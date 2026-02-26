@@ -1,0 +1,26 @@
+\subsection{Elliptic Operator and Regularized Determinant}
+  \label{subsec:elliptic-operator}
+
+  Let $A$ be a positive, self-adjoint elliptic operator of Laplace type
+  acting on functions over a bounded three-dimensional domain $\Omega$,
+  with appropriate boundary conditions ensuring a discrete spectrum.
+  We denote its eigenvalues by $\{\lambda_k\}_{k \ge 0}$,
+  ordered non-decreasingly.
+
+  If $A$ admits a zero mode, we define the pseudo-determinant
+  \begin{equation}
+    \det{}' A = \prod_{\lambda_k > 0} \lambda_k,
+  \end{equation}
+  excluding the vanishing eigenvalue.
+  More generally, the determinant is understood in the regularized sense,
+  for instance via zeta regularization,
+  \begin{equation}
+    \log \det{}' A = - \left.\frac{d}{ds}\right|_{s=0}
+    \sum_{\lambda_k > 0} \lambda_k^{-s}.
+  \end{equation}
+
+  We define the projective entropy functional by
+  \begin{equation}
+    S_\Pi[A] = \frac12 \log \det{}' A.
+  \end{equation}
+  The normalization factor $\tfrac12$ is conventional and will simplify subsequent expressions.
