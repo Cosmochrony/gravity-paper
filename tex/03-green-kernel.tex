@@ -1,0 +1,64 @@
+\section{Green Kernel in Three Dimensions}
+
+  \subsection{Laplace-Type Operators and Asymptotic Behavior}
+
+    We consider an elliptic operator of Laplace type in three spatial dimensions,
+    \begin{equation}
+      A = -\nabla^2 + V(x),
+    \end{equation}
+    acting on a bounded domain $\Omega \subset \mathbb{R}^3$
+    with boundary conditions ensuring self-adjointness and positivity.
+
+    In the weak-field regime and away from boundaries,
+    the leading-order behavior of the Green kernel is governed
+    by the principal symbol of the operator.
+    Neglecting lower-order contributions, the Green function satisfies
+    \begin{equation}
+      -\nabla^2 G(x,y) = \delta(x-y).
+    \end{equation}
+
+    In three dimensions, the fundamental solution of the Laplacian
+    is well known:
+    \begin{equation}
+      G(x,y) = \frac{1}{4\pi |x-y|}.
+    \end{equation}
+
+    More generally, for operators of the form $A = -\nabla^2 + V(x)$
+    with sufficiently regular and bounded $V$,
+    the Green kernel admits the asymptotic expansion
+    \begin{equation}
+      G(x,y) \sim \frac{1}{4\pi |x-y|}
+      \quad \text{as } |x-y| \to \infty,
+    \end{equation}
+    up to exponentially suppressed or subleading corrections,
+    provided no mass gap is introduced.
+
+  \subsection{Entropy Variation and Newtonian Kernel}
+
+    Substituting this asymptotic form into the entropy variation formula,
+    \begin{equation}
+      \delta S_\Pi
+      = \frac12 \int_\Omega \int_\Omega
+      G(x,y)\, \delta A(y,x)\, dx\, dy,
+    \end{equation}
+    we obtain, in the long-distance regime,
+    \begin{equation}
+      \delta S_\Pi
+      \sim
+      \frac{1}{8\pi}
+      \int_\Omega \int_\Omega
+      \frac{\delta A(y,x)}{|x-y|}\, dx\, dy.
+    \end{equation}
+
+    If the perturbation $\delta A$ is spatially localized,
+    this expression reduces asymptotically to a convolution
+    with the Newtonian kernel $1/|x-y|$.
+    The entropy response induced by a compact perturbation
+    therefore decays as $1/r$ at large distances.
+
+    The appearance of the Newtonian kernel is thus not imposed
+    as a fundamental interaction law.
+    It follows directly from the resolvent structure of a
+    three-dimensional Laplace-type operator.
+    Long-range behavior emerges from the spectral properties
+    of the operator governing the entropy functional.

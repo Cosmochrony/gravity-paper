@@ -1,0 +1,71 @@
+\section{Continuum Limit and Scaling Considerations}
+
+  \subsection{Discrete-to-Continuum Correspondence}
+
+    The numerical implementation employs a finite cubic lattice with
+    Dirichlet boundary conditions.
+    Let $h$ denote the lattice spacing and $L_h$ the corresponding
+    graph Laplacian.
+    In the limit $h \to 0$ with fixed physical domain size,
+    the rescaled operator satisfies
+    \begin{equation}
+      h^{-2} L_h \longrightarrow -\nabla^2
+    \end{equation}
+    in the sense of operator convergence on suitable function spaces.
+
+    Accordingly, the discrete resolvent converges to the continuum Green operator,
+    \begin{equation}
+      (L_h + \varepsilon I)^{-1}
+      \;\longrightarrow\;
+      (-\nabla^2 + \varepsilon)^{-1},
+    \end{equation}
+    for fixed $\varepsilon > 0$.
+    In three dimensions and for $\varepsilon \to 0$,
+    the corresponding Green kernel asymptotically reproduces
+    the Newtonian form
+    \begin{equation}
+      G(r) \sim \frac{1}{4\pi r}.
+    \end{equation}
+
+    The discrete $1/r$ behavior observed numerically is therefore
+    consistent with the continuum limit of Laplace-type operators.
+
+  \subsection{Scaling of Entropy Variation}
+
+    Under a rescaling of spatial coordinates
+    $x \mapsto \lambda x$,
+    the Laplacian transforms as
+    \begin{equation}
+      -\nabla^2 \mapsto \lambda^{-2} (-\nabla^2).
+    \end{equation}
+    Eigenvalues scale accordingly as $\lambda^{-2}$,
+    so that the logarithmic determinant transforms as
+    \begin{equation}
+      \log \det{}' A \mapsto
+      \log \det{}' A - 2 N \log \lambda,
+    \end{equation}
+    where $N$ denotes the number of positive modes
+    below a fixed spectral cutoff.
+
+    Although the determinant itself depends on regularization,
+    its first variation under localized perturbations,
+    \begin{equation}
+      \delta S_\Pi = \frac12 \mathrm{Tr}(A^{-1}\delta A),
+    \end{equation}
+    is scale-covariant and governed by the Green kernel.
+    The $1/r$ decay therefore follows from dimensional analysis
+    in three spatial dimensions and is not an artifact of discretization.
+
+  \subsection{Interpretation}
+
+    The continuum scaling properties confirm that
+    the Newtonian kernel arises from the elliptic nature
+    of the operator rather than from lattice-specific effects.
+    The discrete simulations reproduce the expected continuum behavior,
+    while making explicit the role of finite spatial support
+    in generating a macroscopic amplitude shift.
+
+    Within this framework, gravity appears as a long-range
+    resolvent-mediated response of a projective entropy functional.
+    The derivation is restricted to the weak-field,
+    Newtonian regime and does not rely on additional geometric structure.
