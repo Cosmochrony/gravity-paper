@@ -1,0 +1,26 @@
+\subsection{Scaling of Entropy Variation}
+  \label{subsec:scaling-of-entropy-variation}
+
+  Under a rescaling of spatial coordinates
+  $x \mapsto \lambda x$,
+  the Laplacian transforms as
+  \begin{equation}
+    -\nabla^2 \mapsto \lambda^{-2} (-\nabla^2).
+  \end{equation}
+  Eigenvalues scale accordingly as $\lambda^{-2}$,
+  so that the logarithmic determinant transforms as
+  \begin{equation}
+    \log \det{}' A \mapsto
+    \log \det{}' A - 2 N \log \lambda,
+  \end{equation}
+  where $N$ denotes the number of positive modes
+  below a fixed spectral cutoff.
+
+  Although the determinant itself depends on regularization,
+  its first variation under localized perturbations,
+  \begin{equation}
+    \delta S_\Pi = \frac12 \mathrm{Tr}(A^{-1}\delta A),
+  \end{equation}
+  is scale-covariant and governed by the Green kernel.
+  The $1/r$ decay therefore follows from dimensional analysis
+  in three spatial dimensions and is not an artifact of discretization.

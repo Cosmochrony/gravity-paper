@@ -1,0 +1,30 @@
+\subsection{Discrete-to-Continuum Correspondence}
+  \label{subsec:discrete-to-continuum-correspondence}
+
+  The numerical implementation employs a finite cubic lattice with
+  Dirichlet boundary conditions.
+  Let $h$ denote the lattice spacing and $L_h$ the corresponding
+  graph Laplacian.
+  In the limit $h \to 0$ with fixed physical domain size,
+  the rescaled operator satisfies
+  \begin{equation}
+    h^{-2} L_h \longrightarrow -\nabla^2
+  \end{equation}
+  in the sense of operator convergence on suitable function spaces.
+
+  Accordingly, the discrete resolvent converges to the continuum Green operator,
+  \begin{equation}
+    (L_h + \varepsilon I)^{-1}
+    \;\longrightarrow\;
+    (-\nabla^2 + \varepsilon)^{-1},
+  \end{equation}
+  for fixed $\varepsilon > 0$.
+  In three dimensions and for $\varepsilon \to 0$,
+  the corresponding Green kernel asymptotically reproduces
+  the Newtonian form
+  \begin{equation}
+    G(r) \sim \frac{1}{4\pi r}.
+  \end{equation}
+
+  The discrete $1/r$ behavior observed numerically is therefore
+  consistent with the continuum limit of Laplace-type operators.
