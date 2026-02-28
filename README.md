@@ -1,5 +1,3 @@
-# Newtonian Potentials from Projective Entropy in Three Dimensions
-
 This repository contains the source of the **Gravity 1.0** Cosmochrony paper H  
 [*Newtonian Potentials from Projective Entropy in Three Dimensions*](pdf/Gravity.pdf).
 
