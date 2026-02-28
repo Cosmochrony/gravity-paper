@@ -1,0 +1,29 @@
+\subsection{Regularized determinant and renormalization setup}
+\label{subsec:zeta-regularization}
+
+We define the projective entropy functional by
+\begin{equation}
+  S_\Pi[g] \equiv \frac12 \log \det\nolimits' A_g ,
+\end{equation}
+where the prime denotes omission of zero modes, if any.
+
+The determinant is understood in the zeta-regularized sense,
+\begin{equation}
+  \log \det\nolimits' A_g = -\zeta'_{A_g}(0) ,
+\end{equation}
+with
+\begin{equation}
+  \zeta_{A_g}(s)
+  =
+  \frac{1}{\Gamma(s)}
+  \int_0^\infty
+  t^{\,s-1}
+  \Tr\!\left(e^{-tA_g}\right)\,dt ,
+\end{equation}
+initially defined for $\Re(s)$ sufficiently large and continued meromorphically to $s=0$.
+
+In four dimensions, the small-$t$ expansion of the heat trace contains ultraviolet divergences.
+Renormalization is implemented by subtracting the pole terms associated with the heat-kernel coefficients and introducing a renormalization scale $\mu$.
+
+The resulting renormalized functional $S_\Pi^{\mathrm ren}[g;\mu]$ is finite but contains scheme-dependent local geometric counterterms.
+These counterterms are crucial for the emergence of the Einstein--Hilbert structure discussed below.

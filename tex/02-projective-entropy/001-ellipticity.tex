@@ -1,0 +1,38 @@
+\subsection{Ellipticity and minimal Laplace-type operator}
+\label{subsec:ellipticity}
+
+Let $(M,g)$ be a smooth four-dimensional Riemannian manifold.
+We consider a second-order differential operator acting on scalar functions.
+
+The analysis relies crucially on ellipticity.
+For a differential operator of order two, ellipticity means that its principal symbol is invertible away from the zero section.
+
+We choose the minimal Laplace-type operator
+\begin{equation}
+  A_g = -\nabla_g^2 ,
+\end{equation}
+where $\nabla_g$ is the Levi-Civita connection.
+Its principal symbol is
+\begin{equation}
+  \sigma_2(A_g)(x,k) = g^{\mu\nu}(x) k_\mu k_\nu .
+\end{equation}
+On a Riemannian manifold, $g^{\mu\nu}k_\mu k_\nu>0$ for all nonzero $k$.
+Therefore $A_g$ is elliptic.
+
+Ellipticity ensures:
+
+\begin{itemize}
+  \item existence of the resolvent $(A_g+\lambda)^{-1}$ for $\lambda>0$,
+  \item discreteness of the spectrum on compact manifolds,
+  \item local regularity of the Green kernel,
+  \item validity of the short-time heat-kernel expansion,
+  \item meromorphic continuation of the spectral zeta function.
+\end{itemize}
+
+More general scalar Laplace-type operators may include a curvature coupling,
+\begin{equation}
+  A_g(\xi) = -\nabla_g^2 + \xi R .
+\end{equation}
+In this work we set $\xi=0$.
+This is the minimal choice in which the geometry enters exclusively through the principal symbol.
+The conformal value $\xi=1/6$, for which the Einstein--Hilbert counterterm vanishes in four dimensions, is discussed separately as an alternative regime dominated by quadratic curvature terms.

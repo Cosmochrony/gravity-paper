@@ -1,0 +1,33 @@
+\subsection{Short-time heat-kernel expansion}
+  \label{subsec:hk-expansion}
+
+  For an elliptic Laplace-type operator $A_g$ on a smooth four-dimensional
+  Riemannian manifold, the heat trace admits a short-time asymptotic expansion
+  as $t \to 0^+$ of the form
+  \begin{equation}
+    \Tr\!\left(e^{-tA_g}\right)
+    \sim
+    \frac{1}{(4\pi t)^2}
+    \sum_{k\ge 0}
+    t^{k}
+    \int_M d^4x\,\sqrt{g}\, a_{2k}(x) .
+  \end{equation}
+
+  The coefficients $a_{2k}(x)$ are local curvature invariants constructed from
+  the metric and its derivatives.
+  They are the Seeley--DeWitt coefficients of the operator~\cite{Seeley1967,DeWitt1965,Vassilevich2003}.
+
+  For the minimal scalar Laplacian ($\xi=0$), the first coefficients are
+  \begin{align}
+    a_0(x) &= 1 , \\
+    a_2(x) &= \frac{1}{6} R(x) , \\
+    a_4(x) &= \alpha_1 R^2
+    + \alpha_2 R_{\mu\nu}R^{\mu\nu}
+    + \alpha_3 R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma} ,
+  \end{align}
+  with fixed numerical constants $\alpha_i$.
+
+  The coefficients $a_0$ and $a_2$ control the ultraviolet pole structure of
+  the zeta-regularized determinant in four dimensions.
+  The coefficient $a_4$ contributes both to logarithmic divergences and to the
+  finite part.
