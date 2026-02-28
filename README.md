@@ -131,8 +131,7 @@ paper/
 
 If you reference this work, please cite:
 
-> J. Beau, *Newtonian Potentials from Projective Entropy  
-> in Three Dimensions*, Zenodo, 2026.
+> J. Beau, *Newtonian Potentials from Projective Entropy in Three Dimensions*, Zenodo, 2026.
 
 ## Acknowledgements
 
