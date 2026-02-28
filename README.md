@@ -115,13 +115,13 @@ It **does** provide:
 - a bridge toward covariant generalization (developed separately)
 
 ## Repository Contents
-
+```
 paper/
 ├── pdf/        # Compiled Gravity 1.0 PDF  
 ├── tex/        # LaTeX sources  
 ├── figures/    # Diagrams and simulations  
 └── README.md
-
+```
 ## Links
 
 - 📄 Paper PDF: https://github.com/Cosmochrony/gravity-paper/blob/main/pdf/Gravity.pdf
