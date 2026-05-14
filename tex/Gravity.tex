@@ -737,9 +737,11 @@
       \item[\textbf{(C2)}]
       \textit{Einstein infrared limit.}\;
       For weak curvature ($\|X\| \ll 1$):
-      $\Phi(I + \varepsilon\, X)
-      = 1 + \tfrac{1}{2}\,\varepsilon\,\mathrm{tr}\, X
-      + O(\varepsilon^2)$,
+      \[
+        \Phi(X)
+        = 1 + \tfrac{1}{2}\,\mathrm{tr}\, X
+        + O(\|X\|^2)\,,
+      \]
       reproducing the Einstein--Hilbert density at
       leading order.
 
@@ -770,9 +772,9 @@
     \end{enumerate}
 
     Conditions~(C1)--(C4) are direct consequences of the
-    covariance, infrared, and boundedness properties
-    established in the spectral framework of Sections~2--5
-    and in~\cite{Beau2026c}.
+    covariance, infrared consistency, and algebraic saturation
+    properties established in the spectral framework of
+    Sections~2--5 and in~\cite{Beau2026c}.
     Condition~(C5) is the only additional input; its
     derivation from the non-factorisability axiom~A3
     of~\cite{Beau2026m} is the subject of the following
@@ -812,6 +814,13 @@
       result; pending such a derivation, [H-ext] occupies a
       status analogous to~[H-color] in the spectral
       admissibility sub-programme~\cite{Beau2026a36}.
+      Hypothesis~[H-ext] concerns only the extensivity of the
+      post-locking coherence functional and does not affect
+      the tensorial classification itself: the identification
+      of $g^{-1}R$ as the spectral carrier
+      (Lemma~\ref{lem:spectralcarrier}) and the reduction to
+      the scalar BI sector
+      (Lemma~\ref{lem:1Dreduction}) are both unconditional.
     \end{remark}
 
   \subsection{Uniqueness of the tensorial completion}
@@ -875,13 +884,15 @@
 
     \begin{proof}
       \textit{Infrared constraint.}\;
-      Condition~(C2) requires, at first order:
-      $\Phi(I + \varepsilon X)
-      = \exp\!\bigl(\sum_i h(\varepsilon \lambda_i)\bigr)
-      \approx 1 + \varepsilon\, h'(0)\,\mathrm{tr}\, X$.
-      Matching with
-      $1 + \tfrac{1}{2}\,\varepsilon\,\mathrm{tr}\, X$ gives
-      $h'(0) = 1/2$.
+      Condition~(C2) requires, for small $\|X\|$:
+      \[
+        \Phi(X)
+        = \exp\!\Bigl(\sum_i h(\lambda_i)\Bigr)
+        \approx 1 + \sum_i h'(0)\,\lambda_i
+        = 1 + h'(0)\,\mathrm{tr}\, X\,.
+      \]
+      Matching with $1 + \tfrac{1}{2}\,\mathrm{tr}\, X$
+      gives $h'(0) = 1/2$.
       Since $\Phi(0) = 1$ at flat space, $h(0) = 0$.
 
       \textit{Saturation constraint.}\;
@@ -889,28 +900,28 @@
       $\lambda \to -1^+$, hence
       $h(\lambda) \to -\infty$ as $\lambda \to -1^+$.
 
-      \textit{Reduction to the scalar sector.}\;
-      In the scalar Born--Infeld theory of~\cite{Beau2026c},
-      the one-dimensional completer is uniquely fixed by the
-      saturation bound: the action density takes the form
-      $\sqrt{1 + \lambda} - 1$ for a single mode of normalised
-      field gradient~$\lambda$.
-      The associated coherence density is
-      $\log \sqrt{1 + \lambda} = \tfrac{1}{2}\log(1+\lambda)$,
-      satisfying $h(0) = 0$, $h'(0) = 1/2$, and
-      $h \to -\infty$ as $\lambda \to -1^+$.
-
-      \textit{Uniqueness.}\;
-      Any alternative $\tilde{h}$ satisfying the above can be
-      written as
-      $\tilde{h}(\lambda)
-      = \tfrac{1}{2}\log(1 + \lambda) + r(\lambda)$
-      with $r(0) = 0$, $r'(0) = 0$, and $r$ bounded below
-      near $\lambda = -1$.
-      In the one-dimensional sector, $\exp(\tilde{h})$ must
-      reproduce the scalar BI density $\sqrt{1+\lambda}$,
-      whence $\exp(r(\lambda)) = 1$ identically
-      and $r \equiv 0$.
+      \textit{Identification with the scalar sector.}\;
+      By the scalar Born--Infeld uniqueness theorem
+      of~\cite{Beau2026c}, the one-dimensional admissible
+      sector is uniquely and structurally identified with
+      the scalar BI theory: the one-dimensional completer is
+      \[
+        \Phi_{1\mathrm{D}}(\lambda)
+        = \sqrt{1 + \lambda}\,.
+      \]
+      Conditions~(C2) and~(C3) are consequences of this
+      identification rather than independent inputs at the
+      one-dimensional level.
+      Therefore
+      \[
+        h(\lambda)
+        = \log \Phi_{1\mathrm{D}}(\lambda)
+        = \tfrac{1}{2}\,\log(1 + \lambda)\,.
+      \]
+      The uniqueness of $h$ is that of the scalar BI
+      sector established in~\cite{Beau2026c}; the present
+      lemma does not claim independent uniqueness from
+      conditions~(C2) and~(C3) alone.
     \end{proof}
 
     \begin{lemma}[Spectral carrier identification]
@@ -936,17 +947,18 @@
 
       \textit{Exclusion of
         $f(R)\,\delta^{\mu}{}_{\nu}$.}\;
-      The endomorphism
-      $X = f(R)\,\delta^{\mu}{}_{\nu}$
-      has a single repeated eigenvalue.
-      Two manifolds with equal scalar curvature but distinct
-      Ricci eigenvalue distributions would produce
-      identical~$\Phi$, violating the spectral resolution
-      required by admissibility.
+      The endomorphism $X = f(R)\,\delta^{\mu}{}_{\nu}$
+      collapses the local spectral content to a completely
+      degenerate eigenspace:
+      $\lambda_1 = \cdots = \lambda_d = f(R)$.
+      No directional admissibility structure can be
+      distinguished, and the information carried by the
+      individual Ricci eigenvalues is entirely lost.
       The resulting completer
-      $\Phi(X) = \exp\!\bigl(d \cdot h(f(R))\bigr)$ is a
-      function of~$R$ alone, degenerate along all eigenvalue
-      directions.
+      $\Phi(X) = \exp\!\bigl(d \cdot h(f(R))\bigr)$
+      is a function of~$R$ alone and therefore cannot encode
+      the anisotropic curvature content that spectral
+      admissibility requires to resolve.
 
       \textit{Selection.}\;
       The remaining candidate is the mixed Ricci tensor
