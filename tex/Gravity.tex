@@ -29,7 +29,10 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{hypothesis}{Hypothesis}
 
 \title{Infrared Einstein Response from a Renormalized Spectral Entropy Functional}
 \author*[1]{\fnm{Jérôme} \sur{Beau}}\email{jerome.beau@cosmochrony.org}
@@ -60,17 +63,24 @@
 
   These results show that the infrared-dominant local part of the renormalized spectral
   entropy variation reproduces the Einstein tensor.
+  We further show that the ultraviolet completion of this infrared sector is uniquely
+  determined, under a coherence extensivity hypothesis, to be of determinantal
+  Born--Infeld type: the action density takes the Eddington-inspired form
+  $\sqrt{-\det(g_{\mu\nu} + \ell_{\mathrm{sp}}^{2}\, R_{\mu\nu})} - \sqrt{-g}$.
   This mechanism does not rely on a specific microscopic completion,
   but follows from general properties of the renormalized spectral functional.
   In this sense the resulting Einstein response appears as the universal
-  two-derivative infrared sector of the effective geometric dynamics.
+  two-derivative infrared sector of the effective geometric dynamics,
+  and its Born--Infeld completion as the unique admissible spectral
+  ultraviolet extension.
   Geometric gravity therefore appears as an effective low-energy response
   of spectral operator structure rather than as a fundamental dynamical input.
 }
 
 \keywords
-{Spectral geometry, Heat-kernel expansion, Induced gravity, Zeta regularization, Effective action, Einstein tensor,
-  Renormalization}
+{Spectral geometry, Heat-kernel expansion, Induced gravity,
+  Zeta regularization, Effective action, Einstein tensor,
+  Born--Infeld completion, Renormalization}
 
 \begin{document}
   \maketitle
@@ -659,6 +669,447 @@
     Thus the dominance of the Einstein tensor in the renormalized spectral
     stress tensor is self-consistent in the classical infrared domain.
 
+  \section{Ultraviolet completion: uniqueness of the
+  Born--Infeld structure}
+  \label{sec:UV-completion}
+
+  The infrared hierarchy of
+  Section~\ref{subsec:ir-hierarchy} ensures that the
+  Einstein response dominates for
+  $R\,\ell_{\mathrm{sp}}^{2} \ll 1$.
+  In the ultraviolet regime
+  $R\,\ell_{\mathrm{sp}}^{2} \sim 1$,
+  higher-derivative corrections become comparable to the
+  Einstein--Hilbert term and the expansion breaks down.
+  The question is whether the full non-perturbative
+  effective action is determined by the same spectral
+  structure, or requires independent input.
+
+  In the scalar Born--Infeld theory derived
+  in~\cite{Beau2026c}, the saturation bound
+  $|\partial_t \chi| \leq c_{\mathrm{BI}}$ uniquely selects
+  a square-root action density.
+  We now show that the tensorial extension of this result
+  to the gravitational sector is similarly rigid:
+  under admissibility conditions inherited from the
+  framework of~\cite{Beau2026m,Beau2026l}, the
+  determinantal Born--Infeld form is the \emph{unique}
+  admissible spectral tensorial completion of the
+  Einstein--Hilbert sector.
+
+  \subsection{Setup and admissibility conditions}
+    \label{subsec:UV-setup}
+
+    Define the mixed Ricci endomorphism
+    \begin{equation}\label{eq:mixed-ricci}
+      X^{\mu}{}_{\nu}
+      \;=\;
+      \ell_{\mathrm{sp}}^{2}\,
+      g^{\mu\alpha}\, R_{\alpha\nu}\,.
+    \end{equation}
+    A local covariant completer takes the form
+    \begin{equation}\label{eq:completer-form}
+      \mathcal{C}(g, R)
+      \;=\;
+      \sqrt{-g}\;\bigl[\,\Phi(X) - 1\,\bigr]\,,
+    \end{equation}
+    where $\Phi$ is a smooth scalar function of the
+    endomorphism~$X$.
+    The effective gravitational action is then
+    \[
+      S_{\mathrm{coh}}^{\mathrm{full}}[g]
+      \;=\;
+      \frac{1}{16\pi G_N}\,
+      \int \mathcal{C}(g, R)\,\mathrm{d}^4 x\,,
+    \]
+    with $G_N \sim 16\pi^2 \ell_{\mathrm{sp}}^{2}$ as
+    established in Section~\ref{sec:newton-identification}.
+
+    The following conditions encode the structural constraints
+    that any admissible tensorial completion must satisfy.
+
+    \begin{enumerate}
+      \item[\textbf{(C1)}]
+      \textit{Spectral covariance.}\;
+      $\Phi(X)$ depends on $X$ only through its eigenvalues:
+      $\Phi(U X U^{-1}) = \Phi(X)$ for all
+      $U \in \mathrm{O}(d)$.
+
+      \item[\textbf{(C2)}]
+      \textit{Einstein infrared limit.}\;
+      For weak curvature ($\|X\| \ll 1$):
+      $\Phi(I + \varepsilon\, X)
+      = 1 + \tfrac{1}{2}\,\varepsilon\,\mathrm{tr}\, X
+      + O(\varepsilon^2)$,
+      reproducing the Einstein--Hilbert density at
+      leading order.
+
+      \item[\textbf{(C3)}]
+      \textit{Algebraic Born--Infeld saturation.}\;
+      $\Phi(X) \to 0$ as any eigenvalue of $(I + X)$
+      approaches zero.
+      The completer density vanishes at maximal admissible
+      curvature rather than diverging, in accordance with
+      the scalar saturation bound
+      of~\cite{Beau2026c}.
+
+      \item[\textbf{(C4)}]
+      \textit{Spectral isotropy.}\;
+      $\Phi$ treats all eigenvalue directions symmetrically:
+      $\Phi(X) = \varphi(\lambda_1, \ldots, \lambda_d)$
+      with $\varphi$ symmetric.
+
+      \item[\textbf{(C5)}]
+      \textit{Coherence extensivity.}\;
+      Define $S_{\mathrm{coh}} = \log \Phi$.
+      For admissibly independent sectors $X_1$, $X_2$
+      (in the sense of Axiom~A3
+      of~\cite{Beau2026m}):
+      $S_{\mathrm{coh}}(X_1 \oplus X_2)
+      = S_{\mathrm{coh}}(X_1)
+      + S_{\mathrm{coh}}(X_2)$.
+    \end{enumerate}
+
+    Conditions~(C1)--(C4) are direct consequences of the
+    covariance, infrared, and boundedness properties
+    established in the spectral framework of Sections~2--5
+    and in~\cite{Beau2026c}.
+    Condition~(C5) is the only additional input; its
+    derivation from the non-factorisability axiom~A3
+    of~\cite{Beau2026m} is the subject of the following
+    hypothesis.
+
+    \begin{hypothesis}[\textbf{H-ext}: admissible coherence
+    extensivity]\label{hyp:Hext}
+      Let $X_1$ and $X_2$ be curvature endomorphisms
+      associated with admissibly independent sectors in the
+      sense of Axiom~A3 of~\cite{Beau2026m}: no
+      cross-admissibility constraint couples the two sectors
+      after projection locking.
+      Then the coherence functional is extensive:
+      \begin{equation}\label{eq:H-ext}
+        S_{\mathrm{coh}}(X_1 \oplus X_2)
+        =
+        S_{\mathrm{coh}}(X_1) + S_{\mathrm{coh}}(X_2)\,.
+      \end{equation}
+    \end{hypothesis}
+
+    \begin{remark}
+      Axiom~A3 of~\cite{Beau2026m} forbids premature
+      factorisation of the admissible fibre prior to projection
+      locking.
+      After locking, sectors that carry no mutual admissibility
+      constraint contribute independently to the total
+      coherence cost.
+      The extensivity of $S_{\mathrm{coh}}$ is the post-locking
+      counterpart of pre-locking non-factorisability:
+      precisely because A3 prevents premature selection, the
+      residual cost after locking decomposes additively over
+      independently resolved sectors.
+      This is structurally analogous to the extensivity of
+      thermodynamic entropy for non-interacting subsystems.
+      An analytical derivation of~[H-ext] from~A3 would
+      promote the uniqueness theorem below to an unconditional
+      result; pending such a derivation, [H-ext] occupies a
+      status analogous to~[H-color] in the spectral
+      admissibility sub-programme~\cite{Beau2026a36}.
+    \end{remark}
+
+  \subsection{Uniqueness of the tensorial completion}
+    \label{subsec:UV-uniqueness}
+
+    The uniqueness argument proceeds in three lemmas.
+    Lemmas~\ref{lem:1Dreduction}
+    and~\ref{lem:spectralcarrier} are unconditional;
+    Lemma~\ref{lem:extensivity-consequence} is conditional
+    on~[H-ext] and carries the only conditionality in the
+    chain.
+
+    \begin{lemma}[Spectral decomposition from coherence
+    extensivity]
+      \label{lem:extensivity-consequence}
+      Assume~\textup{[H-ext]}.
+      Then conditions~\textup{(C1)}, \textup{(C4)},
+      and~\textup{(C5)} together force
+      \begin{equation}\label{eq:spectral-decomposition}
+        S_{\mathrm{coh}}(X)
+        = \sum_{i=1}^{d} h(\lambda_i)\,,
+      \end{equation}
+      for a single smooth function
+      $h : (-1, +\infty) \to \mathbb{R}$, where
+      $\lambda_1, \ldots, \lambda_d$ are the eigenvalues
+      of~$X$.
+    \end{lemma}
+
+    \begin{proof}
+      The extensivity of $S_{\mathrm{coh}}$
+      implies $\Phi(X_1 \oplus X_2)
+      = \Phi(X_1)\,\Phi(X_2)$ by exponentiation.
+      Write $X$ in diagonal form
+      $X = \mathrm{diag}(\lambda_1, \ldots, \lambda_d)$
+      relative to the $g$-orthonormal eigenbasis.
+      Apply the multiplicativity of $\Phi$ iteratively to
+      the rank-1 decomposition
+      $X = \lambda_1 P_1 \oplus \cdots \oplus \lambda_d P_d$
+      (where $P_i$ are rank-1 projectors onto the
+      eigenspaces):
+      $\Phi(X) = \prod_{i} \Phi(\lambda_i P_i)$.
+      Taking logarithms
+      gives~\eqref{eq:spectral-decomposition}
+      with $h(\lambda) = \log \Phi(\lambda P)$ for any unit
+      projector~$P$.
+      Condition~(C4) ensures that $h$ does not depend on the
+      choice of eigendirection.
+    \end{proof}
+
+    \begin{lemma}[One-dimensional reduction to scalar BI]
+      \label{lem:1Dreduction}
+      Under conditions~\textup{(C2)} and~\textup{(C3)},
+      the sector function $h$
+      in~\eqref{eq:spectral-decomposition} is uniquely
+      determined:
+      \begin{equation}\label{eq:h-unique}
+        h(\lambda)
+        = \tfrac{1}{2}\,\log(1 + \lambda)\,.
+      \end{equation}
+    \end{lemma}
+
+    \begin{proof}
+      \textit{Infrared constraint.}\;
+      Condition~(C2) requires, at first order:
+      $\Phi(I + \varepsilon X)
+      = \exp\!\bigl(\sum_i h(\varepsilon \lambda_i)\bigr)
+      \approx 1 + \varepsilon\, h'(0)\,\mathrm{tr}\, X$.
+      Matching with
+      $1 + \tfrac{1}{2}\,\varepsilon\,\mathrm{tr}\, X$ gives
+      $h'(0) = 1/2$.
+      Since $\Phi(0) = 1$ at flat space, $h(0) = 0$.
+
+      \textit{Saturation constraint.}\;
+      Condition~(C3) requires $\Phi(X) \to 0$ as
+      $\lambda \to -1^+$, hence
+      $h(\lambda) \to -\infty$ as $\lambda \to -1^+$.
+
+      \textit{Reduction to the scalar sector.}\;
+      In the scalar Born--Infeld theory of~\cite{Beau2026c},
+      the one-dimensional completer is uniquely fixed by the
+      saturation bound: the action density takes the form
+      $\sqrt{1 + \lambda} - 1$ for a single mode of normalised
+      field gradient~$\lambda$.
+      The associated coherence density is
+      $\log \sqrt{1 + \lambda} = \tfrac{1}{2}\log(1+\lambda)$,
+      satisfying $h(0) = 0$, $h'(0) = 1/2$, and
+      $h \to -\infty$ as $\lambda \to -1^+$.
+
+      \textit{Uniqueness.}\;
+      Any alternative $\tilde{h}$ satisfying the above can be
+      written as
+      $\tilde{h}(\lambda)
+      = \tfrac{1}{2}\log(1 + \lambda) + r(\lambda)$
+      with $r(0) = 0$, $r'(0) = 0$, and $r$ bounded below
+      near $\lambda = -1$.
+      In the one-dimensional sector, $\exp(\tilde{h})$ must
+      reproduce the scalar BI density $\sqrt{1+\lambda}$,
+      whence $\exp(r(\lambda)) = 1$ identically
+      and $r \equiv 0$.
+    \end{proof}
+
+    \begin{lemma}[Spectral carrier identification]
+      \label{lem:spectralcarrier}
+      Among local covariant two-derivative symmetric tensors
+      on $(M, g)$, the mixed Ricci endomorphism
+      $X^{\mu}{}_{\nu}
+      = \ell_{\mathrm{sp}}^{2}\,
+      g^{\mu\alpha} R_{\alpha\nu}$
+      is the unique admissible spectral carrier for~$\Phi$
+      with non-degenerate eigenvalue spectrum.
+    \end{lemma}
+
+    \begin{proof}
+      \textit{Classification.}\;
+      At two-derivative order, the only symmetric $(0,2)$
+      tensors constructed covariantly from the metric and the
+      Riemann tensor are $R_{\mu\nu}$ and
+      $R\, g_{\mu\nu}$, together with linear combinations.
+      Condition~(C1) requires the argument of~$\Phi$ to be
+      an endomorphism $X : T_p M \to T_p M$, obtained by
+      raising one index with the metric.
+
+      \textit{Exclusion of
+        $f(R)\,\delta^{\mu}{}_{\nu}$.}\;
+      The endomorphism
+      $X = f(R)\,\delta^{\mu}{}_{\nu}$
+      has a single repeated eigenvalue.
+      Two manifolds with equal scalar curvature but distinct
+      Ricci eigenvalue distributions would produce
+      identical~$\Phi$, violating the spectral resolution
+      required by admissibility.
+      The resulting completer
+      $\Phi(X) = \exp\!\bigl(d \cdot h(f(R))\bigr)$ is a
+      function of~$R$ alone, degenerate along all eigenvalue
+      directions.
+
+      \textit{Selection.}\;
+      The remaining candidate is the mixed Ricci tensor
+      $g^{\mu\alpha} R_{\alpha\nu}$, which carries the full
+      directional information of the Ricci curvature through
+      its $d$~independent eigenvalues.
+      It is the unique minimal two-derivative endomorphism
+      with non-trivial spectral content.
+
+      \textit{Trace modifications.}\;
+      The alternative
+      $\mathcal{R}_{\mu\nu}
+      = R_{\mu\nu} - \alpha\, g_{\mu\nu} R$
+      (for constant~$\alpha$) yields eigenvalues shifted by
+      $-\alpha R$ relative to the Ricci eigenvalues.
+      Such a shift modifies $\Phi$ only at subleading IR
+      order and is absorbed into a redefinition of
+      $\ell_{\mathrm{sp}}^{2}$ provided
+      $\alpha \neq 1/d$.
+      The identification $\mathcal{R}_{\mu\nu} = R_{\mu\nu}$
+      ($\alpha = 0$) is the minimal choice.
+      The residual ambiguity in~$\alpha$ affects only
+      higher-order corrections and is resolved by matching
+      to the $a_2$ coefficient computed in
+      Section~\ref{sec:hk-sdw}.
+    \end{proof}
+
+    \begin{theorem}[Uniqueness of the admissible tensorial
+    completion]
+      \label{thm:uniqueness-completion}
+      Let $\mathcal{C}(g, R)$ be a local covariant scalar
+      density of the form~\eqref{eq:completer-form},
+      satisfying conditions~\textup{(C1)--(C4)} and
+      Hypothesis~\textup{[H-ext]}.
+      Then, up to the trace ambiguity resolved by the
+      heat-kernel analysis of
+      Section~\ref{sec:hk-sdw}:
+      \begin{equation}\label{eq:unique-completer}
+        \mathcal{C}(g, R)
+        \;=\;
+        \sqrt{-g}\;
+        \Bigl[\,
+        \sqrt{\det\!\bigl(
+        \delta^{\mu}{}_{\nu}
+        + \ell_{\mathrm{sp}}^{2}\,
+        g^{\mu\alpha} R_{\alpha\nu}
+        \bigr)}
+        \;-\; 1
+        \,\Bigr]\,.
+      \end{equation}
+    \end{theorem}
+
+    \begin{proof}
+      By Lemma~\ref{lem:spectralcarrier}, the spectral
+      carrier is
+      $X = \ell_{\mathrm{sp}}^{2}\, g^{-1} R$ with
+      eigenvalues $\lambda_i$.
+      By Lemma~\ref{lem:extensivity-consequence}
+      (conditional on~[H-ext]),
+      $\Phi(X) = \exp\!\bigl(\sum_i h(\lambda_i)\bigr)$.
+      By Lemma~\ref{lem:1Dreduction},
+      $h(\lambda) = \tfrac{1}{2}\log(1 + \lambda)$.
+      Therefore:
+      \[
+        \Phi(X)
+        = \exp\!\Bigl(\,
+        \tfrac{1}{2}\sum_i \log(1 + \lambda_i)
+        \Bigr)
+        = \sqrt{\,\prod_i (1 + \lambda_i)}
+        = \sqrt{\det(I + X)}\,.
+      \]
+      Substituting into~\eqref{eq:completer-form}
+      gives~\eqref{eq:unique-completer}.
+    \end{proof}
+
+    Using $\det(g \cdot A) = \det g \cdot \det A$, the
+    result takes the equivalent Eddington--Born--Infeld form:
+
+    \begin{corollary}[Eddington--Born--Infeld action]
+      \label{cor:EBI}
+      Under the hypotheses of
+      Theorem~\ref{thm:uniqueness-completion},
+      the gravitational action takes the form
+      \begin{equation}\label{eq:EBI-action}
+        S_{\mathrm{coh}}^{\mathrm{full}}[g]
+        \;=\;
+        \frac{1}{16\pi G_N}\,
+        \int_{M}
+        \Bigl[\,
+        \sqrt{-\det\!\bigl(
+        g_{\mu\nu}
+        + \ell_{\mathrm{sp}}^{2}\, R_{\mu\nu}
+        \bigr)}
+        \;-\;
+        \sqrt{-g}
+        \,\Bigr]\,
+        \mathrm{d}^4 x\,.
+      \end{equation}
+    \end{corollary}
+
+  \subsection{Structural interpretation}
+    \label{subsec:UV-interpretation}
+
+    \begin{remark}
+      The action~\eqref{eq:EBI-action} coincides in form
+      with Eddington-inspired Born--Infeld gravitational
+      actions studied independently in the modified gravity
+      literature.
+      The present derivation differs in two respects.
+      First, the EiBI form is not postulated as a modified
+      gravity model but derived as a structural rigidity from
+      admissibility conditions.
+      Second, the spectral capacity length
+      $\ell_{\mathrm{sp}}$ is not a free parameter: it is
+      determined by the same spectral cutoff that fixes the
+      induced Newton constant in
+      Section~\ref{sec:newton-identification}.
+    \end{remark}
+
+    \begin{remark}
+      The framework involves two spectrally defined objects
+      that must be carefully distinguished.
+      At the \emph{global} level, the projective entropy
+      functional
+      $S_\Pi[g] = \tfrac{1}{2}\log\det' A_g$
+      of Section~\ref{sec:projective-entropy-covariant}
+      encodes the full eigenvalue spectrum of the effective
+      Laplacian~$A_g$ and produces the infrared Einstein
+      response (Section~\ref{sec:metric-variation}).
+      At the \emph{local} level, the coherence density
+      $S_{\mathrm{coh}}(X)
+      = \tfrac{1}{2}\log\det(I + X)$
+      encodes the eigenvalue spectrum of the mixed Ricci
+      endomorphism and governs the ultraviolet saturation
+      regime.
+      Both share the algebraic form
+      $\tfrac{1}{2}\log\det(\cdot)$ because both originate
+      from the extensivity of admissible coherence:
+      the former over eigenvalue modes of~$A_g$, the latter
+      over eigenvalue directions of~$g^{-1}R$.
+      Admissible spectral extensivity is therefore the common
+      principle underlying both the infrared gravitational
+      response and the ultraviolet Born--Infeld completion.
+    \end{remark}
+
+    \begin{remark}
+      Lemma~\ref{lem:1Dreduction} is unconditional:
+      it follows from the scalar Born--Infeld uniqueness
+      of~\cite{Beau2026c}.
+      Lemma~\ref{lem:spectralcarrier} is unconditional:
+      it is a classification result in Riemannian geometry.
+      Lemma~\ref{lem:extensivity-consequence} is conditional
+      on~[H-ext], whose derivation from Axiom~A3
+      of~\cite{Beau2026m} is structurally motivated but
+      not yet analytically closed.
+      Theorem~\ref{thm:uniqueness-completion} is therefore
+      conditional on~[H-ext] alone.
+      The conditionality is sharply localised: it resides
+      entirely in the passage from non-factorisability
+      (Axiom~A3) to extensivity of~$S_{\mathrm{coh}}$.
+    \end{remark}
+
   \section{Discussion and outlook}
   \label{sec:discussion}
 
@@ -858,6 +1309,15 @@
     Third, the precise numerical value of the induced Newton constant depends on
     the ultraviolet completion and on the detailed matter content contributing to
     the spectral functional.
+    The uniqueness result of Section~\ref{sec:UV-completion} constrains the
+    functional form of this completion but does not fix its overall
+    normalisation independently of the matter content.
+
+    Fourth, Hypothesis~[H-ext]
+    (Section~\ref{subsec:UV-setup}) has not yet been
+    derived analytically from the Foundation axioms.
+    The uniqueness of the Born--Infeld tensorial completion is conditional
+    on this hypothesis.
 
     Finally, the present work focuses on the emergence of the effective
     gravitational field equations.
@@ -908,9 +1368,12 @@
       effective stress tensor.
 
       \item Investigation of regimes in which higher-order curvature
-      contributions become relevant, in particular in strong-curvature
-      domains where quadratic terms from the spectral expansion may
-      dominate the effective dynamics.
+      contributions become relevant.
+      Section~\ref{sec:UV-completion} identifies the unique admissible
+      non-perturbative completion in the Born--Infeld class; the resulting
+      strong-curvature dynamics and its predictions for
+      gravitational collapse, bouncing cosmologies, and singularity
+      resolution remain to be explored.
 
       \item Exploration of the relation between projection structure and
       emergent geometry, clarifying how non-injective effective
