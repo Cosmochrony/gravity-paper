@@ -27,8 +27,22 @@ produces, in four dimensions:
 - non-local form factors
 - conformal anomaly contributions
 
-In the weak-curvature regime R ℓ_χ² ≪ 1,
+In the weak-curvature regime R ℓ_sp² ≪ 1,
 the two-derivative Einstein term dominates.
+
+### Born-Infeld Ultraviolet Completion
+
+The paper establishes that the ultraviolet completion of this infrared Einstein sector is **uniquely determined** under a coherence extensivity hypothesis.
+
+The induced Newton coupling scales parametrically as:
+
+G_N ~ 16π² ℓ_sp²
+
+The unique admissible spectral UV extension takes the determinantal Born-Infeld form:
+
+√(-det(g_μν + ℓ_sp² R_μν)) - √(-g)
+
+This Eddington-inspired structure provides the complete effective geometric action, with Einstein gravity appearing as the universal infrared two-derivative sector.
 
 ## Conceptual Structure
 
@@ -39,6 +53,7 @@ Gravity 2.0A integrates:
 3. Zeta regularization and renormalization
 4. Induced gravity interpretation (Sakharov mechanism)
 5. Infrared derivative hierarchy
+6. Unique Born-Infeld ultraviolet completion
 
 ## Status
 

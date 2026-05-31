@@ -11,6 +11,7 @@
 \usepackage{xparse}
 \usepackage{algorithm}
 \usepackage{algorithmicx}
+\usepackage{doi}
 \usepackage{algpseudocode}
 % Boxes
 \usepackage[most]{tcolorbox}
@@ -28,30 +29,1385 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{hypothesis}{Hypothesis}
 
 \title{Infrared Einstein Response from a Renormalized Spectral Entropy Functional}
 \author*[1]{\fnm{Jérôme} \sur{Beau}}\email{jerome.beau@cosmochrony.org}
 \affil*[1]{\orgname{Independent Researcher}, \country{France}}
 \date{}
 
-\input{abstract}
+\abstract{
+  We investigate the covariant metric variation of a minimal spectral entropy functional
+  \(
+  S_\Pi[g] = \frac12 \log \det\nolimits' A_g
+  \)
+  defined by a Laplace-type elliptic operator on a four-dimensional Riemannian manifold.
+  Using heat-kernel methods and zeta regularization, we analyze the renormalized functional
+  and determine the geometric structure of the resulting effective stress tensor.
 
-\keywords{Spectral geometry, Heat-kernel expansion, Induced gravity, Zeta regularization, Effective action, Einstein tensor, Renormalization}
+  We show that the renormalized spectral variation decomposes into a local two-derivative
+  Einstein tensor term, a cosmological term, local four-derivative quadratic curvature
+  contributions, non-local form factors, and a conformal anomaly piece.
+  The Einstein tensor arises from the counterterm associated with the $a_2$ heat-kernel pole,
+  in direct analogy with induced gravity in the sense of Sakharov.
+
+  In the weak-curvature regime where all dimensionless curvature invariants satisfy
+  \(R\,\ell_{\mathrm{sp}}^2 \ll 1\),
+  the local two-derivative contribution dominates over higher-derivative and non-local
+  terms.
+  The induced Newton coupling scales parametrically with the spectral cutoff
+  as \(G_N \sim 16\pi^2 \ell_{\mathrm{sp}}^2\), up to scheme-dependent factors.
+
+  These results show that the infrared-dominant local part of the renormalized spectral
+  entropy variation reproduces the Einstein tensor.
+  We further show that the ultraviolet completion of this infrared sector is uniquely
+  determined, under a coherence extensivity hypothesis, to be of determinantal
+  Born--Infeld type: the action density takes the Eddington-inspired form
+  $\sqrt{-\det(g_{\mu\nu} + \ell_{\mathrm{sp}}^{2}\, R_{\mu\nu})} - \sqrt{-g}$.
+  This mechanism does not rely on a specific microscopic completion,
+  but follows from general properties of the renormalized spectral functional.
+  In this sense the resulting Einstein response appears as the universal
+  two-derivative infrared sector of the effective geometric dynamics,
+  and its Born--Infeld completion as the unique admissible spectral
+  ultraviolet extension.
+  Geometric gravity therefore appears as an effective low-energy response
+  of spectral operator structure rather than as a fundamental dynamical input.
+}
+
+\keywords
+{Spectral geometry, Heat-kernel expansion, Induced gravity,
+  Zeta regularization, Effective action, Einstein tensor,
+  Born--Infeld completion, Renormalization}
 
 \begin{document}
   \maketitle
 
-  \clearpage
   \tableofcontents
 
-  \input{01-introduction/introduction}
-  \input{02-projective-entropy/projective-entropy}
-  \input{03-hk-sdw/hk-sdw}
-  \input{04-spatial-support/metric-variation}
-  \input{05-newton-identification/newton-identification}
-  \input{06-discussion/discussion}
+  \clearpage
 
-  \bibliography{references}
+  \section{Introduction}
+    \label{sec:introduction}
+
+    Gravity is traditionally described as a geometric phenomenon.
+    In general relativity, the gravitational interaction is encoded in the curvature of spacetime, and the Newtonian
+    potential arises as a weak-field limit of the Einstein equations.
+    This geometric formulation is remarkably successful.
+    It nevertheless leaves open the conceptual question of whether gravitational dynamics must be fundamental, or
+    whether it may arise as an effective response of a more primitive operator-based structure~\cite{Cosmochrony}.
+
+    In parallel, operator-theoretic and spectral approaches have clarified how elliptic operators encode geometric and
+    physical information.
+    Functional determinants, resolvents, and heat-kernel asymptotics play a central role in quantum field theory,
+    statistical mechanics, and spectral geometry~\cite{Vassilevich2003,ParkerToms2009}.
+    Variations of logarithmic determinants generate non-local responses through the inverse operator.
+    This suggests a bridge between entropy-like functionals and long-range interaction.
+
+    In a previous analysis~\cite{Beau2026a}, we investigated a minimal mechanism by which a Newtonian interaction
+    can emerge from the
+    variation of a projective entropy functional in three spatial dimensions.
+    For a positive Laplace-type operator \(A\), the functional
+    \begin{equation}
+      S_\Pi[A] = \frac12 \log \det\nolimits' A
+    \end{equation}
+    has the weak-perturbation variation
+    \begin{equation}
+      \delta S_\Pi = \frac12 \Tr\!\left(A^{-1}\delta A\right),
+    \end{equation}
+    so that the Green kernel governs the spatial structure of the response.
+    In three dimensions, the Green kernel of a Laplace-type operator exhibits a universal \(1/r\) decay.
+    Consequently, the entropy response inherits a Newtonian long-range profile without assuming a force law.
+
+    The goal of the present paper is to develop a covariant extension of this mechanism and to identify, in a controlled
+    infrared regime, the leading local geometric content of the \emph{renormalized} metric variation.
+    We do not claim an exact equality between the metric variation of the bare determinant and Einstein's equations.
+    We also do not discard non-local contributions, higher-derivative curvature terms, or the conformal anomaly.
+    Instead, our central claim is the following.
+
+    \paragraph{Central claim (renormalized IR locality).}
+      In four dimensions, for a minimal Laplace-type operator and in the weak-curvature regime where all dimensionless
+      curvature invariants satisfy \(R\,\ell_{\mathrm{sp}}^2\ll 1\), the infrared-dominant \emph{local}
+      two-derivative part of the
+      renormalized metric variation \(\delta S_\Pi^{\mathrm ren}/\delta g^{\mu\nu}\)
+      is proportional to the Einstein tensor
+      \(G_{\mu\nu}\).
+      The associated coefficient defines an induced Newton coupling whose scaling is set by the spectral cutoff scale
+      \(\ell_{\mathrm{sp}}\).
+      The Einstein term arises from renormalization of the geometric sector, via the counterterm associated with the
+      \(a_2\) heat-kernel pole, in the standard sense of induced gravity.
+      The structural necessity of non-injectivity for any genuinely emergent description is established
+      in~\cite{Beau2026l}.
+
+      The present paper is a middle link in a derivation chain.
+      The Laplace-type operator $A_g = -\nabla^2_g$ is taken here as the starting point.
+      Its identification with the Cosmochrony admissibility operator $L_\Pi$ is established
+      by the chain: Q5a~\cite{Beau2026q5a} (Mosco convergence $\mathcal{E}_q \to L_\Pi$),
+      Q5b~\cite{Beau2026q5b} (BFS stratification lifts $L_\Pi$ to $L_{\mathrm{eff}}$ on
+  $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$), and Q9~\cite{Beau2026q9}
+      ([H-lift] proved unconditionally).
+      The identification $L_\Pi = A_g$ is therefore structural, not a working hypothesis.
+      The present paper establishes the infrared consequence: any such operator yields,
+      after renormalization, a dominant Einstein response.
+
+      Operationally, this result identifies a robust hierarchy.
+      Local four-derivative contributions (quadratic curvature variations) and non-local form factors are suppressed in
+      the
+      infrared by additional powers of \(\ell_{\mathrm{sp}}^2\), while the conformal anomaly remains as a distinct
+      ultraviolet-sensitive
+      contribution whose presence is tracked explicitly.
+
+      The remainder of the paper is organized as follows.
+      In Section~\ref{sec:projective-entropy-covariant}
+      , we define the covariant projective entropy functional and set up the
+      minimal Laplace-type operator choice.
+      In Section~\ref{sec:hk-sdw}
+      , we summarize the heat-kernel expansion and the role of Seeley--DeWitt coefficients in the
+      pole structure of zeta regularization.
+      In Section~\ref{sec:metric-variation}
+      , we define the renormalized spectral stress tensor and decompose it by derivative
+      order into Einstein, quadratic-curvature, non-local, and anomaly pieces.
+      In Section~\ref{subsec:ir-hierarchy}
+      , we formulate the infrared hierarchy as a covariant derivative expansion and
+      state the dominance criterion \(R\,\ell_{\mathrm{sp}}^2\ll 1\).
+      In Section~\ref{sec:newton-identification}
+      , we discuss the induced-gravity interpretation and the identification of the
+      effective Newton coupling.
+      We conclude in Section~\ref{sec:discussion} with limitations and outlook.
+
+  \section{Covariant projective entropy functional}
+  \label{sec:projective-entropy-covariant}
+
+  \subsection{Ellipticity and minimal Laplace-type operator}
+    \label{subsec:ellipticity}
+
+    Let $(M,g)$ be a smooth four-dimensional Riemannian manifold.
+    We consider a second-order differential operator acting on scalar functions.
+
+    The analysis relies crucially on ellipticity.
+    For a differential operator of order two, ellipticity means that its
+    principal symbol is invertible away from the zero section.
+
+    We choose the minimal Laplace-type operator
+    \begin{equation}
+      A_g = -\nabla_g^2 ,
+    \end{equation}
+    where $\nabla_g$ is the Levi-Civita connection.
+    Its principal symbol is
+    \begin{equation}
+      \sigma_2(A_g)(x,k) = g^{\mu\nu}(x) k_\mu k_\nu .
+    \end{equation}
+    On a Riemannian manifold, $g^{\mu\nu}k_\mu k_\nu>0$ for all nonzero $k$.
+    Therefore $A_g$ is elliptic.
+
+    The principal symbol fully determines the local propagation structure.
+    In particular, the metric enters exclusively through $\sigma_2(A_g)$.
+    Lower-order terms do not affect ellipticity.
+
+    Ellipticity ensures:
+
+    \begin{itemize}
+      \item existence of the resolvent $(A_g+\lambda)^{-1}$ for $\lambda>0$,
+      \item discreteness of the spectrum on compact manifolds,
+      \item local regularity of the Green kernel,
+      \item validity of the short-time heat-kernel expansion,
+      \item meromorphic continuation of the spectral zeta function.
+    \end{itemize}
+
+    More general scalar Laplace-type operators may include a curvature coupling,
+    \begin{equation}
+      A_g(\xi) = -\nabla_g^2 + \xi R .
+    \end{equation}
+
+    The additional term $\xi R$ modifies only the zeroth-order endomorphism
+    part of the operator and does not alter its principal symbol.
+    It therefore does not affect ellipticity.
+
+    In this work we set $\xi=0$.
+    This is the minimal operator choice in which the effective geometry is
+    entirely encoded in the principal symbol, without additional curvature
+    input introduced at lower order.
+
+    The conformal value $\xi=1/6$ cancels the $a_2$ coefficient in four
+    dimensions and suppresses the induced Einstein--Hilbert counterterm.
+    The present analysis focuses on the minimal elliptic case $\xi=0$,
+    for which the $a_2$ contribution is nonvanishing.
+
+  \subsection{Regularized determinant and renormalization setup}
+    \label{subsec:zeta-regularization}
+
+    We define the projective entropy functional by
+    \begin{equation}
+      S_\Pi[g] \equiv \frac12 \log \det\nolimits' A_g ,
+    \end{equation}
+    where the prime denotes omission of zero modes, if any.
+
+    The determinant is understood in the zeta-regularized sense,
+    \begin{equation}
+      \log \det\nolimits' A_g = -\zeta'_{A_g}(0) ,
+    \end{equation}
+    with
+    \begin{equation}
+      \zeta_{A_g}(s)
+      =
+      \frac{1}{\Gamma(s)}
+      \int_0^\infty
+      t^{\,s-1}
+      \Tr\!\left(e^{-tA_g}\right)\,dt ,
+    \end{equation}
+    initially defined for $\Re(s)$ sufficiently large and continued meromorphically to $s=0$.
+
+    In four dimensions, the small-$t$ expansion of the heat trace contains ultraviolet divergences.
+    Renormalization is implemented by subtracting the pole terms associated with the heat-kernel coefficients and
+    introducing a renormalization scale $\mu$.
+
+    The resulting renormalized functional $S_\Pi^{\mathrm ren}[g;\mu]$
+    is finite but contains scheme-dependent local geometric counterterms.
+    These counterterms are crucial for the emergence of the Einstein--Hilbert structure discussed below.
+
+  \subsection{First variation and resolvent trace}
+    \label{subsec:first-variation}
+
+    For a perturbation $A_g \to A_g + \delta A_g$, the first variation of the determinant satisfies formally
+    \begin{equation}
+      \delta S_\Pi
+      =
+      \frac12 \Tr\!\left(A_g^{-1}\,\delta A_g\right) .
+    \end{equation}
+
+    This identity shows that the response of the functional is governed by the resolvent kernel.
+    In three spatial dimensions, this mechanism produces a universal $1/r$
+    Green profile, leading to a Newtonian response without assuming a fundamental force law.
+
+    In the present covariant four-dimensional setting, the metric variation defines a renormalized spectral stress
+    tensor,
+    \begin{equation}
+      \mathcal{T}^{\Pi,{\mathrm ren}}_{\mu\nu}
+      \equiv
+      -\frac{2}{\sqrt{g}}
+      \frac{\delta S_\Pi^{\mathrm ren}}{\delta g^{\mu\nu}} .
+    \end{equation}
+
+    Its precise geometric decomposition depends on the heat-kernel structure of $A_g$.
+    In particular, local two-derivative, local four-derivative, non-local, and anomaly contributions will appear with
+    distinct origins.
+    The classification of these terms and their infrared hierarchy is developed in the following sections.
+
+  \section{Heat-kernel expansion and Seeley--DeWitt structure}
+  \label{sec:hk-sdw}
+
+  \subsection{Short-time heat-kernel expansion}
+    \label{subsec:hk-expansion}
+
+    For an elliptic Laplace-type operator $A_g$ on a smooth four-dimensional
+    Riemannian manifold, the heat trace admits a short-time asymptotic expansion
+    as $t \to 0^+$ of the form
+    \begin{equation}
+      \Tr\!\left(e^{-tA_g}\right)
+      \sim
+      \frac{1}{(4\pi t)^2}
+      \sum_{k\ge 0}
+      t^{k}
+      \int_M d^4x\,\sqrt{g}\, a_{2k}(x) .
+    \end{equation}
+
+    The coefficients $a_{2k}(x)$ are local curvature invariants constructed from
+    the metric and its derivatives.
+    They are the Seeley--DeWitt coefficients of the operator~\cite{Seeley1967,DeWitt1965,Vassilevich2003}.
+
+    For the minimal scalar Laplacian ($\xi=0$), with vanishing endomorphism
+    $E=0$ and bundle curvature $\Omega=0$, the first coefficients are
+    \begin{align}
+      a_0(x) &= 1 , \\
+      a_2(x) &= \frac{1}{6} R(x) , \\
+      a_4(x)
+      &=
+      \frac{1}{(4\pi)^2}
+      \frac{1}{360}
+      \left(
+        \frac{5}{3} R^2
+      -
+      R_{\mu\nu} R^{\mu\nu}
+        +
+        R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}
+      \right) .
+    \end{align}
+
+    Thus, in the decomposition
+    \begin{equation}
+      a_4
+      =
+      \alpha_1 R^2
+      +
+      \alpha_2 R_{\mu\nu} R^{\mu\nu}
+      +
+      \alpha_3 R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma},
+    \end{equation}
+    the explicit numerical coefficients are
+    \begin{equation}
+      \alpha_1
+      =
+      \frac{5}{3 \cdot 360 (4\pi)^2},
+      \quad
+      \alpha_2
+      =
+      -\frac{1}{360 (4\pi)^2},
+      \quad
+      \alpha_3
+      =
+      \frac{1}{360 (4\pi)^2}.
+    \end{equation}
+
+    In four dimensions, the quadratic curvature invariants are not all
+    independent.
+    The Gauss--Bonnet density
+    \begin{equation}
+      \mathcal{G}
+      =
+      R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}
+      -
+      4 R_{\mu\nu} R^{\mu\nu}
+      +
+      R^2
+    \end{equation}
+    is topological and does not contribute to the local equations of motion.
+    The chosen basis $\{R^2, R_{\mu\nu}R^{\mu\nu},
+  R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}\}$ is therefore equivalent,
+    up to a Gauss--Bonnet term, to the commonly used basis
+    $\{R^2, R_{\mu\nu}R^{\mu\nu}, \mathcal{G}\}$.
+
+  \subsection{Pole structure in four dimensions}
+    \label{subsec:pole-structure}
+
+    Substituting the heat expansion into the definition of $\zeta_{A_g}(s)$
+    shows that in $d=4$ the coefficients $a_0$ and $a_2$ generate simple poles
+    at $s=2$ and $s=1$, respectively.
+
+    More precisely:
+
+    \begin{itemize}
+      \item $a_0$ controls the cosmological-constant counterterm,
+      \item $a_2$ controls the Einstein--Hilbert counterterm,
+      \item $a_4$ controls quadratic curvature counterterms.
+    \end{itemize}
+
+    After subtraction of the pole terms and introduction of the renormalization
+    scale $\mu$, the renormalized functional contains local geometric
+    counterterms whose coefficients depend on $\mu$.
+
+  \subsection{Origin of the Einstein tensor}
+    \label{subsec:einstein-origin}
+
+    The crucial structural point is the following.
+
+    The coefficient $a_2(x)=R/6$ implies that the pole subtraction generates a
+    local term proportional to
+    \begin{equation}
+      \int d^4x\,\sqrt{g}\, R .
+    \end{equation}
+
+    Upon metric variation, this counterterm produces the Einstein tensor,
+    \begin{equation}
+      \frac{\delta}{\delta g^{\mu\nu}}
+      \int d^4x\,\sqrt{g}\, R
+      \;\propto\;
+      G_{\mu\nu} .
+    \end{equation}
+
+    Therefore, the local two-derivative Einstein term in the renormalized
+    spectral stress tensor arises from the counterterm associated with the
+    $a_2$ heat-kernel pole.
+
+    It does not arise from the bare finite part of $\zeta'_{A_g}(0)$ alone.
+    Rather, it is generated through renormalization of the geometric sector,
+    in the standard sense of induced gravity.
+
+    This mechanism is structurally identical to Sakharov's induced-gravity
+    construction~\cite{Sakharov1967}, with the spectral cutoff scale playing the role of the
+    ultraviolet regulator.
+
+    Higher-derivative local contributions originate from $a_4$ and yield
+    four-derivative tensors (Bach-like structures) upon variation.
+    Non-local form factors arise from the finite part of the determinant
+    and will be treated separately.
+
+  \section{Metric variation and renormalized spectral stress tensor}
+  \label{sec:metric-variation}
+
+  \subsection{Definition of the renormalized spectral stress tensor}
+    \label{subsec:spectral-stress}
+
+    The renormalized projective entropy functional
+    $S_\Pi^{\mathrm ren}[g;\mu]$ defines a covariant stress tensor by
+    \begin{equation}
+      \mathcal{T}^{\Pi,{\mathrm ren}}_{\mu\nu}
+      \equiv
+      -\frac{2}{\sqrt{g}}
+      \frac{\delta S_\Pi^{\mathrm ren}}{\delta g^{\mu\nu}} .
+    \end{equation}
+
+    Formally, prior to renormalization, the first variation reads
+    \begin{equation}
+      \delta S_\Pi
+      =
+      \frac12 \Tr\!\left(A_g^{-1}\delta A_g\right),
+    \end{equation}
+    so that the response is governed by the resolvent kernel.
+    After renormalization, local counterterms contribute additional
+    geometric variations.
+
+    In four dimensions, and for the minimal Laplacian $\xi=0$,
+    the metric variation admits the general decomposition
+    \begin{equation}
+      \frac{\delta S_\Pi^{\mathrm ren}}{\delta g^{\mu\nu}}
+      =
+      c_{\mathrm EH}(\mu)\, G_{\mu\nu}
+      +
+      c_\Lambda(\mu)\, g_{\mu\nu}
+      +
+      \beta(\mu)\, B_{\mu\nu}
+      +
+      T^{\mathrm non\mbox{-}loc}_{\mu\nu}
+      +
+      A_{\mu\nu}.
+      \label{eq:full-decomposition}
+    \end{equation}
+
+    Each term has a distinct geometric origin.
+
+  \subsection{Local two-derivative sector}
+    \label{subsec:two-derivative}
+
+    The Einstein tensor contribution arises from the renormalized
+    Einstein--Hilbert counterterm generated by the $a_2$ pole.
+    From Section~\ref{sec:hk-sdw}, the subtraction of the $a_2$ divergence
+    produces a local term proportional to
+    \begin{equation}
+      \int d^4x\,\sqrt{g}\, R .
+    \end{equation}
+
+    Its metric variation yields
+    \begin{equation}
+      \frac{\delta}{\delta g^{\mu\nu}}
+      \int d^4x\,\sqrt{g}\, R
+      =
+      -\sqrt{g}\, G_{\mu\nu}.
+    \end{equation}
+
+    Therefore,
+    \begin{equation}
+      c_{\mathrm EH}(\mu)
+      =
+      \frac{1}{16\pi G_N(\mu)},
+    \end{equation}
+    where $G_N(\mu)$ is the induced Newton coupling.
+
+    The cosmological constant term originates from the $a_0$ pole and
+    is proportional to $\int\sqrt{g}$.
+
+  \subsection{Local four-derivative sector}
+    \label{subsec:four-derivative}
+
+    The coefficient $a_4$ generates quadratic curvature counterterms of the form
+    \begin{equation}
+      \int d^4x\,\sqrt{g}\,
+      \left(
+        \alpha_1 R^2
+      +
+        \alpha_2 R_{\mu\nu}R^{\mu\nu}
+        +
+        \alpha_3 R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+      \right).
+    \end{equation}
+
+    Their variation produces fourth-order differential tensors,
+    which we collectively denote by $B_{\mu\nu}$.
+    These are Bach-like structures containing four derivatives of the metric.
+
+  \subsection{Non-local form factors and anomaly}
+    \label{subsec:nonlocal-anomaly}
+
+    The finite part of the determinant generates non-local contributions.
+    In covariant form, these can be expressed through curvature-dependent
+    form factors of the type
+    \begin{equation}
+      R \,\mathcal{F}\!\left(\frac{\Box}{\mu^2}\right) R ,
+    \end{equation}
+    and similar structures, as developed by
+    Barvinsky and Vilkovisky~\cite{BarvinskyVilkovisky1985,BarvinskyVilkovisky1990}.
+    Their metric variation yields non-local tensors
+    $T^{\mathrm{non\mbox{-}loc}}_{\mu\nu}$.
+
+    In addition, renormalization induces a conformal trace anomaly.
+    For a minimally coupled scalar field in four dimensions,
+    the trace of the anomaly satisfies~\cite{BirrellDavies1982,Vassilevich2003}
+    \begin{equation}
+      g^{\mu\nu} A_{\mu\nu}
+      =
+      \frac{1}{(4\pi)^2}
+      \frac{1}{360}
+      \left(
+        R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}
+        -
+        R_{\mu\nu} R^{\mu\nu}
+        +
+        \frac{1}{3} \Box R
+      \right).
+    \end{equation}
+
+    The local tensor structure of $A_{\mu\nu}$ depends on the
+    renormalization scheme, but its trace is fixed by this universal expression.
+    The anomaly contributes at four-derivative order and remains subleading
+    in the weak-curvature infrared regime $R\,\ell_\chi^2 \ll 1$.
+
+  \subsection{Infrared hierarchy}
+    \label{subsec:ir-hierarchy}
+
+    Consider the regime in which all dimensionless curvature invariants satisfy
+    \begin{equation}
+      R\,\ell_{\mathrm{sp}}^2 \ll 1,
+      \qquad
+      R_{\mu\nu}\,\ell_{\mathrm{sp}}^2 \ll 1.
+    \end{equation}
+
+    In this regime, the derivative expansion is controlled by the small
+    parameter $R\,\ell_{\mathrm{sp}}^2$.
+    Since $B_{\mu\nu}$ is quadratic in curvature,
+    its contribution scales as
+    \begin{equation}
+      \frac{\beta\, B_{\mu\nu}}{c_{\mathrm EH}\, G_{\mu\nu}}
+      \sim
+      R\,\ell_{\mathrm{sp}}^2 .
+    \end{equation}
+
+    Therefore, for $R\,\ell_{\mathrm{sp}}^2 \ll 1$,
+    the local two-derivative Einstein term dominates over the
+    four-derivative sector.
+    Non-local form factors reduce to suppressed derivative corrections.
+
+    This establishes the infrared dominance of the Einstein tensor
+    within the renormalized spectral stress tensor.
+
+  \section{Identification of Newton's constant and spectral scaling}
+  \label{sec:newton-identification}
+
+  \subsection{Running of the Einstein--Hilbert coefficient}
+    \label{subsec:running}
+
+    In four dimensions, the subtraction of the $a_2$ pole generates a
+    renormalization-scale dependence in the Einstein--Hilbert coefficient.
+
+    For the minimal scalar Laplacian with $a_2 = R/6$, the scale dependence
+    of the induced coupling satisfies
+    \begin{equation}
+      \frac{d}{d\log \mu}
+      \left(
+        \frac{1}{16\pi G_N(\mu)}
+      \right)
+      =
+      \frac{1}{(4\pi)^2}
+      \frac{1}{6}.
+    \end{equation}
+
+    This relation follows directly from the residue of the $a_2$ pole in the
+    zeta-regularized determinant.
+    It expresses the standard induced-gravity running generated by a minimal
+    scalar degree of freedom~\cite{BirrellDavies1982,ParkerToms2009}.
+
+    The absolute normalization of $G_N$ depends on the ultraviolet completion
+    or cutoff prescription.
+    However, its parametric dependence is fixed by dimensional analysis.
+
+  \subsection{Spectral cutoff and induced scale}
+    \label{subsec:spectral-cutoff}
+
+    Let $\Lambda_{\mathrm UV}$ denote the ultraviolet cutoff scale associated with
+    the spectral regularization.
+    Identifying $\Lambda_{\mathrm UV}$ with the inverse spectral resolution scale,
+    \begin{equation}
+      \Lambda_{\mathrm UV} \sim \ell_{\mathrm{sp}}^{-1},
+    \end{equation}
+    the induced Einstein--Hilbert coefficient scales as
+    \begin{equation}
+      \frac{1}{16\pi G_N}
+      \sim
+      \frac{\Lambda_{\mathrm UV}^2}{16\pi^2}.
+    \end{equation}
+
+    Therefore,
+    \begin{equation}
+      G_N
+      \sim
+      16\pi^2 \, \ell_{\mathrm{sp}}^2,
+    \end{equation}
+    up to scheme-dependent numerical factors and possible multiplicities
+    from additional degrees of freedom.
+
+    This scaling relation provides the bridge between the spectral resolution
+    scale $\ell_{\mathrm{sp}}$ and the effective gravitational coupling.
+
+  \subsection{Infrared consistency}
+    \label{subsec:ir-consistency}
+
+    The infrared hierarchy established in
+    Section~\ref{subsec:ir-hierarchy}
+    requires
+    \begin{equation}
+      R\,\ell_{\mathrm{sp}}^2 \ll 1.
+    \end{equation}
+
+    Using the scaling above, this condition is equivalent to
+    \begin{equation}
+      R \ll G_N^{-1},
+    \end{equation}
+    which is precisely the weak-curvature regime in which classical
+    general relativity is valid.
+
+    Thus the dominance of the Einstein tensor in the renormalized spectral
+    stress tensor is self-consistent in the classical infrared domain.
+
+  \section{Ultraviolet completion: uniqueness of the
+  Born--Infeld structure}
+  \label{sec:UV-completion}
+
+  The infrared hierarchy of
+  Section~\ref{subsec:ir-hierarchy} ensures that the
+  Einstein response dominates for
+  $R\,\ell_{\mathrm{sp}}^{2} \ll 1$.
+  In the ultraviolet regime
+  $R\,\ell_{\mathrm{sp}}^{2} \sim 1$,
+  higher-derivative corrections become comparable to the
+  Einstein--Hilbert term and the expansion breaks down.
+  The question is whether the full non-perturbative
+  effective action is determined by the same spectral
+  structure, or requires independent input.
+
+  In the scalar Born--Infeld theory derived
+  in~\cite{Beau2026c}, the saturation bound
+  $|\partial_t \chi| \leq c_{\mathrm{BI}}$ uniquely selects
+  a square-root action density.
+  We now show that the tensorial extension of this result
+  to the gravitational sector is similarly rigid:
+  under admissibility conditions inherited from the
+  framework of~\cite{Beau2026m,Beau2026l}, the
+  determinantal Born--Infeld form is the \emph{unique}
+  admissible spectral tensorial completion of the
+  Einstein--Hilbert sector.
+
+  \subsection{Setup and admissibility conditions}
+    \label{subsec:UV-setup}
+
+    Define the mixed Ricci endomorphism
+    \begin{equation}\label{eq:mixed-ricci}
+      X^{\mu}{}_{\nu}
+      \;=\;
+      \ell_{\mathrm{sp}}^{2}\,
+      g^{\mu\alpha}\, R_{\alpha\nu}\,.
+    \end{equation}
+    A local covariant completer takes the form
+    \begin{equation}\label{eq:completer-form}
+      \mathcal{C}(g, R)
+      \;=\;
+      \sqrt{-g}\;\bigl[\,\Phi(X) - 1\,\bigr]\,,
+    \end{equation}
+    where $\Phi$ is a smooth scalar function of the
+    endomorphism~$X$.
+    The effective gravitational action is then
+    \[
+      S_{\mathrm{coh}}^{\mathrm{full}}[g]
+      \;=\;
+      \frac{1}{16\pi G_N}\,
+      \int \mathcal{C}(g, R)\,\mathrm{d}^4 x\,,
+    \]
+    with $G_N \sim 16\pi^2 \ell_{\mathrm{sp}}^{2}$ as
+    established in Section~\ref{sec:newton-identification}.
+
+    The following conditions encode the structural constraints
+    that any admissible tensorial completion must satisfy.
+
+    \begin{enumerate}
+      \item[\textbf{(C1)}]
+      \textit{Spectral covariance.}\;
+      $\Phi(X)$ depends on $X$ only through its eigenvalues:
+      $\Phi(U X U^{-1}) = \Phi(X)$ for all
+      $U \in \mathrm{O}(d)$.
+
+      \item[\textbf{(C2)}]
+      \textit{Einstein infrared limit.}\;
+      For weak curvature ($\|X\| \ll 1$):
+      \[
+        \Phi(X)
+        = 1 + \tfrac{1}{2}\,\mathrm{tr}\, X
+        + O(\|X\|^2)\,,
+      \]
+      reproducing the Einstein--Hilbert density at
+      leading order.
+
+      \item[\textbf{(C3)}]
+      \textit{Algebraic Born--Infeld saturation.}\;
+      $\Phi(X) \to 0$ as any eigenvalue of $(I + X)$
+      approaches zero.
+      The completer density vanishes at maximal admissible
+      curvature rather than diverging, in accordance with
+      the scalar saturation bound
+      of~\cite{Beau2026c}.
+
+      \item[\textbf{(C4)}]
+      \textit{Spectral isotropy.}\;
+      $\Phi$ treats all eigenvalue directions symmetrically:
+      $\Phi(X) = \varphi(\lambda_1, \ldots, \lambda_d)$
+      with $\varphi$ symmetric.
+
+      \item[\textbf{(C5)}]
+      \textit{Coherence extensivity.}\;
+      Define $S_{\mathrm{coh}} = \log \Phi$.
+      For admissibly independent sectors $X_1$, $X_2$
+      (in the sense of Axiom~A3
+      of~\cite{Beau2026m}):
+      $S_{\mathrm{coh}}(X_1 \oplus X_2)
+      = S_{\mathrm{coh}}(X_1)
+      + S_{\mathrm{coh}}(X_2)$.
+    \end{enumerate}
+
+    Conditions~(C1)--(C4) are direct consequences of the
+    covariance, infrared consistency, and algebraic saturation
+    properties established in the spectral framework of
+    Sections~2--5 and in~\cite{Beau2026c}.
+    Condition~(C5) is the only additional input; its
+    derivation from the non-factorisability axiom~A3
+    of~\cite{Beau2026m} is the subject of the following
+    hypothesis.
+
+    \begin{hypothesis}[\textbf{H-ext}: admissible coherence
+    extensivity]\label{hyp:Hext}
+      Let $X_1$ and $X_2$ be curvature endomorphisms
+      associated with admissibly independent sectors in the
+      sense of Axiom~A3 of~\cite{Beau2026m}: no
+      cross-admissibility constraint couples the two sectors
+      after projection locking.
+      Then the coherence functional is extensive:
+      \begin{equation}\label{eq:H-ext}
+        S_{\mathrm{coh}}(X_1 \oplus X_2)
+        =
+        S_{\mathrm{coh}}(X_1) + S_{\mathrm{coh}}(X_2)\,.
+      \end{equation}
+    \end{hypothesis}
+
+    \begin{remark}
+      Axiom~A3 of~\cite{Beau2026m} forbids premature
+      factorisation of the admissible fibre prior to projection
+      locking.
+      After locking, sectors that carry no mutual admissibility
+      constraint contribute independently to the total
+      coherence cost.
+      The extensivity of $S_{\mathrm{coh}}$ is the post-locking
+      counterpart of pre-locking non-factorisability:
+      precisely because A3 prevents premature selection, the
+      residual cost after locking decomposes additively over
+      independently resolved sectors.
+      This is structurally analogous to the extensivity of
+      thermodynamic entropy for non-interacting subsystems.
+      An analytical derivation of~[H-ext] from~A3 would
+      promote the uniqueness theorem below to an unconditional
+      result; pending such a derivation, [H-ext] occupies a
+      status analogous to the former open form of~[H-color] in the spectral
+      admissibility sub-programme~\cite{Beau2026a36}
+      (since established analytically in O31~\cite{Beau2026a35}).
+      Hypothesis~[H-ext] concerns only the extensivity of the
+      post-locking coherence functional and does not affect
+      the tensorial classification itself: the identification
+      of $g^{-1}R$ as the spectral carrier
+      (Lemma~\ref{lem:spectralcarrier}) and the reduction to
+      the scalar BI sector
+      (Lemma~\ref{lem:1Dreduction}) are both unconditional.
+    \end{remark}
+
+  \subsection{Uniqueness of the tensorial completion}
+    \label{subsec:UV-uniqueness}
+
+    The uniqueness argument proceeds in three lemmas.
+    Lemmas~\ref{lem:1Dreduction}
+    and~\ref{lem:spectralcarrier} are unconditional;
+    Lemma~\ref{lem:extensivity-consequence} is conditional
+    on~[H-ext] and carries the only conditionality in the
+    chain.
+
+    \begin{lemma}[Spectral decomposition from coherence
+    extensivity]
+      \label{lem:extensivity-consequence}
+      Assume~\textup{[H-ext]}.
+      Then conditions~\textup{(C1)}, \textup{(C4)},
+      and~\textup{(C5)} together force
+      \begin{equation}\label{eq:spectral-decomposition}
+        S_{\mathrm{coh}}(X)
+        = \sum_{i=1}^{d} h(\lambda_i)\,,
+      \end{equation}
+      for a single smooth function
+      $h : (-1, +\infty) \to \mathbb{R}$, where
+      $\lambda_1, \ldots, \lambda_d$ are the eigenvalues
+      of~$X$.
+    \end{lemma}
+
+    \begin{proof}
+      The extensivity of $S_{\mathrm{coh}}$
+      implies $\Phi(X_1 \oplus X_2)
+      = \Phi(X_1)\,\Phi(X_2)$ by exponentiation.
+      Write $X$ in diagonal form
+      $X = \mathrm{diag}(\lambda_1, \ldots, \lambda_d)$
+      relative to the $g$-orthonormal eigenbasis.
+      Apply the multiplicativity of $\Phi$ iteratively to
+      the rank-1 decomposition
+      $X = \lambda_1 P_1 \oplus \cdots \oplus \lambda_d P_d$
+      (where $P_i$ are rank-1 projectors onto the
+      eigenspaces):
+      $\Phi(X) = \prod_{i} \Phi(\lambda_i P_i)$.
+      Taking logarithms
+      gives~\eqref{eq:spectral-decomposition}
+      with $h(\lambda) = \log \Phi(\lambda P)$ for any unit
+      projector~$P$.
+      Condition~(C4) ensures that $h$ does not depend on the
+      choice of eigendirection.
+    \end{proof}
+
+    \begin{lemma}[One-dimensional reduction to scalar BI]
+      \label{lem:1Dreduction}
+      Under conditions~\textup{(C2)} and~\textup{(C3)},
+      the sector function $h$
+      in~\eqref{eq:spectral-decomposition} is uniquely
+      determined:
+      \begin{equation}\label{eq:h-unique}
+        h(\lambda)
+        = \tfrac{1}{2}\,\log(1 + \lambda)\,.
+      \end{equation}
+    \end{lemma}
+
+    \begin{proof}
+      \textit{Infrared constraint.}\;
+      Condition~(C2) requires, for small $\|X\|$:
+      \[
+        \Phi(X)
+        = \exp\!\Bigl(\sum_i h(\lambda_i)\Bigr)
+        \approx 1 + \sum_i h'(0)\,\lambda_i
+        = 1 + h'(0)\,\mathrm{tr}\, X\,.
+      \]
+      Matching with $1 + \tfrac{1}{2}\,\mathrm{tr}\, X$
+      gives $h'(0) = 1/2$.
+      Since $\Phi(0) = 1$ at flat space, $h(0) = 0$.
+
+      \textit{Saturation constraint.}\;
+      Condition~(C3) requires $\Phi(X) \to 0$ as
+      $\lambda \to -1^+$, hence
+      $h(\lambda) \to -\infty$ as $\lambda \to -1^+$.
+
+      \textit{Identification with the scalar sector.}\;
+      By the scalar Born--Infeld uniqueness theorem
+      of~\cite{Beau2026c}, the one-dimensional admissible
+      sector is uniquely and structurally identified with
+      the scalar BI theory: the one-dimensional completer is
+      \[
+        \Phi_{1\mathrm{D}}(\lambda)
+        = \sqrt{1 + \lambda}\,.
+      \]
+      Conditions~(C2) and~(C3) are consequences of this
+      identification rather than independent inputs at the
+      one-dimensional level.
+      Therefore
+      \[
+        h(\lambda)
+        = \log \Phi_{1\mathrm{D}}(\lambda)
+        = \tfrac{1}{2}\,\log(1 + \lambda)\,.
+      \]
+      The uniqueness of $h$ is that of the scalar BI
+      sector established in~\cite{Beau2026c}; the present
+      lemma does not claim independent uniqueness from
+      conditions~(C2) and~(C3) alone.
+    \end{proof}
+
+    \begin{lemma}[Spectral carrier identification]
+      \label{lem:spectralcarrier}
+      Among local covariant two-derivative symmetric tensors
+      on $(M, g)$, the mixed Ricci endomorphism
+      $X^{\mu}{}_{\nu}
+      = \ell_{\mathrm{sp}}^{2}\,
+      g^{\mu\alpha} R_{\alpha\nu}$
+      is the unique admissible spectral carrier for~$\Phi$
+      with non-degenerate eigenvalue spectrum.
+    \end{lemma}
+
+    \begin{proof}
+      \textit{Classification.}\;
+      At two-derivative order, the only symmetric $(0,2)$
+      tensors constructed covariantly from the metric and the
+      Riemann tensor are $R_{\mu\nu}$ and
+      $R\, g_{\mu\nu}$, together with linear combinations.
+      Condition~(C1) requires the argument of~$\Phi$ to be
+      an endomorphism $X : T_p M \to T_p M$, obtained by
+      raising one index with the metric.
+
+      \textit{Exclusion of
+        $f(R)\,\delta^{\mu}{}_{\nu}$.}\;
+      The endomorphism $X = f(R)\,\delta^{\mu}{}_{\nu}$
+      collapses the local spectral content to a completely
+      degenerate eigenspace:
+      $\lambda_1 = \cdots = \lambda_d = f(R)$.
+      No directional admissibility structure can be
+      distinguished, and the information carried by the
+      individual Ricci eigenvalues is entirely lost.
+      The resulting completer
+      $\Phi(X) = \exp\!\bigl(d \cdot h(f(R))\bigr)$
+      is a function of~$R$ alone and therefore cannot encode
+      the anisotropic curvature content that spectral
+      admissibility requires to resolve.
+
+      \textit{Selection.}\;
+      The remaining candidate is the mixed Ricci tensor
+      $g^{\mu\alpha} R_{\alpha\nu}$, which carries the full
+      directional information of the Ricci curvature through
+      its $d$~independent eigenvalues.
+      It is the unique minimal two-derivative endomorphism
+      with non-trivial spectral content.
+
+      \textit{Trace modifications.}\;
+      The alternative
+      $\mathcal{R}_{\mu\nu}
+      = R_{\mu\nu} - \alpha\, g_{\mu\nu} R$
+      (for constant~$\alpha$) yields eigenvalues shifted by
+      $-\alpha R$ relative to the Ricci eigenvalues.
+      Such a shift modifies $\Phi$ only at subleading IR
+      order and is absorbed into a redefinition of
+      $\ell_{\mathrm{sp}}^{2}$ provided
+      $\alpha \neq 1/d$.
+      The identification $\mathcal{R}_{\mu\nu} = R_{\mu\nu}$
+      ($\alpha = 0$) is the minimal choice.
+      The residual ambiguity in~$\alpha$ affects only
+      higher-order corrections and is resolved by matching
+      to the $a_2$ coefficient computed in
+      Section~\ref{sec:hk-sdw}.
+    \end{proof}
+
+    \begin{theorem}[Uniqueness of the admissible tensorial
+    completion]
+      \label{thm:uniqueness-completion}
+      Let $\mathcal{C}(g, R)$ be a local covariant scalar
+      density of the form~\eqref{eq:completer-form},
+      satisfying conditions~\textup{(C1)--(C4)} and
+      Hypothesis~\textup{[H-ext]}.
+      Then, up to the trace ambiguity resolved by the
+      heat-kernel analysis of
+      Section~\ref{sec:hk-sdw}:
+      \begin{equation}\label{eq:unique-completer}
+        \mathcal{C}(g, R)
+        \;=\;
+        \sqrt{-g}\;
+        \Bigl[\,
+        \sqrt{\det\!\bigl(
+        \delta^{\mu}{}_{\nu}
+        + \ell_{\mathrm{sp}}^{2}\,
+        g^{\mu\alpha} R_{\alpha\nu}
+        \bigr)}
+        \;-\; 1
+        \,\Bigr]\,.
+      \end{equation}
+    \end{theorem}
+
+    \begin{proof}
+      By Lemma~\ref{lem:spectralcarrier}, the spectral
+      carrier is
+      $X = \ell_{\mathrm{sp}}^{2}\, g^{-1} R$ with
+      eigenvalues $\lambda_i$.
+      By Lemma~\ref{lem:extensivity-consequence}
+      (conditional on~[H-ext]),
+      $\Phi(X) = \exp\!\bigl(\sum_i h(\lambda_i)\bigr)$.
+      By Lemma~\ref{lem:1Dreduction},
+      $h(\lambda) = \tfrac{1}{2}\log(1 + \lambda)$.
+      Therefore:
+      \[
+        \Phi(X)
+        = \exp\!\Bigl(\,
+        \tfrac{1}{2}\sum_i \log(1 + \lambda_i)
+        \Bigr)
+        = \sqrt{\,\prod_i (1 + \lambda_i)}
+        = \sqrt{\det(I + X)}\,.
+      \]
+      Substituting into~\eqref{eq:completer-form}
+      gives~\eqref{eq:unique-completer}.
+    \end{proof}
+
+    Using $\det(g \cdot A) = \det g \cdot \det A$, the
+    result takes the equivalent Eddington--Born--Infeld form:
+
+    \begin{corollary}[Eddington--Born--Infeld action]
+      \label{cor:EBI}
+      Under the hypotheses of
+      Theorem~\ref{thm:uniqueness-completion},
+      the gravitational action takes the form
+      \begin{equation}\label{eq:EBI-action}
+        S_{\mathrm{coh}}^{\mathrm{full}}[g]
+        \;=\;
+        \frac{1}{16\pi G_N}\,
+        \int_{M}
+        \Bigl[\,
+        \sqrt{-\det\!\bigl(
+        g_{\mu\nu}
+        + \ell_{\mathrm{sp}}^{2}\, R_{\mu\nu}
+        \bigr)}
+        \;-\;
+        \sqrt{-g}
+        \,\Bigr]\,
+        \mathrm{d}^4 x\,.
+      \end{equation}
+    \end{corollary}
+
+  \subsection{Structural interpretation}
+    \label{subsec:UV-interpretation}
+
+    \begin{remark}
+      The action~\eqref{eq:EBI-action} coincides in form
+      with Eddington-inspired Born--Infeld gravitational
+      actions studied independently in the modified gravity
+      literature.
+      The present derivation differs in two respects.
+      First, the EiBI form is not postulated as a modified
+      gravity model but derived as a structural rigidity from
+      admissibility conditions.
+      Second, the spectral capacity length
+      $\ell_{\mathrm{sp}}$ is not a free parameter: it is
+      determined by the same spectral cutoff that fixes the
+      induced Newton constant in
+      Section~\ref{sec:newton-identification}.
+    \end{remark}
+
+    \begin{remark}
+      The framework involves two spectrally defined objects
+      that must be carefully distinguished.
+      At the \emph{global} level, the projective entropy
+      functional
+      $S_\Pi[g] = \tfrac{1}{2}\log\det' A_g$
+      of Section~\ref{sec:projective-entropy-covariant}
+      encodes the full eigenvalue spectrum of the effective
+      Laplacian~$A_g$ and produces the infrared Einstein
+      response (Section~\ref{sec:metric-variation}).
+      At the \emph{local} level, the coherence density
+      $S_{\mathrm{coh}}(X)
+      = \tfrac{1}{2}\log\det(I + X)$
+      encodes the eigenvalue spectrum of the mixed Ricci
+      endomorphism and governs the ultraviolet saturation
+      regime.
+      Both share the algebraic form
+      $\tfrac{1}{2}\log\det(\cdot)$ because both originate
+      from the extensivity of admissible coherence:
+      the former over eigenvalue modes of~$A_g$, the latter
+      over eigenvalue directions of~$g^{-1}R$.
+      Admissible spectral extensivity is therefore the common
+      principle underlying both the infrared gravitational
+      response and the ultraviolet Born--Infeld completion.
+    \end{remark}
+
+    \begin{remark}
+      Lemma~\ref{lem:1Dreduction} is unconditional:
+      it follows from the scalar Born--Infeld uniqueness
+      of~\cite{Beau2026c}.
+      Lemma~\ref{lem:spectralcarrier} is unconditional:
+      it is a classification result in Riemannian geometry.
+      Lemma~\ref{lem:extensivity-consequence} is conditional
+      on~[H-ext], whose derivation from Axiom~A3
+      of~\cite{Beau2026m} is structurally motivated but
+      not yet analytically closed.
+      Theorem~\ref{thm:uniqueness-completion} is therefore
+      conditional on~[H-ext] alone.
+      The conditionality is sharply localised: it resides
+      entirely in the passage from non-factorisability
+      (Axiom~A3) to extensivity of~$S_{\mathrm{coh}}$.
+    \end{remark}
+
+  \section{Discussion and outlook}
+  \label{sec:discussion}
+
+  \subsection{Summary of the structural result}
+    \label{subsec:summary}
+
+    We have constructed a covariant projective entropy functional
+    \begin{equation}
+      S_\Pi[g] = \frac12 \log \det\nolimits' A_g ,
+    \end{equation}
+    for a minimal elliptic Laplace-type operator.
+
+    Using heat-kernel methods and zeta regularization in four dimensions,
+    we showed that the renormalized metric variation admits the decomposition
+    \begin{equation}
+      \frac{\delta S_\Pi^{\mathrm ren}}{\delta g^{\mu\nu}}
+      =
+      c_{\mathrm EH} G_{\mu\nu}
+      +
+      c_\Lambda g_{\mu\nu}
+      +
+      \beta B_{\mu\nu}
+      +
+      T^{\mathrm non\mbox{-}loc}_{\mu\nu}
+      +
+      A_{\mu\nu}.
+    \end{equation}
+
+    The Einstein tensor arises from the counterterm associated with the
+    $a_2$ heat-kernel pole.
+    Local four-derivative terms originate from $a_4$.
+    Non-local form factors and anomaly contributions are retained explicitly.
+
+    In the weak-curvature regime $R\,\ell_{\mathrm{sp}}^2 \ll 1$,
+    the local two-derivative Einstein term dominates over
+    higher-derivative contributions.
+    The induced Newton coupling scales parametrically as
+    \begin{equation}
+      G_N \sim 16\pi^2 \ell_{\mathrm{sp}}^2,
+    \end{equation}
+    up to scheme-dependent factors.
+
+    The result is therefore not an exact derivation of Einstein's equations
+    from the bare determinant.
+    It is a structural statement about the infrared-dominant local
+    two-derivative part of the renormalized spectral stress tensor.
+
+  \subsection{Structural necessity of non-injective projection}
+    \label{subsec:structural-necessity}
+
+    The spectral derivation developed above shows that the renormalized variation
+    of the projective entropy functional produces an infrared-dominant Einstein
+    response.
+    It is useful to clarify under which structural conditions such an emergent
+    gravitational sector can arise.
+
+    Consider a physical description obtained through a projection
+    \[
+      \Pi : F \rightarrow O ,
+    \]
+    mapping a space of admissible configurations $F$ to a space of observable
+    states $O$.
+    The space $F$ is not an external substrate: it is induced by the admissibility
+    structure of the observable states, with its internal organisation constrained
+    by the Born\textendash Infeld capacity bound~\cite{Beau2026m,Beau2026l}.
+    Such projections need not be injective: distinct admissible configurations may
+    yield the same observable outcome.
+
+    A basic structural observation is that admissible injective projections possess
+    trivial holonomy.
+    If the projection is injective, transport along closed loops in the projection
+    fiber is necessarily trivial.
+    The associated fiber connection therefore has vanishing curvature,
+    \[
+      \Omega_{\mu\nu} = 0 .
+    \]
+
+    In this case the projection cannot generate additional geometric structure in
+    the effective description.
+    In particular, no contribution to the effective spacetime curvature can arise
+    from projection-induced fiber curvature.
+
+    When the projection is non-injective, by contrast, the projection fiber may
+    carry non-trivial curvature.
+    The effective geometric response may then contain terms schematically of the
+    form
+    \[
+      R^{\mathrm{eff}}_{\mu\nu}
+      \supset
+      \mathrm{tr}_{g_\Pi}\!\left(\Omega_{\mu\alpha}\Omega_\nu{}^{\alpha}\right),
+    \]
+    showing that curvature in the projection fiber can act as a source for
+    effective spacetime curvature.
+
+    This observation provides a structural interpretation of emergent gravitation.
+    If the effective description were injective, the projection would introduce no
+    additional curvature and no gravitational sector would arise from projection
+    structure.
+    The existence of an emergent gravitational response therefore requires a
+    non-injective projection~\cite{Beau2026l}.
+
+
+    \begin{remark}[Heisenberg torsion as the structural source]
+    The non-commutativity underlying the gravitational response has a concrete
+    realisation in the Cosmochrony spectral programme.
+    In $\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z})$, the generating set
+    $S_q = \{X^{\pm 1}, Y^{\pm 1}\}$ does not include the central generator $Z$,
+    yet $[X, Y] = Z$.
+    The central direction is therefore not a degree of freedom of the BFS
+    exploration but the structural obstruction to integrability of the horizontal
+    distribution --- the torsion of the sub-Riemannian geometry of
+    $\mathrm{Heis}_3$.
+    The admissibility form $\mathcal{E}_q$, built on the perturbation of admissible
+    states by $\rho_q(s)$, is directly sensitive to this non-commutativity.
+    In the large-$q$ Mosco limit~\cite{Beau2026q5a}, this torsion translates into
+    the Laplace-type operator $L_\Pi = A_g$ that enters the present paper.
+    This identification is now unconditional: Q9~\cite{Beau2026q9} proves hypothesis~[H-lift],
+    and Q8~\cite{BeauQ8} together with Q10~\cite{Beau2026q10} establish the metric
+    coefficients $A_Z = A_H = 2$, giving $g^{\mu\nu} = \mathrm{diag}(-A_\tau, 2, 2, 2)$
+    with only the temporal coefficient $A_\tau$ remaining to be determined.
+    Numerical computation of the admissibility weight
+    $a_q(s) = \mathbb{E}_{n,c}\bigl[\|(\rho_q(s)-I)\Pi_q v_c^{(n)}\|^2_{C_q}\bigr]$
+    for all conjugate pairs $(c,q-c)$ at $q \in \{29, 61, 101, 151, 211\}$
+    (267 valid pairs in total) yields the cross-$q$ summary
+    \[
+      a_q(s)\cdot q^2 \;\in\;
+      \{2.002,\; 1.988,\; 1.982,\; 1.972,\; 1.983\},
+    \]
+    with inter-pair standard deviations below $0.09$ and mean isotropy
+    $|a_q(X)-a_q(Y)|\cdot q^2 < 0.07$ across all primes.
+    A small number of non-generic pairs (those whose character $c$
+    has special arithmetic properties modulo $q$) exhibit larger
+    anisotropy and account for the residual variance;
+    generic pairs satisfy $A_{\mathrm{hw}}\approx 2.000$ to three
+    significant figures.
+    Hypothesis~H-w of~\cite{Beau2026q5a} is thereby confirmed numerically
+    across five primes: $a_q(s)\cdot q^2 \to 2$ as $q\to\infty$,
+    with $A$ independent of $s$.
+    The isotropy $a_q(X)=a_q(Y)$ implies that the Dirichlet form limit
+    is isotropic, consistent with the emergence of a Lorentzian metric.
+    The Einstein response derived here is therefore, at the structural level,
+    a consequence of Heisenberg torsion rather than of a postulated spacetime
+    curvature.
+    \end{remark}
+
+    Within the spectral framework considered in this work, the geometric response
+    arises from the renormalized variation of the functional
+    \[
+      S_\Pi[g] = \frac12 \log \det{}' A_g .
+    \]
+    The heat-kernel analysis shows that the infrared-dominant local contribution
+    to the metric variation is proportional to the Einstein tensor.
+    The spectral construction therefore provides an explicit realization of the
+    effective dynamics compatible with a non-injective projective structure.
+
+    Taken together, these results suggest the following structural picture.
+    Non-injective projection allows the emergence of non-trivial fiber curvature,
+    which in turn enables an effective geometric response.
+    The spectral entropy functional provides a minimal mechanism realizing this
+    response and selects the Einstein sector as the dominant infrared contribution
+    to the effective dynamics.
+    This mechanism is consistent with the relational spectral framework
+    of~\cite{Beau2026a}, in which spacetime geometry emerges operationally from
+    relational configurations under non-injective projection.
+    The same non-injectivity argument further yields gauge charges and gauge groups
+    as fibre invariants of $\Pi$, establishing Yang\textendash Mills structure without
+    additional postulates~\cite{Beau2026m}.
+
+  \subsection{Relation to induced gravity}
+    \label{subsec:induced-gravity}
+
+    The mechanism identified here is structurally identical to
+    induced gravity in the sense of Sakharov.
+    The gravitational coupling emerges from renormalization of the
+    geometric sector.
+    The spectral cutoff scale sets the magnitude of the induced
+    Einstein--Hilbert term.
+
+    No assumption of fundamental gravitational dynamics is made.
+    The geometric response arises from operator-theoretic structure.
+
+  \subsection{Limitations}
+    \label{subsec:limitations}
+
+    Several limitations must be emphasized.
+
+    First, the derivation is performed in a Euclidean Riemannian framework.
+    Although the variational structure of the spectral functional is well defined
+    in this setting, a complete treatment of causal propagation requires a
+    Lorentzian formulation of the theory.
+
+    Second, non-local contributions generated by the spectral expansion are not
+    eliminated.
+    While they are suppressed in the infrared regime considered here,
+    they may become relevant at higher curvature or shorter scales.
+
+    Third, the precise numerical value of the induced Newton constant depends on
+    the ultraviolet completion and on the detailed matter content contributing to
+    the spectral functional.
+    The uniqueness result of Section~\ref{sec:UV-completion} constrains the
+    functional form of this completion but does not fix its overall
+    normalisation independently of the matter content.
+
+    Fourth, Hypothesis~[H-ext]
+    (Section~\ref{subsec:UV-setup}) has not yet been
+    derived analytically from the Foundation axioms.
+    The uniqueness of the Born--Infeld tensorial completion is conditional
+    on this hypothesis.
+
+    Finally, the present work focuses on the emergence of the effective
+    gravitational field equations.
+    Questions of dynamical stability, cosmological evolution, and coupling to
+    additional matter sectors lie beyond the scope of the present analysis.
+
+  \subsection{Remark on geometric flows and spectral monotonicity}
+    \label{subsec:ricci-flow}
+
+    The functional $S_\Pi$ depends on the full eigenvalue spectrum of the
+    elliptic operator $A_g$.
+    Under geometric evolution equations such as the Ricci flow,
+    spectral quantities associated with the Laplacian exhibit
+    monotonic behavior.
+
+    In particular, monotonicity of the first eigenvalue
+    $\lambda_1(-\nabla_g^2)$ of the scalar Laplacian under Ricci flow
+    has been established by Ma~\cite{Ma2006}.
+    Related results for modified Laplace-type operators involving
+    curvature terms were obtained by Cao~\cite{Cao2007}.
+    These developments are rooted in the entropy framework introduced
+    by Perelman~\cite{Perelman2002}.
+
+    Although $S_\Pi$ is not identical to Perelman's entropy functional,
+    its spectral definition suggests a structural relation between
+    geometric flows and spectral entropy variation.
+    Clarifying this relation would require a dedicated analysis
+    and lies beyond the scope of the present work.
+
+  \subsection{Outlook}
+    \label{subsec:outlook}
+
+    The analysis presented here shows that a minimal spectral entropy
+    functional generates, after renormalization, an infrared-dominant
+    Einstein response.
+
+    Several directions follow naturally from this result.
+
+    \begin{itemize}
+
+      \item Extension of the spectral framework to Lorentzian signature,
+      allowing a fully causal formulation of the effective dynamics and
+      the study of propagating gravitational modes.
+
+      \item Coupling of the spectral sector to additional operator
+      structures describing matter degrees of freedom, leading to a
+      unified description of geometric and material contributions to the
+      effective stress tensor.
+
+      \item Investigation of regimes in which higher-order curvature
+      contributions become relevant.
+      Section~\ref{sec:UV-completion} identifies the unique admissible
+      non-perturbative completion in the Born--Infeld class; the resulting
+      strong-curvature dynamics and its predictions for
+      gravitational collapse, bouncing cosmologies, and singularity
+      resolution remain to be explored.
+
+      \item Exploration of the relation between projection structure and
+      emergent geometry, clarifying how non-injective effective
+      descriptions may generate curvature responses in the infrared
+      regime.
+
+      \item Completion of the derivation chain
+      $\Pi_q \to \mathcal{E}_q \to L_\Pi = A_g \to G_{\mu\nu}$:
+      the identification $L_\Pi = A_g$ is now unconditional (Q9~\cite{Beau2026q9}),
+      and the metric coefficients are established as
+      $g^{\mu\nu} = \mathrm{diag}(-A_\tau,\, 2,\, 2,\, 2)$
+      (Q8~\cite{BeauQ8}, Q10~\cite{Beau2026q10}).
+      Determining the temporal coefficient $A_\tau$ from the projective
+      temporal ordering data of~\cite{Beau2026q5a} is the remaining open step.
+
+    \end{itemize}
+
+    More broadly, the present result supports the idea that geometric
+    gravity may arise as a low-energy manifestation of spectral
+    operator structure rather than as a fundamental dynamical input.
+
+    \clearpage
+    \bibliography{cosmochrony-bibliography,external-refs}
 
 \end{document}
