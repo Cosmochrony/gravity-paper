@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you cite this work, please use the metadata from this file."
+title: "Infrared Einstein Response from a Renormalized Spectral Entropy Functional"
+type: software
+authors:
+  - family-names: "Beau"
+    given-names: "Jérôme"
+repository-code: "https://github.com/Cosmochrony/gravity"
+url: "https://cosmochrony.org/science/spectral-gravity/gravity/"
+doi: "10.5281/zenodo.18818721"
+license: "CC-BY-4.0"
+preferred-citation:
+  type: article
+  title: "Infrared Einstein Response from a Renormalized Spectral Entropy Functional"
+  authors:
+    - family-names: "Beau"
+      given-names: "Jérôme"
+  year: 2026
+  doi: "10.5281/zenodo.18818721"
+  url: "https://doi.org/10.5281/zenodo.18818721"
