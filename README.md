@@ -1,108 +1,147 @@
-This repository contains the source of the **Gravity 2.0A** Cosmochrony paper H  
-[*Infrared Einstein Response from a Renormalized Spectral Entropy Functional*](pdf/Gravity.pdf).:
+# Conditions for an Infrared Einstein Sector from Spectral Geometry
 
-This work develops a minimal spectral framework in which:
+This repository contains the source of the Cosmochrony Gravity paper.
 
-- Newtonian 1/r behavior arises from resolvent structure in three dimensions
-- The covariant four-dimensional extension yields an induced Einstein–Hilbert term
-- The infrared-dominant local part of the renormalized metric variation is proportional to the Einstein tensor
+Version 3.3 separates two regularization statements that previous versions conflated:
 
-The construction is purely operator-theoretic and spectral.
-No fundamental gravitational dynamics are postulated.
+- a physical proper-time cutoff produces power-sensitive local terms;
+- zeta regularization controls the finite determinant and logarithmic scale dependence.
 
-## Core Result
+## Spectral input
 
-For a minimal elliptic Laplace-type operator
+For a four-dimensional minimal scalar Laplacian,
 
-A_g = -∇_g²
+\[
+\operatorname{Tr}(e^{-tA_g})
+\sim
+\frac{1}{(4\pi t)^2}
+\int_M \mathrm d^4x\,\sqrt g\,
+\left(a_0+t a_2+t^2a_4+\cdots\right),
+\]
 
-the renormalized spectral entropy functional
+with
 
-S_Π[g] = 1/2 log det' A_g
+\[
+a_0=1,
+\qquad
+a_2=\frac{R}{6},
+\]
 
-produces, in four dimensions:
+and
 
-- an induced Einstein tensor term from the a₂ heat-kernel pole
-- quadratic curvature terms from a₄
-- non-local form factors
-- conformal anomaly contributions
+\[
+a_4=\frac{1}{360}
+\left(
+12\nabla^2R+5R^2-2R_{\mu\nu}R^{\mu\nu}
++2R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+\right).
+\]
 
-In the weak-curvature regime R ℓ_sp² ≪ 1,
-the two-derivative Einstein term dominates.
+The factor \((4\pi t)^{-2}\) is outside the coefficient series and is not repeated
+inside \(a_4\).
 
-### Born-Infeld Ultraviolet Completion
+## Separation of schemes
 
-The paper establishes that the ultraviolet completion of this infrared Einstein sector is **uniquely determined** under a coherence extensivity hypothesis.
+With the proper-time cutoff \(\Lambda=\ell_{\mathrm{sp}}^{-1}\),
 
-The induced Newton coupling scales parametrically as:
+\[
+S_{\Pi,\mathrm{loc}}^\Lambda
+=-rac{1}{2(4\pi)^2}
+\int_M\mathrm d^4x\,\sqrt g
+\left[
+\frac{\Lambda^4}{2}a_0
++\Lambda^2a_2
++\log\!\left(\frac{\Lambda^2}{\mu^2}\right)a_4
+\right].
+\]
 
-G_N ~ 16π² ℓ_sp²
+For \(S_\Pi=+\tfrac12\log\det' A_g\), one minimal scalar therefore contributes
 
-The unique admissible spectral UV extension takes the determinantal Born-Infeld form:
+\[
+\Delta c_{\mathrm{EH}}^\Lambda
+=-\frac{\Lambda^2}{12(4\pi)^2}.
+\]
 
-√(-det(g_μν + ℓ_sp² R_μν)) - √(-g)
+Zeta regularization gives instead
 
-This Eddington-inspired structure provides the complete effective geometric action, with Einstein gravity appearing as the universal infrared two-derivative sector.
+\[
+\frac{\mathrm d S_\Pi^\zeta}{\mathrm d\log\mu}
+=-\zeta_A(0),
+\]
 
-## Conceptual Structure
+which is governed in four dimensions by the integrated \(a_4\) coefficient.
+It does not produce an \(a_2\mu^2R\) term.
 
-Gravity 2.0A integrates:
+## Conditional Einstein sector
 
-1. The 3D Newtonian resolvent mechanism (Gravity 1.0)
-2. Heat-kernel expansion and Seeley–DeWitt structure
-3. Zeta regularization and renormalization
-4. Induced gravity interpretation (Sakharov mechanism)
-5. Infrared derivative hierarchy
-6. Unique Born-Infeld ultraviolet completion
+The renormalized metric variation may contain
 
-## Status
+\[
+\delta S_\Pi^{\mathrm{ren}}
+=\int_M\mathrm d^4x\,\sqrt g
+\left[
+c_{\mathrm{EH}}^{\mathrm{ren}}G_{\mu\nu}
++c_\Lambda^{\mathrm{ren}}g_{\mu\nu}
++\beta^{\mathrm{ren}}B_{\mu\nu}
++\cdots
+\right]\delta g^{\mu\nu}.
+\]
 
-This framework is:
+The observed coupling is defined by the matching condition
 
-- elliptic and spectral
-- renormalized
-- infrared-controlled
-- induced rather than fundamental
+\[
+c_{\mathrm{EH}}^{\mathrm{ren}}=\frac{1}{16\pi G_N}.
+\]
 
-It does not assume:
+The heat-kernel expansion determines the cutoff-sensitive contribution but not the
+finite value or sign of this coefficient.
+Additional operator content and a renormalization condition are required to obtain the
+observed positive Newton constant.
 
-- fundamental gravitational dynamics
-- Lorentzian causal propagation
-- strong-field or cosmological evolution
+The local Einstein term dominates the four-derivative sector when
 
-## Repository Structure
-```
-paper/
-├── pdf/        # Compiled Gravity 1.0 PDF  
-├── tex/        # LaTeX sources  
-└── README.md
-```
-## Previous Version
+\[
+RL_4^2\ll1,
+\qquad
+L_4^2=left|\frac{\beta^{\mathrm{ren}}}{c_{\mathrm{EH}}^{\mathrm{ren}}}\right|.
+\]
 
-Gravity 1.0 developed the three-dimensional Newtonian mechanism
-without covariant extension.
-Gravity 2.0A supersedes and integrates that analysis.
+Under cutoff-dominated matching without cancellations,
+\(L_4=O(\ell_{\mathrm{sp}})\) and \(G_N=O(\ell_{\mathrm{sp}}^2)\).
+This is conditional scaling, not a numerical prediction.
+
+## Born--Infeld completion
+
+Under the separate coherence-extensivity hypothesis, the tensorial completion of a
+supplied Einstein infrared term remains of determinantal Born--Infeld form:
+
+\[
+\sqrt{-\det(g_{\mu\nu}+\ell_{\mathrm{sp}}^2R_{\mu\nu})}-\sqrt{-g}.
+\]
+
+This rigidity statement does not determine the finite Einstein coefficient.
+
+## Interpretive status
+
+Spectral geometry fixes the available local tensor structures and their cutoff
+sensitivities.
+It does not yet derive the positive finite gravitational coupling.
+The remaining problem is to construct an independent matching principle from the
+complete projected operator content.
+
+## Links
+
+- [Paper PDF](https://github.com/Cosmochrony/gravity-paper/blob/main/out/Gravity.pdf)
+- [Programme website](https://cosmochrony.org/science/spectral-gravity/gravity/)
+- [Zenodo concept DOI](https://doi.org/10.5281/zenodo.18818721)
 
 ## Citation
 
-If you reference this work, please cite:
-
-> J. Beau, *Infrared Einstein Response from a Renormalized Spectral Entropy Functional*, Zenodo, 2026.
+> J. Beau, *Conditions for an Infrared Einstein Sector from Spectral Geometry*,
+> Zenodo, 2026.
 
 ## Acknowledgements
 
-Portions of the formal development, numerical validation, and editorial
-refinement benefited from iterative interactions with large language models,
-used as analytical assistants for testing internal consistency and exploring
-alternative formulations.
-All theoretical results and interpretations remain the sole responsibility
-of the author.
-
-## Contributions
-
-This repository is intended as a research reference.
-
-Critical feedback, mathematical scrutiny, and independent spectral analyses
-are welcome.
-Please open an issue to discuss conceptual points, technical details,
-or possible extensions.
+Portions of the development benefited from iterative interactions with large language
+models used as analytical assistants.
+All claims, interpretations, and final formulations remain the author's responsibility.

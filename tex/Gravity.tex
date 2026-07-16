@@ -34,53 +34,40 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{hypothesis}{Hypothesis}
 
-\title{Infrared Einstein Response from a Renormalized Spectral Entropy Functional}
+\title{Conditions for an Infrared Einstein Sector from Spectral Geometry}
 \author*[1]{\fnm{Jérôme} \sur{Beau}}\email{jerome.beau@cosmochrony.org}
 \affil*[1]{\orgname{Independent Researcher}, \country{France}}
 \date{}
 
 \abstract{
-  We investigate the covariant metric variation of a minimal spectral entropy functional
-  \(
-  S_\Pi[g] = \frac12 \log \det\nolimits' A_g
-  \)
-  defined by a Laplace-type elliptic operator on a four-dimensional Riemannian manifold.
-  Using heat-kernel methods and zeta regularization, we analyze the renormalized functional
-  and determine the geometric structure of the resulting effective stress tensor.
+  We determine the conditions under which a four-dimensional Laplace-type operator can support a local infrared
+  Einstein sector.
+  The analysis separates two regularization statements that must not be conflated.
+  A physical proper-time cutoff $\Lambda=\ell_{\mathrm{sp}}^{-1}$ produces power-sensitive local terms
+  $a_0\Lambda^4$ and $a_2\Lambda^2$, while zeta regularization produces finite and logarithmic scale dependence
+  governed in four dimensions by $a_4=\zeta_A(0)$.
 
-  We show that the renormalized spectral variation decomposes into a local two-derivative
-  Einstein tensor term, a cosmological term, local four-derivative quadratic curvature
-  contributions, non-local form factors, and a conformal anomaly piece.
-  The Einstein tensor arises from the counterterm associated with the $a_2$ heat-kernel pole,
-  in direct analogy with induced gravity in the sense of Sakharov.
+  For $S_\Pi=+\tfrac12\log\det' A_g$, one minimal scalar contributes
+  $\Delta c_{\mathrm{EH}}=-\Lambda^2/[12(4\pi)^2]$ to the Einstein--Hilbert coefficient.
+  The finite renormalized value, its sign, and the observed Newton constant require a matching condition and the
+  complete operator content; they are not predicted by this determinant alone.
+  Once these coefficients are supplied, the metric variation decomposes into Einstein, cosmological,
+  higher-derivative, and non-local sectors.
+  The Einstein term dominates locally when the renormalized coefficient ratio satisfies $R L_4^2\ll1$.
 
-  In the weak-curvature regime where all dimensionless curvature invariants satisfy
-  \(R\,\ell_{\mathrm{sp}}^2 \ll 1\),
-  the local two-derivative contribution dominates over higher-derivative and non-local
-  terms.
-  The induced Newton coupling scales parametrically with the spectral cutoff
-  as \(G_N \sim 16\pi^2 \ell_{\mathrm{sp}}^2\), up to scheme-dependent factors.
-
-  These results show that the infrared-dominant local part of the renormalized spectral
-  entropy variation reproduces the Einstein tensor.
-  We further show that the ultraviolet completion of this infrared sector is uniquely
-  determined, under a coherence extensivity hypothesis, to be of determinantal
-  Born--Infeld type: the action density takes the Eddington-inspired form
-  $\sqrt{-\det(g_{\mu\nu} + \ell_{\mathrm{sp}}^{2}\, R_{\mu\nu})} - \sqrt{-g}$.
-  This mechanism does not rely on a specific microscopic completion,
-  but follows from general properties of the renormalized spectral functional.
-  In this sense the resulting Einstein response appears as the universal
-  two-derivative infrared sector of the effective geometric dynamics,
-  and its Born--Infeld completion as the unique admissible spectral
-  ultraviolet extension.
-  Geometric gravity therefore appears as an effective low-energy response
-  of spectral operator structure rather than as a fundamental dynamical input.
+  Under the separate coherence-extensivity hypothesis, the tensorial completion of a supplied Einstein infrared term
+  remains of determinantal Born--Infeld type.
+  \textbf{Interpretive status.}
+  Spectral geometry fixes the allowed local structures and their cutoff sensitivities, but it does not yet derive the
+  positive finite gravitational coupling.
+  The result identifies the matching problem that must be solved before gravity can be claimed as an emergent spectral
+  prediction.
 }
 
 \keywords
-{Spectral geometry, Heat-kernel expansion, Induced gravity,
+{Spectral geometry, Heat-kernel expansion, Spectral cutoff,
   Zeta regularization, Effective action, Einstein tensor,
-  Born--Infeld completion, Renormalization}
+  Born--Infeld completion, Renormalization matching}
 
 \begin{document}
   \maketitle
@@ -124,20 +111,15 @@
     The goal of the present paper is to develop a covariant extension of this mechanism and to identify, in a controlled
     infrared regime, the leading local geometric content of the \emph{renormalized} metric variation.
     We do not claim an exact equality between the metric variation of the bare determinant and Einstein's equations.
-    We also do not discard non-local contributions, higher-derivative curvature terms, or the conformal anomaly.
+    We also do not discard non-local contributions or higher-derivative logarithmic terms.
     Instead, our central claim is the following.
 
-    \paragraph{Central claim (renormalized IR locality).}
-      In four dimensions, for a minimal Laplace-type operator and in the weak-curvature regime where all dimensionless
-      curvature invariants satisfy \(R\,\ell_{\mathrm{sp}}^2\ll 1\), the infrared-dominant \emph{local}
-      two-derivative part of the
-      renormalized metric variation \(\delta S_\Pi^{\mathrm ren}/\delta g^{\mu\nu}\)
-      is proportional to the Einstein tensor
-      \(G_{\mu\nu}\).
-      The associated coefficient defines an induced Newton coupling whose scaling is set by the spectral cutoff scale
-      \(\ell_{\mathrm{sp}}\).
-      The Einstein term arises from renormalization of the geometric sector, via the counterterm associated with the
-      \(a_2\) heat-kernel pole, in the standard sense of induced gravity.
+    \paragraph{Central claim (scheme separation and conditional IR locality).}
+      In four dimensions, the $a_2$ coefficient produces a quadratic Einstein--Hilbert contribution only in an
+      explicit cutoff scheme, while zeta-scale dependence is governed by $a_4$.
+      The finite renormalized Einstein coefficient is a matching datum.
+      If that coefficient is nonzero and the renormalized higher-derivative ratios satisfy $R L_4^2\ll1$, the
+      Einstein tensor is the dominant local two-derivative metric response.
       The structural necessity of non-injectivity for any genuinely emergent description is established
       in~\cite{Beau2026l}.
 
@@ -149,32 +131,26 @@
   $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$), and Q9~\cite{Beau2026q9}
       ([H-lift] proved unconditionally).
       The identification $L_\Pi = A_g$ is therefore structural, not a working hypothesis.
-      The present paper establishes the infrared consequence: any such operator yields,
-      after renormalization, a dominant Einstein response.
+      The present paper establishes the available infrared tensor structure and its regulator dependence.
+      It does not establish that the minimal determinant alone fixes a positive observed Newton coupling.
 
-      Operationally, this result identifies a robust hierarchy.
-      Local four-derivative contributions (quadratic curvature variations) and non-local form factors are suppressed in
-      the
-      infrared by additional powers of \(\ell_{\mathrm{sp}}^2\), while the conformal anomaly remains as a distinct
-      ultraviolet-sensitive
-      contribution whose presence is tracked explicitly.
+      Operationally, this result identifies the coefficient ratios that control the derivative hierarchy.
+      Their relation to $\ell_{\mathrm{sp}}$ is conditional on cutoff-dominated matching without cancellations.
 
       The remainder of the paper is organized as follows.
       In Section~\ref{sec:projective-entropy-covariant}
       , we define the covariant projective entropy functional and set up the
       minimal Laplace-type operator choice.
       In Section~\ref{sec:hk-sdw}
-      , we summarize the heat-kernel expansion and the role of Seeley--DeWitt coefficients in the
-      pole structure of zeta regularization.
+      , we separate the proper-time-cutoff and zeta roles of the Seeley--DeWitt coefficients.
       In Section~\ref{sec:metric-variation}
       , we define the renormalized spectral stress tensor and decompose it by derivative
-      order into Einstein, quadratic-curvature, non-local, and anomaly pieces.
+      order into Einstein, quadratic-curvature, and non-local pieces.
       In Section~\ref{subsec:ir-hierarchy}
       , we formulate the infrared hierarchy as a covariant derivative expansion and
       state the dominance criterion \(R\,\ell_{\mathrm{sp}}^2\ll 1\).
       In Section~\ref{sec:newton-identification}
-      , we discuss the induced-gravity interpretation and the identification of the
-      effective Newton coupling.
+      , we discuss the cutoff-sensitive contribution and the matching definition of the effective Newton coupling.
       We conclude in Section~\ref{sec:discussion} with limitations and outlook.
 
   \section{Covariant projective entropy functional}
@@ -235,7 +211,7 @@
     The present analysis focuses on the minimal elliptic case $\xi=0$,
     for which the $a_2$ contribution is nonvanishing.
 
-  \subsection{Regularized determinant and renormalization setup}
+  \subsection{Zeta determinant and spectral-cutoff matching}
     \label{subsec:zeta-regularization}
 
     We define the projective entropy functional by
@@ -244,9 +220,13 @@
     \end{equation}
     where the prime denotes omission of zero modes, if any.
 
-    The determinant is understood in the zeta-regularized sense,
+    Its zeta-regularized form at reference scale $\mu$ is
     \begin{equation}
-      \log \det\nolimits' A_g = -\zeta'_{A_g}(0) ,
+      S_\Pi^{\zeta}[g;\mu]
+      =
+      -\frac12\zeta'_{A_g}(0)
+      -\frac12\log(\mu^2)\,\zeta_{A_g}(0),
+      \label{eq:zeta-functional}
     \end{equation}
     with
     \begin{equation}
@@ -259,13 +239,31 @@
     \end{equation}
     initially defined for $\Re(s)$ sufficiently large and continued meromorphically to $s=0$.
 
-    In four dimensions, the small-$t$ expansion of the heat trace contains ultraviolet divergences.
-    Renormalization is implemented by subtracting the pole terms associated with the heat-kernel coefficients and
-    introducing a renormalization scale $\mu$.
+    In four dimensions, $\zeta_{A_g}(0)$ is governed locally by the integrated coefficient $a_4$.
+    Consequently, zeta-scale dependence is logarithmic and belongs to the four-derivative sector.
+    It does not generate an $a_2\mu^2R$ term.
 
-    The resulting renormalized functional $S_\Pi^{\mathrm ren}[g;\mu]$
-    is finite but contains scheme-dependent local geometric counterterms.
-    These counterterms are crucial for the emergence of the Einstein--Hilbert structure discussed below.
+    Cosmochrony also supplies a physical spectral resolution scale
+    $\ell_{\mathrm{sp}}$.
+    To track power-sensitive local terms, we therefore introduce the separate proper-time-cutoff functional
+    \begin{equation}
+      S_\Pi^{\Lambda}[g]
+      =
+      -\frac12
+      \int_{\Lambda^{-2}}^\infty
+      \frac{\dd t}{t}\,
+      \Tr\!\left(e^{-tA_g}\right),
+      \qquad
+      \Lambda\equiv\ell_{\mathrm{sp}}^{-1}.
+      \label{eq:cutoff-functional}
+    \end{equation}
+    The cutoff and zeta prescriptions answer different questions and will not be identified.
+    The cutoff determines the power-sensitive matching contributions, while the zeta determinant organizes the finite
+    and logarithmic sectors.
+
+    The renormalized functional additionally contains finite local coefficients fixed by matching conditions.
+    In particular, the finite value and sign of the Einstein--Hilbert coefficient are not determined by the heat-kernel
+    expansion alone.
 
   \subsection{First variation and resolvent trace}
     \label{subsec:first-variation}
@@ -291,8 +289,8 @@
     \end{equation}
 
     Its precise geometric decomposition depends on the heat-kernel structure of $A_g$.
-    In particular, local two-derivative, local four-derivative, non-local, and anomaly contributions will appear with
-    distinct origins.
+    In particular, local two-derivative, local four-derivative, and non-local contributions appear with distinct
+    regulator dependence.
     The classification of these terms and their infrared hierarchy is developed in the following sections.
 
   \section{Heat-kernel expansion and Seeley--DeWitt structure}
@@ -324,14 +322,12 @@
       a_2(x) &= \frac{1}{6} R(x) , \\
       a_4(x)
       &=
-      \frac{1}{(4\pi)^2}
       \frac{1}{360}
       \left(
-        \frac{5}{3} R^2
-      -
-      R_{\mu\nu} R^{\mu\nu}
-        +
-        R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}
+        12\nabla^2R
+        +5R^2
+        -2R_{\mu\nu} R^{\mu\nu}
+        +2R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}
       \right) .
     \end{align}
 
@@ -339,6 +335,8 @@
     \begin{equation}
       a_4
       =
+      \frac{1}{30}\nabla^2R
+      +
       \alpha_1 R^2
       +
       \alpha_2 R_{\mu\nu} R^{\mu\nu}
@@ -349,16 +347,20 @@
     \begin{equation}
       \alpha_1
       =
-      \frac{5}{3 \cdot 360 (4\pi)^2},
+      \frac{5}{360},
       \quad
       \alpha_2
       =
-      -\frac{1}{360 (4\pi)^2},
+      -\frac{2}{360},
       \quad
       \alpha_3
       =
-      \frac{1}{360 (4\pi)^2}.
+      \frac{2}{360}.
     \end{equation}
+
+    The universal factor $(4\pi t)^{-2}$ already appears outside the coefficient series and must not be included a
+    second time in $a_4$.
+    On a closed manifold the integrated $\nabla^2R$ term is a boundary term, but it is part of the local coefficient.
 
     In four dimensions, the quadratic curvature invariants are not all
     independent.
@@ -384,49 +386,75 @@
     Substituting the heat expansion into the definition of $\zeta_{A_g}(s)$
     shows that in $d=4$ the coefficients $a_0$ and $a_2$ generate simple poles
     at $s=2$ and $s=1$, respectively.
+    Those poles describe the meromorphic zeta function away from the evaluation point $s=0$.
+    They must not be confused with the divergence of the zeta-regularized effective functional at $s=0$.
+    In four dimensions,
+    \begin{equation}
+      \zeta_{A_g}(0)
+      =
+      \frac{1}{(4\pi)^2}
+      \int_M\dd^4x\,\sqrt{g}\,a_4(x),
+      \label{eq:zeta-zero-a4}
+    \end{equation}
+    up to the separately treated zero-mode contribution.
+    Therefore
+    \begin{equation}
+      \frac{\dd S_\Pi^\zeta}{\dd\log\mu}
+      =
+      -\zeta_{A_g}(0),
+      \label{eq:zeta-running-a4}
+    \end{equation}
+    so zeta-scale dependence is governed by $a_4$, not $a_2$.
 
-    More precisely:
-
-    \begin{itemize}
-      \item $a_0$ controls the cosmological-constant counterterm,
-      \item $a_2$ controls the Einstein--Hilbert counterterm,
-      \item $a_4$ controls quadratic curvature counterterms.
-    \end{itemize}
-
-    After subtraction of the pole terms and introduction of the renormalization
-    scale $\mu$, the renormalized functional contains local geometric
-    counterterms whose coefficients depend on $\mu$.
+    The proper-time cutoff instead gives the local ultraviolet contribution
+    \begin{equation}
+      S_{\Pi,\mathrm{loc}}^\Lambda
+      =
+      -\frac{1}{2(4\pi)^2}
+      \int_M\dd^4x\,\sqrt{g}\,
+      \left[
+        \frac{\Lambda^4}{2}a_0
+        +\Lambda^2a_2
+        +\log\!\left(\frac{\Lambda^2}{\mu^2}\right)a_4
+      \right]
+      +O(\Lambda^0).
+      \label{eq:cutoff-local}
+    \end{equation}
+    Thus $a_0$ and $a_2$ control quartic and quadratic cutoff sensitivity, while $a_4$ controls the logarithmic
+    sensitivity.
 
   \subsection{Origin of the Einstein tensor}
     \label{subsec:einstein-origin}
 
     The crucial structural point is the following.
 
-    The coefficient $a_2(x)=R/6$ implies that the pole subtraction generates a
-    local term proportional to
+    The coefficient $a_2(x)=R/6$ implies that the explicit cutoff contribution contains
     \begin{equation}
-      \int d^4x\,\sqrt{g}\, R .
+      \Delta S_{\Pi,\mathrm{EH}}^\Lambda
+      =
+      -\frac{\Lambda^2}{12(4\pi)^2}
+      \int_M\dd^4x\,\sqrt{g}\,R.
+      \label{eq:cutoff-EH}
     \end{equation}
 
     Upon metric variation, this counterterm produces the Einstein tensor,
     \begin{equation}
       \frac{\delta}{\delta g^{\mu\nu}}
       \int d^4x\,\sqrt{g}\, R
-      \;\propto\;
-      G_{\mu\nu} .
+      =
+      \sqrt{g}\,G_{\mu\nu} .
     \end{equation}
 
-    Therefore, the local two-derivative Einstein term in the renormalized
-    spectral stress tensor arises from the counterterm associated with the
-    $a_2$ heat-kernel pole.
-
-    It does not arise from the bare finite part of $\zeta'_{A_g}(0)$ alone.
-    Rather, it is generated through renormalization of the geometric sector,
-    in the standard sense of induced gravity.
+    The cutoff therefore supplies an Einstein-tensor contribution with a calculable power-sensitive coefficient.
+    It does not arise from the zeta-scale dependence of $\zeta'_{A_g}(0)$.
+    A finite local counterterm is nevertheless allowed, so the renormalized coefficient must be fixed by matching.
+    For the convention $S_\Pi=+\tfrac12\log\det' A_g$, the one-scalar cutoff contribution in
+    \eqref{eq:cutoff-EH} is negative.
+    A positive observed Newton constant is therefore not predicted by this contribution alone.
 
     This mechanism is structurally identical to Sakharov's induced-gravity
-    construction~\cite{Sakharov1967}, with the spectral cutoff scale playing the role of the
-    ultraviolet regulator.
+    construction~\cite{Sakharov1967}, with the spectral resolution scale playing the role of an explicit ultraviolet
+    regulator, but with the finite normalization and sign left to the full field content and matching condition.
 
     Higher-derivative local contributions originate from $a_4$ and yield
     four-derivative tensors (Bach-like structures) upon variation.
@@ -458,32 +486,30 @@
     After renormalization, local counterterms contribute additional
     geometric variations.
 
-    In four dimensions, and for the minimal Laplacian $\xi=0$,
-    the metric variation admits the general decomposition
+    In four dimensions, and for the minimal Laplacian $\xi=0$, write the renormalized variation as
     \begin{equation}
-      \frac{\delta S_\Pi^{\mathrm ren}}{\delta g^{\mu\nu}}
+      \delta S_\Pi^{\mathrm ren}
       =
-      c_{\mathrm EH}(\mu)\, G_{\mu\nu}
-      +
-      c_\Lambda(\mu)\, g_{\mu\nu}
-      +
-      \beta(\mu)\, B_{\mu\nu}
-      +
-      T^{\mathrm non\mbox{-}loc}_{\mu\nu}
-      +
-      A_{\mu\nu}.
+      \int_M\dd^4x\,\sqrt{g}\,
+      \left[
+        c_{\mathrm EH}^{\mathrm ren}\,G_{\mu\nu}
+        +c_\Lambda^{\mathrm ren}\,g_{\mu\nu}
+        +\beta^{\mathrm ren}\,B_{\mu\nu}
+        +T^{\mathrm non\mbox{-}loc}_{\mu\nu}
+      \right]\delta g^{\mu\nu}.
       \label{eq:full-decomposition}
     \end{equation}
 
-    Each term has a distinct geometric origin.
+    The local coefficients are renormalized matching data.
+    Their cutoff-sensitive parts are constrained by~\eqref{eq:cutoff-local}, while their finite parts depend on the
+    renormalization conditions and complete field content.
 
   \subsection{Local two-derivative sector}
     \label{subsec:two-derivative}
 
-    The Einstein tensor contribution arises from the renormalized
-    Einstein--Hilbert counterterm generated by the $a_2$ pole.
-    From Section~\ref{sec:hk-sdw}, the subtraction of the $a_2$ divergence
-    produces a local term proportional to
+    The Einstein tensor contribution arises from the renormalized Einstein--Hilbert term.
+    Its power-sensitive spectral contribution is the $a_2\Lambda^2$ term of~\eqref{eq:cutoff-EH}, which is proportional
+    to
     \begin{equation}
       \int d^4x\,\sqrt{g}\, R .
     \end{equation}
@@ -493,40 +519,44 @@
       \frac{\delta}{\delta g^{\mu\nu}}
       \int d^4x\,\sqrt{g}\, R
       =
-      -\sqrt{g}\, G_{\mu\nu}.
+      \sqrt{g}\, G_{\mu\nu}.
     \end{equation}
 
-    Therefore,
+    After adding the bare and finite counterterm contributions, define
     \begin{equation}
-      c_{\mathrm EH}(\mu)
+      c_{\mathrm EH}^{\mathrm ren}
       =
-      \frac{1}{16\pi G_N(\mu)},
+      \frac{1}{16\pi G_N}.
+      \label{eq:cEH-matching}
     \end{equation}
-    where $G_N(\mu)$ is the induced Newton coupling.
+    This equation is a matching definition of the observed Newton coupling, not a prediction of its finite value.
 
-    The cosmological constant term originates from the $a_0$ pole and
-    is proportional to $\int\sqrt{g}$.
+    The cosmological term similarly receives an $a_0\Lambda^4$ contribution and an independent finite matching term.
+    It cannot be discarded by an infrared approximation.
 
   \subsection{Local four-derivative sector}
     \label{subsec:four-derivative}
 
-    The coefficient $a_4$ generates quadratic curvature counterterms of the form
+    The coefficient $a_4$ fixes the logarithmic scale dependence of quadratic-curvature counterterms of the form
     \begin{equation}
       \int d^4x\,\sqrt{g}\,
       \left(
-        \alpha_1 R^2
+        c_1^{\mathrm ren} R^2
       +
-        \alpha_2 R_{\mu\nu}R^{\mu\nu}
+        c_2^{\mathrm ren} R_{\mu\nu}R^{\mu\nu}
         +
-        \alpha_3 R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
+        c_3^{\mathrm ren} R_{\mu\nu\rho\sigma}R^{\mu\nu\rho\sigma}
       \right).
     \end{equation}
+
+    The numerical coefficients in $a_4$ determine the logarithmic beta functions of these couplings, not their finite
+    renormalized values.
 
     Their variation produces fourth-order differential tensors,
     which we collectively denote by $B_{\mu\nu}$.
     These are Bach-like structures containing four derivatives of the metric.
 
-  \subsection{Non-local form factors and anomaly}
+  \subsection{Non-local and logarithmic responses}
     \label{subsec:nonlocal-anomaly}
 
     The finite part of the determinant generates non-local contributions.
@@ -540,27 +570,19 @@
     Their metric variation yields non-local tensors
     $T^{\mathrm{non\mbox{-}loc}}_{\mu\nu}$.
 
-    In addition, renormalization induces a conformal trace anomaly.
-    For a minimally coupled scalar field in four dimensions,
-    the trace of the anomaly satisfies~\cite{BirrellDavies1982,Vassilevich2003}
+    In addition, zeta regularization produces the local scale response~\cite{BirrellDavies1982,Vassilevich2003}
     \begin{equation}
-      g^{\mu\nu} A_{\mu\nu}
+      \frac{\dd S_\Pi^\zeta}{\dd\log\mu}
       =
-      \frac{1}{(4\pi)^2}
-      \frac{1}{360}
-      \left(
-        R_{\mu\nu\rho\sigma} R^{\mu\nu\rho\sigma}
-        -
-        R_{\mu\nu} R^{\mu\nu}
-        +
-        \frac{1}{3} \Box R
-      \right).
+      -\frac{1}{(4\pi)^2}
+      \int_M\dd^4x\,\sqrt{g}\,a_4(x).
     \end{equation}
 
-    The local tensor structure of $A_{\mu\nu}$ depends on the
-    renormalization scheme, but its trace is fixed by this universal expression.
-    The anomaly contributes at four-derivative order and remains subleading
-    in the weak-curvature infrared regime $R\,\ell_\chi^2 \ll 1$.
+    Its metric variation is already included in the local four-derivative tensor $B_{\mu\nu}$ of
+    \eqref{eq:full-decomposition}; it is not an additional independent tensor.
+    A conformal-anomaly interpretation requires the conformal operator and its endomorphism terms; the present minimal
+    operator is not conformally coupled.
+    In either case, the logarithmic local response is of four-derivative order.
 
   \subsection{Infrared hierarchy}
     \label{subsec:ir-hierarchy}
@@ -572,110 +594,101 @@
       R_{\mu\nu}\,\ell_{\mathrm{sp}}^2 \ll 1.
     \end{equation}
 
-    In this regime, the derivative expansion is controlled by the small
-    parameter $R\,\ell_{\mathrm{sp}}^2$.
-    Since $B_{\mu\nu}$ is quadratic in curvature,
-    its contribution scales as
+    The derivative hierarchy is controlled by the ratio of renormalized coefficients, not by the cutoff scale alone.
+    Define a higher-derivative length by
     \begin{equation}
-      \frac{\beta\, B_{\mu\nu}}{c_{\mathrm EH}\, G_{\mu\nu}}
-      \sim
-      R\,\ell_{\mathrm{sp}}^2 .
+      L_4^2
+      \equiv
+      \left|\frac{\beta^{\mathrm ren}}{c_{\mathrm EH}^{\mathrm ren}}\right|.
+      \label{eq:L4-def}
     \end{equation}
+    Since $B_{\mu\nu}$ is quadratic in curvature, its relative contribution scales as $R L_4^2$.
+    If both coefficients are dominated by their spectral-cutoff contributions without cancellations, then
+    $L_4=O(\ell_{\mathrm{sp}})$.
+    This identification is a matching assumption, not a consequence of zeta regularization.
 
-    Therefore, for $R\,\ell_{\mathrm{sp}}^2 \ll 1$,
+    Therefore, for $R L_4^2\ll1$,
     the local two-derivative Einstein term dominates over the
     four-derivative sector.
-    Non-local form factors reduce to suppressed derivative corrections.
+    Non-local form factors are additionally controlled by the external momentum or curvature scale relative to the
+    spectral matching scale.
 
-    This establishes the infrared dominance of the Einstein tensor
-    within the renormalized spectral stress tensor.
+    This establishes a conditional infrared hierarchy once the renormalized matching coefficients are specified.
 
-  \section{Identification of Newton's constant and spectral scaling}
+  \section{Spectral cutoff and Newton-coefficient matching}
   \label{sec:newton-identification}
 
-  \subsection{Running of the Einstein--Hilbert coefficient}
+  \subsection{Quadratic cutoff sensitivity}
     \label{subsec:running}
 
-    In four dimensions, the subtraction of the $a_2$ pole generates a
-    renormalization-scale dependence in the Einstein--Hilbert coefficient.
-
-    For the minimal scalar Laplacian with $a_2 = R/6$, the scale dependence
-    of the induced coupling satisfies
+    For the minimal scalar Laplacian with $a_2=R/6$, the explicit proper-time cutoff contribution to the
+    Einstein--Hilbert coefficient is
     \begin{equation}
-      \frac{d}{d\log \mu}
-      \left(
-        \frac{1}{16\pi G_N(\mu)}
-      \right)
+      \Delta c_{\mathrm EH}^{\Lambda}
       =
-      \frac{1}{(4\pi)^2}
-      \frac{1}{6}.
+      -\frac{\Lambda^2}{12(4\pi)^2}.
+      \label{eq:cEH-cutoff}
     \end{equation}
+    Equivalently,
+    \begin{equation}
+      \frac{\dd}{\dd\log\Lambda}
+      \Delta c_{\mathrm EH}^{\Lambda}
+      =
+      -\frac{\Lambda^2}{6(4\pi)^2}.
+      \label{eq:cEH-cutoff-running}
+    \end{equation}
+    The missing factor $\Lambda^2$ in the previous version was the signature of an incorrect conflation of this
+    quadratic cutoff sensitivity with zeta-scale running.
+    Zeta-scale dependence in four dimensions is instead governed by $a_4$ through~\eqref{eq:zeta-running-a4}.
 
-    This relation follows directly from the residue of the $a_2$ pole in the
-    zeta-regularized determinant.
-    It expresses the standard induced-gravity running generated by a minimal
-    scalar degree of freedom~\cite{BirrellDavies1982,ParkerToms2009}.
-
-    The absolute normalization of $G_N$ depends on the ultraviolet completion
-    or cutoff prescription.
-    However, its parametric dependence is fixed by dimensional analysis.
+    The renormalized coefficient has the schematic matching form
+    \begin{equation}
+      c_{\mathrm EH}^{\mathrm ren}
+      =
+      c_{\mathrm EH}^{\mathrm bare}(\Lambda)
+      +\Delta c_{\mathrm EH}^{\Lambda}
+      +\delta c_{\mathrm EH}^{\mathrm fin}(\Lambda,\mu).
+      \label{eq:cEH-renormalized}
+    \end{equation}
+    Its finite value is fixed by a renormalization condition or measurement.
+    Contributions from additional bosonic and fermionic operators alter both the multiplicity and the sign.
 
   \subsection{Spectral cutoff and induced scale}
     \label{subsec:spectral-cutoff}
 
-    Let $\Lambda_{\mathrm UV}$ denote the ultraviolet cutoff scale associated with
-    the spectral regularization.
-    Identifying $\Lambda_{\mathrm UV}$ with the inverse spectral resolution scale,
+    Identifying the physical spectral cutoff with the inverse spectral resolution scale,
     \begin{equation}
-      \Lambda_{\mathrm UV} \sim \ell_{\mathrm{sp}}^{-1},
+      \Lambda=\ell_{\mathrm{sp}}^{-1},
     \end{equation}
-    the induced Einstein--Hilbert coefficient scales as
+    the magnitude of the one-scalar power-sensitive contribution is
     \begin{equation}
-      \frac{1}{16\pi G_N}
-      \sim
-      \frac{\Lambda_{\mathrm UV}^2}{16\pi^2}.
+      \left|\Delta c_{\mathrm EH}^{\Lambda}\right|
+      =
+      \frac{1}{12(4\pi)^2\ell_{\mathrm{sp}}^2}.
     \end{equation}
 
-    Therefore,
-    \begin{equation}
-      G_N
-      \sim
-      16\pi^2 \, \ell_{\mathrm{sp}}^2,
-    \end{equation}
-    up to scheme-dependent numerical factors and possible multiplicities
-    from additional degrees of freedom.
-
-    This scaling relation provides the bridge between the spectral resolution
-    scale $\ell_{\mathrm{sp}}$ and the effective gravitational coupling.
+    If the complete matched coefficient is dominated by cutoff contributions and is positive, dimensional scaling
+    gives $G_N=O(\ell_{\mathrm{sp}}^2)$ with a field-content-dependent loop factor.
+    Neither the sign nor the numerical coefficient follows from the single minimal scalar determinant.
 
   \subsection{Infrared consistency}
     \label{subsec:ir-consistency}
 
-    The infrared hierarchy established in
-    Section~\ref{subsec:ir-hierarchy}
-    requires
+    The local infrared hierarchy established in Section~\ref{subsec:ir-hierarchy} requires
     \begin{equation}
-      R\,\ell_{\mathrm{sp}}^2 \ll 1.
+      R L_4^2\ll1.
     \end{equation}
-
-    Using the scaling above, this condition is equivalent to
-    \begin{equation}
-      R \ll G_N^{-1},
-    \end{equation}
-    which is precisely the weak-curvature regime in which classical
-    general relativity is valid.
-
-    Thus the dominance of the Einstein tensor in the renormalized spectral
-    stress tensor is self-consistent in the classical infrared domain.
+    Under cutoff-dominated matching, $L_4=O(\ell_{\mathrm{sp}})$ and this reduces parametrically to
+    $R\ell_{\mathrm{sp}}^2\ll1$.
+    Without that matching assumption, the derivative hierarchy must be stated directly in terms of the renormalized
+    coefficient ratio $L_4$.
 
   \section{Ultraviolet completion: uniqueness of the
   Born--Infeld structure}
   \label{sec:UV-completion}
 
-  The infrared hierarchy of
-  Section~\ref{subsec:ir-hierarchy} ensures that the
-  Einstein response dominates for
-  $R\,\ell_{\mathrm{sp}}^{2} \ll 1$.
+  Under the matching conditions of Section~\ref{subsec:ir-hierarchy}, the Einstein response dominates locally for
+  $RL_4^2\ll1$.
   In the ultraviolet regime
   $R\,\ell_{\mathrm{sp}}^{2} \sim 1$,
   higher-derivative corrections become comparable to the
@@ -721,8 +734,8 @@
       \frac{1}{16\pi G_N}\,
       \int \mathcal{C}(g, R)\,\mathrm{d}^4 x\,,
     \]
-    with $G_N \sim 16\pi^2 \ell_{\mathrm{sp}}^{2}$ as
-    established in Section~\ref{sec:newton-identification}.
+    where $G_N$ is the positive matched coupling defined in~\eqref{eq:cEH-matching}, not a value fixed by the minimal
+    determinant.
 
     The following conditions encode the structural constraints
     that any admissible tensorial completion must satisfy.
@@ -1072,11 +1085,9 @@
       First, the EiBI form is not postulated as a modified
       gravity model but derived as a structural rigidity from
       admissibility conditions.
-      Second, the spectral capacity length
-      $\ell_{\mathrm{sp}}$ is not a free parameter: it is
-      determined by the same spectral cutoff that fixes the
-      induced Newton constant in
-      Section~\ref{sec:newton-identification}.
+      Second, the spectral capacity length $\ell_{\mathrm{sp}}$ specifies the physical cutoff entering the
+      power-sensitive contributions.
+      It does not by itself fix the finite Newton constant.
     \end{remark}
 
     \begin{remark}
@@ -1087,8 +1098,8 @@
       $S_\Pi[g] = \tfrac{1}{2}\log\det' A_g$
       of Section~\ref{sec:projective-entropy-covariant}
       encodes the full eigenvalue spectrum of the effective
-      Laplacian~$A_g$ and produces the infrared Einstein
-      response (Section~\ref{sec:metric-variation}).
+      Laplacian~$A_g$ and supplies the cutoff-sensitive contribution to the infrared Einstein coefficient
+      (Section~\ref{sec:metric-variation}).
       At the \emph{local} level, the coherence density
       $S_{\mathrm{coh}}(X)
       = \tfrac{1}{2}\log\det(I + X)$
@@ -1125,7 +1136,7 @@
   \section{Discussion and outlook}
   \label{sec:discussion}
 
-  \subsection{Summary of the structural result}
+  \subsection{Summary of the conditional structural result}
     \label{subsec:summary}
 
     We have constructed a covariant projective entropy functional
@@ -1134,47 +1145,36 @@
     \end{equation}
     for a minimal elliptic Laplace-type operator.
 
-    Using heat-kernel methods and zeta regularization in four dimensions,
-    we showed that the renormalized metric variation admits the decomposition
+    Separating a physical proper-time cutoff from zeta regularization, we showed that the renormalized metric variation
+    admits the decomposition
     \begin{equation}
-      \frac{\delta S_\Pi^{\mathrm ren}}{\delta g^{\mu\nu}}
+      \delta S_\Pi^{\mathrm ren}
       =
-      c_{\mathrm EH} G_{\mu\nu}
-      +
-      c_\Lambda g_{\mu\nu}
-      +
-      \beta B_{\mu\nu}
-      +
-      T^{\mathrm non\mbox{-}loc}_{\mu\nu}
-      +
-      A_{\mu\nu}.
+      \int_M\dd^4x\,\sqrt{g}\,
+      \left[
+        c_{\mathrm EH}^{\mathrm ren}G_{\mu\nu}
+        +c_\Lambda^{\mathrm ren}g_{\mu\nu}
+        +\beta^{\mathrm ren}B_{\mu\nu}
+        +T^{\mathrm non\mbox{-}loc}_{\mu\nu}
+      \right]\delta g^{\mu\nu}.
     \end{equation}
 
-    The Einstein tensor arises from the counterterm associated with the
-    $a_2$ heat-kernel pole.
-    Local four-derivative terms originate from $a_4$.
-    Non-local form factors and anomaly contributions are retained explicitly.
+    The $a_2\Lambda^2$ cutoff term contributes to the Einstein coefficient, while $a_4$ governs zeta-scale dependence
+    and logarithmic four-derivative terms.
+    Non-local form factors and logarithmic local contributions are retained explicitly.
 
-    In the weak-curvature regime $R\,\ell_{\mathrm{sp}}^2 \ll 1$,
-    the local two-derivative Einstein term dominates over
-    higher-derivative contributions.
-    The induced Newton coupling scales parametrically as
-    \begin{equation}
-      G_N \sim 16\pi^2 \ell_{\mathrm{sp}}^2,
-    \end{equation}
-    up to scheme-dependent factors.
+    In the regime $RL_4^2\ll1$, the local two-derivative Einstein term dominates over higher-derivative contributions.
+    Under cutoff-dominated matching one has parametrically $L_4=O(\ell_{\mathrm{sp}})$ and
+    $G_N=O(\ell_{\mathrm{sp}}^2)$, but neither the sign nor the numerical coefficient of $G_N$ follows from the single
+    determinant.
 
-    The result is therefore not an exact derivation of Einstein's equations
-    from the bare determinant.
-    It is a structural statement about the infrared-dominant local
-    two-derivative part of the renormalized spectral stress tensor.
+    The result is therefore a structural and conditional statement about the available infrared local response.
 
   \subsection{Structural necessity of non-injective projection}
     \label{subsec:structural-necessity}
 
-    The spectral derivation developed above shows that the renormalized variation
-    of the projective entropy functional produces an infrared-dominant Einstein
-    response.
+    The spectral analysis developed above shows that the projective entropy functional permits an Einstein response
+    and supplies its power-sensitive cutoff contribution.
     It is useful to clarify under which structural conditions such an emergent
     gravitational sector can arise.
 
@@ -1262,9 +1262,9 @@
     with $A$ independent of $s$.
     The isotropy $a_q(X)=a_q(Y)$ implies that the Dirichlet form limit
     is isotropic, consistent with the emergence of a Lorentzian metric.
-    The Einstein response derived here is therefore, at the structural level,
-    a consequence of Heisenberg torsion rather than of a postulated spacetime
-    curvature.
+    The availability of the spectral Einstein sector is therefore, at the structural level, linked to the
+    Heisenberg-torsion construction of the effective operator.
+    Its positive finite normalization remains a separate matching problem.
     \end{remark}
 
     Within the spectral framework considered in this work, the geometric response
@@ -1272,17 +1272,16 @@
     \[
       S_\Pi[g] = \frac12 \log \det{}' A_g .
     \]
-    The heat-kernel analysis shows that the infrared-dominant local contribution
-    to the metric variation is proportional to the Einstein tensor.
-    The spectral construction therefore provides an explicit realization of the
-    effective dynamics compatible with a non-injective projective structure.
+    The heat-kernel analysis identifies the Einstein tensor among the local metric responses and computes its
+    quadratic cutoff sensitivity.
+    The spectral construction therefore provides the ingredients for an effective dynamics compatible with a
+    non-injective projective structure, conditional on renormalized matching.
 
     Taken together, these results suggest the following structural picture.
     Non-injective projection allows the emergence of non-trivial fiber curvature,
     which in turn enables an effective geometric response.
-    The spectral entropy functional provides a minimal mechanism realizing this
-    response and selects the Einstein sector as the dominant infrared contribution
-    to the effective dynamics.
+    The spectral entropy functional provides a minimal mechanism for an Einstein-sector contribution.
+    Dominance in the infrared follows only when the matched coefficient hierarchy satisfies~\eqref{eq:L4-def}.
     This mechanism is consistent with the relational spectral framework
     of~\cite{Beau2026a}, in which spacetime geometry emerges operationally from
     relational configurations under non-injective projection.
@@ -1336,9 +1335,9 @@
     While they are suppressed in the infrared regime considered here,
     they may become relevant at higher curvature or shorter scales.
 
-    Third, the precise numerical value of the induced Newton constant depends on
-    the ultraviolet completion and on the detailed matter content contributing to
-    the spectral functional.
+    Third, the finite value and sign of the Newton constant are matching data.
+    The minimal scalar cutoff contribution is negative with the determinant convention used here, and additional
+    operator content or a finite renormalization condition is required to obtain the observed positive coefficient.
     The uniqueness result of Section~\ref{sec:UV-completion} constrains the
     functional form of this completion but does not fix its overall
     normalisation independently of the matter content.
@@ -1380,9 +1379,10 @@
   \subsection{Outlook}
     \label{subsec:outlook}
 
-    The analysis presented here shows that a minimal spectral entropy
-    functional generates, after renormalization, an infrared-dominant
-    Einstein response.
+    The analysis presented here shows that a minimal spectral operator supplies an $a_2\Lambda^2$ Einstein--Hilbert
+    contribution under an explicit spectral cutoff.
+    A dominant positive infrared Einstein response follows only after the renormalized matching coefficients satisfy
+    the stated sign and hierarchy conditions.
 
     Several directions follow naturally from this result.
 
@@ -1421,9 +1421,10 @@
 
     \end{itemize}
 
-    More broadly, the present result supports the idea that geometric
-    gravity may arise as a low-energy manifestation of spectral
-    operator structure rather than as a fundamental dynamical input.
+    \textbf{Interpretive outlook.}
+    The result keeps open the possibility that geometric gravity is a low-energy manifestation of spectral operator
+    structure, while isolating the missing step: an independent matching principle must select the positive finite
+    Einstein coefficient rather than merely permit it.
 
     \clearpage
     \bibliography{cosmochrony-bibliography,external-refs}
