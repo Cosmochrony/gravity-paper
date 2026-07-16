@@ -131,7 +131,6 @@ complete projected operator content.
 
 ## Links
 
-- [Paper PDF](https://github.com/Cosmochrony/gravity-paper/blob/main/out/Gravity.pdf)
 - [Programme website](https://cosmochrony.org/science/spectral-gravity/gravity/)
 - [Zenodo concept DOI](https://doi.org/10.5281/zenodo.18818721)
 
