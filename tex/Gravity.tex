@@ -1,4 +1,8 @@
 \documentclass[pdflatex,sn-mathphys-num]{sn-jnl} % Math and Physical Sciences Numbered Reference Style
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\input{glyphtounicode}
+\pdfgentounicode=1
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{graphicx}
@@ -38,6 +42,13 @@
 \author*[1]{\fnm{Jérôme} \sur{Beau}}\email{jerome.beau@cosmochrony.org}
 \affil*[1]{\orgname{Independent Researcher}, \country{France}}
 \date{}
+\hypersetup{
+  pdftitle={Conditions for an Infrared Einstein Sector from Spectral Geometry},
+  pdfauthor={Jérôme Beau},
+  pdfsubject={Conditions for a local infrared Einstein sector from a four-dimensional Laplace-type operator},
+  pdfkeywords={spectral geometry, heat-kernel expansion, spectral cutoff, zeta regularization, effective action,
+    Einstein tensor, Born--Infeld completion, renormalization matching}
+}
 
 \abstract{
   We determine the conditions under which a four-dimensional Laplace-type operator can support a local infrared

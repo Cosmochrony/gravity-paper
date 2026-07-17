@@ -2,7 +2,7 @@
 
 This repository contains the source of the Cosmochrony Gravity paper.
 
-Version 3.3 separates two regularization statements that previous versions conflated:
+The paper separates two distinct regularization statements:
 
 - a physical proper-time cutoff produces power-sensitive local terms;
 - zeta regularization controls the finite determinant and logarithmic scale dependence.
@@ -46,7 +46,7 @@ With the proper-time cutoff \(\Lambda=\ell_{\mathrm{sp}}^{-1}\),
 
 \[
 S_{\Pi,\mathrm{loc}}^\Lambda
-=-rac{1}{2(4\pi)^2}
+=-\frac{1}{2(4\pi)^2}
 \int_M\mathrm d^4x\,\sqrt g
 \left[
 \frac{\Lambda^4}{2}a_0
@@ -103,7 +103,7 @@ The local Einstein term dominates the four-derivative sector when
 \[
 RL_4^2\ll1,
 \qquad
-L_4^2=left|\frac{\beta^{\mathrm{ren}}}{c_{\mathrm{EH}}^{\mathrm{ren}}}\right|.
+L_4^2=\left|\frac{\beta^{\mathrm{ren}}}{c_{\mathrm{EH}}^{\mathrm{ren}}}\right|.
 \]
 
 Under cutoff-dominated matching without cancellations,
