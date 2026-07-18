@@ -112,14 +112,18 @@ This is conditional scaling, not a numerical prediction.
 
 ## Born--Infeld completion
 
-Under the separate coherence-extensivity hypothesis, the tensorial completion of a
-supplied Einstein infrared term remains of determinantal Born--Infeld form:
+Under the separate coherence-extensivity hypothesis, the determinantal Born--Infeld density
 
 \[
-\sqrt{-\det(g_{\mu\nu}+\ell_{\mathrm{sp}}^2R_{\mu\nu})}-\sqrt{-g}.
+\sqrt{-\det(g_{\mu\nu}+\ell_{\mathrm{sp}}^2R_{\mu\nu})}-\sqrt{-g}
 \]
 
-This rigidity statement does not determine the finite Einstein coefficient.
+is an admissible tensorial completion of a supplied Einstein infrared term, but the
+structural conditions do not select it uniquely: the admissible completers form the family
+\(\Phi(X)=\exp\sum_i h(\lambda_i)\) with \(h\) constrained only at the origin and at the
+saturation boundary, containing in particular
+\(\Phi_a(X)=\sqrt{\det(I+X)}\,e^{a\,\mathrm{tr}(X^2)}\) for every real \(a\).
+This classification does not determine the finite Einstein coefficient.
 
 ## Interpretive status
 

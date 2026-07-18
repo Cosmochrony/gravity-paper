@@ -66,8 +66,10 @@
   higher-derivative, and non-local sectors.
   The Einstein term dominates locally when the renormalized coefficient ratio satisfies $R L_4^2\ll1$.
 
-  Under the separate coherence-extensivity hypothesis, the tensorial completion of a supplied Einstein infrared term
-  remains of determinantal Born--Infeld type.
+  Under the separate coherence-extensivity hypothesis, the determinantal Born--Infeld density is an admissible
+  tensorial completion of a supplied Einstein infrared term, but the structural conditions do not select it uniquely:
+  an explicit one-parameter family of distinct admissible completions shares its infrared limit and saturation
+  behaviour.
   \textbf{Interpretive status.}
   Spectral geometry fixes the allowed local structures and their cutoff sensitivities, but it does not yet derive the
   positive finite gravitational coupling.
@@ -695,7 +697,7 @@
     Without that matching assumption, the derivative hierarchy must be stated directly in terms of the renormalized
     coefficient ratio $L_4$.
 
-  \section{Ultraviolet completion: uniqueness of the
+  \section{Ultraviolet completion: admissibility and non-uniqueness of the
   Born--Infeld structure}
   \label{sec:UV-completion}
 
@@ -709,17 +711,24 @@
   effective action is determined by the same spectral
   structure, or requires independent input.
 
-  In the scalar Born--Infeld theory derived
-  in~\cite{Beau2026c}, the saturation bound
-  $|\partial_t \chi| \leq c_{\mathrm{BI}}$ uniquely selects
-  a square-root action density.
-  We now show that the tensorial extension of this result
-  to the gravitational sector is similarly rigid:
-  under admissibility conditions inherited from the
-  framework of~\cite{Beau2026m,Beau2026l}, the
-  determinantal Born--Infeld form is the \emph{unique}
-  admissible spectral tensorial completion of the
-  Einstein--Hilbert sector.
+  In the scalar Born--Infeld theory of~\cite{Beau2026c},
+  the saturation bound
+  $|\partial_t \chi| \leq c_{\mathrm{BI}}$ motivates a
+  square-root action density.
+  We formulate the corresponding admissibility conditions
+  for the gravitational sector, inherited from the
+  framework of~\cite{Beau2026m,Beau2026l}, and classify
+  the completions they allow.
+  The determinantal Born--Infeld form is an admissible
+  spectral tensorial completion of the Einstein--Hilbert
+  sector, but the conditions do not select it uniquely:
+  they determine the completer only through a
+  one-dimensional sector function subject to constraints at
+  the origin and at the saturation boundary, and an
+  explicit one-parameter family of distinct admissible
+  completers realises this freedom.
+  We state the additional input a uniqueness theorem would
+  require.
 
   \subsection{Setup and admissibility conditions}
     \label{subsec:UV-setup}
@@ -835,7 +844,7 @@
       This is structurally analogous to the extensivity of
       thermodynamic entropy for non-interacting subsystems.
       An analytical derivation of~[H-ext] from~A3 would
-      promote the uniqueness theorem below to an unconditional
+      make the classification below an unconditional
       result; pending such a derivation, [H-ext] occupies a
       status analogous to the former open form of~[H-color] in the spectral
       admissibility sub-programme~\cite{Beau2026a36}
@@ -844,15 +853,15 @@
       post-locking coherence functional and does not affect
       the tensorial classification itself: the identification
       of $g^{-1}R$ as the spectral carrier
-      (Lemma~\ref{lem:spectralcarrier}) and the reduction to
-      the scalar BI sector
+      (Lemma~\ref{lem:spectralcarrier}) and the constraints
+      on the sector function
       (Lemma~\ref{lem:1Dreduction}) are both unconditional.
     \end{remark}
 
-  \subsection{Uniqueness of the tensorial completion}
+  \subsection{Classification of the tensorial completions}
     \label{subsec:UV-uniqueness}
 
-    The uniqueness argument proceeds in three lemmas.
+    The classification proceeds in three lemmas.
     Lemmas~\ref{lem:1Dreduction}
     and~\ref{lem:spectralcarrier} are unconditional;
     Lemma~\ref{lem:extensivity-consequence} is conditional
@@ -896,16 +905,23 @@
       choice of eigendirection.
     \end{proof}
 
-    \begin{lemma}[One-dimensional reduction to scalar BI]
+    \begin{lemma}[Constraints on the sector function]
       \label{lem:1Dreduction}
       Under conditions~\textup{(C2)} and~\textup{(C3)},
       the sector function $h$
-      in~\eqref{eq:spectral-decomposition} is uniquely
-      determined:
+      in~\eqref{eq:spectral-decomposition} satisfies
       \begin{equation}\label{eq:h-unique}
-        h(\lambda)
-        = \tfrac{1}{2}\,\log(1 + \lambda)\,.
+        h(0) = 0\,,
+        \qquad
+        h'(0) = \tfrac{1}{2}\,,
+        \qquad
+        \lim_{\lambda \to -1^{+}} h(\lambda) = -\infty\,,
       \end{equation}
+      and, conversely, every smooth
+      $h : (-1, +\infty) \to \mathbb{R}$
+      satisfying~\eqref{eq:h-unique} defines a completer
+      $\Phi(X) = \exp\bigl(\sum_i h(\lambda_i)\bigr)$
+      obeying conditions~\textup{(C1)--(C5)}.
     \end{lemma}
 
     \begin{proof}
@@ -926,28 +942,24 @@
       $\lambda \to -1^+$, hence
       $h(\lambda) \to -\infty$ as $\lambda \to -1^+$.
 
-      \textit{Identification with the scalar sector.}\;
-      By the scalar Born--Infeld uniqueness theorem
-      of~\cite{Beau2026c}, the one-dimensional admissible
-      sector is uniquely and structurally identified with
-      the scalar BI theory: the one-dimensional completer is
-      \[
-        \Phi_{1\mathrm{D}}(\lambda)
-        = \sqrt{1 + \lambda}\,.
-      \]
-      Conditions~(C2) and~(C3) are consequences of this
-      identification rather than independent inputs at the
-      one-dimensional level.
-      Therefore
-      \[
-        h(\lambda)
-        = \log \Phi_{1\mathrm{D}}(\lambda)
-        = \tfrac{1}{2}\,\log(1 + \lambda)\,.
-      \]
-      The uniqueness of $h$ is that of the scalar BI
-      sector established in~\cite{Beau2026c}; the present
-      lemma does not claim independent uniqueness from
-      conditions~(C2) and~(C3) alone.
+      \textit{Sufficiency.}\;
+      Conversely, let $h$ be smooth and
+      satisfy~\eqref{eq:h-unique}.
+      Then $\Phi(X) = \exp\bigl(\sum_i h(\lambda_i)\bigr)$
+      is a symmetric function of the eigenvalues alone,
+      hence obeys~(C1) and~(C4); it is multiplicative over
+      direct sums, hence obeys~(C5); its expansion at small
+      $\|X\|$ is
+      $1 + \tfrac12\,\mathrm{tr}\,X + O(\|X\|^2)$,
+      hence it obeys~(C2); and when one eigenvalue of
+      $I + X$ approaches zero the corresponding term
+      $h(\lambda_i)$ diverges to $-\infty$ while the
+      remaining terms stay bounded, so $\Phi(X) \to 0$ and
+      (C3) holds.
+      Conditions~(C2) and~(C3) therefore constrain only the
+      value and first derivative of~$h$ at the origin and
+      its boundary behaviour at saturation; the remainder of
+      the sector function is left free.
     \end{proof}
 
     \begin{lemma}[Spectral carrier identification]
@@ -1012,8 +1024,8 @@
       Section~\ref{sec:hk-sdw}.
     \end{proof}
 
-    \begin{theorem}[Uniqueness of the admissible tensorial
-    completion]
+    \begin{theorem}[Admissibility and non-uniqueness of the
+    tensorial completion]
       \label{thm:uniqueness-completion}
       Let $\mathcal{C}(g, R)$ be a local covariant scalar
       density of the form~\eqref{eq:completer-form},
@@ -1022,19 +1034,50 @@
       Then, up to the trace ambiguity resolved by the
       heat-kernel analysis of
       Section~\ref{sec:hk-sdw}:
-      \begin{equation}\label{eq:unique-completer}
-        \mathcal{C}(g, R)
-        \;=\;
-        \sqrt{-g}\;
-        \Bigl[\,
-        \sqrt{\det\!\bigl(
-        \delta^{\mu}{}_{\nu}
-        + \ell_{\mathrm{sp}}^{2}\,
-        g^{\mu\alpha} R_{\alpha\nu}
-        \bigr)}
-        \;-\; 1
-        \,\Bigr]\,.
-      \end{equation}
+      \begin{enumerate}
+        \item[\textup{(i)}]
+        the determinantal Born--Infeld density
+        \begin{equation}\label{eq:unique-completer}
+          \mathcal{C}_{\mathrm{BI}}(g, R)
+          \;=\;
+          \sqrt{-g}\;
+          \Bigl[\,
+          \sqrt{\det\!\bigl(
+          \delta^{\mu}{}_{\nu}
+          + \ell_{\mathrm{sp}}^{2}\,
+          g^{\mu\alpha} R_{\alpha\nu}
+          \bigr)}
+          \;-\; 1
+          \,\Bigr]
+        \end{equation}
+        is an admissible completion, corresponding to the
+        sector function
+        $h(\lambda) = \tfrac12\log(1+\lambda)$;
+
+        \item[\textup{(ii)}]
+        it is not the only one: the general admissible
+        completer is
+        \begin{equation}\label{eq:general-completer}
+          \Phi(X)
+          = \exp\!\Bigl(\sum_{i=1}^{d} h(\lambda_i)\Bigr)\,,
+        \end{equation}
+        with $h$ any smooth function satisfying the
+        constraints~\eqref{eq:h-unique}.
+        In particular, the one-parameter family
+        \begin{equation}\label{eq:counterexample-family}
+          \Phi_a(X)
+          \;=\;
+          \sqrt{\det(I + X)}\;
+          \exp\!\bigl(a\,\mathrm{tr}\,X^2\bigr)\,,
+          \qquad a \in \mathbb{R}\,,
+        \end{equation}
+        corresponding to
+        $h_a(\lambda) = \tfrac12\log(1+\lambda)
+        + a\lambda^2$, satisfies~\textup{(C1)--(C5)} for
+        every~$a$ and differs from
+        $\Phi_0 = \sqrt{\det(I+X)}$ at second order in the
+        infrared expansion.
+      \end{enumerate}
     \end{theorem}
 
     \begin{proof}
@@ -1045,28 +1088,73 @@
       By Lemma~\ref{lem:extensivity-consequence}
       (conditional on~[H-ext]),
       $\Phi(X) = \exp\!\bigl(\sum_i h(\lambda_i)\bigr)$.
-      By Lemma~\ref{lem:1Dreduction},
-      $h(\lambda) = \tfrac{1}{2}\log(1 + \lambda)$.
-      Therefore:
+      By Lemma~\ref{lem:1Dreduction}, admissibility is
+      equivalent to the constraints~\eqref{eq:h-unique}
+      on~$h$.
+      The choice $h(\lambda) = \tfrac12\log(1+\lambda)$
+      satisfies them, and gives
       \[
         \Phi(X)
         = \exp\!\Bigl(\,
         \tfrac{1}{2}\sum_i \log(1 + \lambda_i)
         \Bigr)
         = \sqrt{\,\prod_i (1 + \lambda_i)}
-        = \sqrt{\det(I + X)}\,.
+        = \sqrt{\det(I + X)}\,,
       \]
-      Substituting into~\eqref{eq:completer-form}
-      gives~\eqref{eq:unique-completer}.
+      which proves~(i) upon substitution
+      into~\eqref{eq:completer-form}.
+      For~(ii), each $h_a$ is smooth on $(-1,+\infty)$ with
+      $h_a(0) = 0$, $h_a'(0) = \tfrac12$, and
+      $h_a(\lambda) \to -\infty$ as $\lambda \to -1^{+}$,
+      since the quadratic term stays bounded there; by the
+      sufficiency part of Lemma~\ref{lem:1Dreduction},
+      every $\Phi_a$ obeys~(C1)--(C5).
+      For $a \neq 0$ the completers are distinct:
+      $\Phi_a(X)
+      = \Phi_0(X)\,
+      \bigl(1 + a\,\mathrm{tr}\,X^2 + O(\|X\|^4)\bigr)$.
     \end{proof}
 
+    \begin{remark}[Input required for a uniqueness theorem]
+      \label{rem:uniqueness-input}
+      Conditions~(C1)--(C5) fix the completer only through
+      the constraints~\eqref{eq:h-unique}; selecting
+      $h(\lambda) = \tfrac12\log(1+\lambda)$ within the
+      family~\eqref{eq:general-completer} requires input
+      beyond them.
+      Three candidate sources of such input are open.
+      First, a derived reduction of the tensorial sector
+      function to the scalar saturation profile
+      of~\cite{Beau2026c} would fix $h$ pointwise; at
+      present no construction identifies the eigenvalue
+      sectors of the curvature endomorphism with the scalar
+      Born--Infeld degree of freedom.
+      Second, matching the infrared expansion of $\Phi$
+      beyond first order to independently computed
+      higher-order heat-kernel data would eliminate
+      polynomial deformations order by order; carried to
+      all orders this would amount to specifying $\Phi$
+      rather than deriving it, so only finitely many orders
+      can legitimately serve as input.
+      Third, a propagation condition on the induced field
+      equations---absence of additional characteristics or
+      of birefringence, in the sense in which exceptional
+      propagation selects Born--Infeld electrodynamics among
+      its nonlinear
+      deformations~\cite{Boillat1970,Plebanski1970}---could
+      single out the determinantal form; whether the
+      spectral framework implies such a condition is open.
+    \end{remark}
+
     Using $\det(g \cdot A) = \det g \cdot \det A$, the
-    result takes the equivalent Eddington--Born--Infeld form:
+    determinantal member takes the equivalent
+    Eddington--Born--Infeld form:
 
     \begin{corollary}[Eddington--Born--Infeld action]
       \label{cor:EBI}
-      Under the hypotheses of
-      Theorem~\ref{thm:uniqueness-completion},
+      For the determinantal
+      member~\eqref{eq:unique-completer} of the admissible
+      family of Theorem~\ref{thm:uniqueness-completion},
       the gravitational action takes the form
       \begin{equation}\label{eq:EBI-action}
         S_{\mathrm{coh}}^{\mathrm{full}}[g]
@@ -1092,11 +1180,16 @@
       The action~\eqref{eq:EBI-action} coincides in form
       with Eddington-inspired Born--Infeld gravitational
       actions studied independently in the modified gravity
-      literature.
-      The present derivation differs in two respects.
+      literature~\cite{DeserGibbons1998,BanadosFerreira2010}.
+      The present setting differs in two respects.
       First, the EiBI form is not postulated as a modified
-      gravity model but derived as a structural rigidity from
-      admissibility conditions.
+      gravity model but arises as a distinguished member of
+      the family of completions allowed by the admissibility
+      conditions---the member whose sector function carries
+      no deformation beyond the
+      constraints~\eqref{eq:h-unique}; its selection within
+      that family is an open problem
+      (Remark~\ref{rem:uniqueness-input}).
       Second, the spectral capacity length $\ell_{\mathrm{sp}}$ specifies the physical cutoff entering the
       power-sensitive contributions.
       It does not by itself fix the finite Newton constant.
@@ -1130,8 +1223,8 @@
 
     \begin{remark}
       Lemma~\ref{lem:1Dreduction} is unconditional:
-      it follows from the scalar Born--Infeld uniqueness
-      of~\cite{Beau2026c}.
+      it is an elementary analysis of
+      conditions~(C2) and~(C3).
       Lemma~\ref{lem:spectralcarrier} is unconditional:
       it is a classification result in Riemannian geometry.
       Lemma~\ref{lem:extensivity-consequence} is conditional
@@ -1143,6 +1236,9 @@
       The conditionality is sharply localised: it resides
       entirely in the passage from non-factorisability
       (Axiom~A3) to extensivity of~$S_{\mathrm{coh}}$.
+      The selection of the determinantal member within the
+      admissible family is a separate, open problem
+      (Remark~\ref{rem:uniqueness-input}).
     \end{remark}
 
   \section{Discussion and outlook}
@@ -1350,15 +1446,18 @@
     Third, the finite value and sign of the Newton constant are matching data.
     The minimal scalar cutoff contribution is negative with the determinant convention used here, and additional
     operator content or a finite renormalization condition is required to obtain the observed positive coefficient.
-    The uniqueness result of Section~\ref{sec:UV-completion} constrains the
-    functional form of this completion but does not fix its overall
-    normalisation independently of the matter content.
+    The classification of Section~\ref{sec:UV-completion} constrains the
+    functional form of this completion but fixes neither the member of the
+    admissible family nor its overall normalisation independently of the
+    matter content.
 
     Fourth, Hypothesis~[H-ext]
     (Section~\ref{subsec:UV-setup}) has not yet been
     derived analytically from the Foundation axioms.
-    The uniqueness of the Born--Infeld tensorial completion is conditional
-    on this hypothesis.
+    The spectral classification of the tensorial completions is conditional
+    on this hypothesis, and even under it the admissibility conditions leave
+    the Born--Infeld member non-uniquely selected within the
+    family~\eqref{eq:general-completer}.
 
     Finally, the present work focuses on the emergence of the effective
     gravitational field equations.
@@ -1411,9 +1510,10 @@
 
       \item Investigation of regimes in which higher-order curvature
       contributions become relevant.
-      Section~\ref{sec:UV-completion} identifies the unique admissible
-      non-perturbative completion in the Born--Infeld class; the resulting
-      strong-curvature dynamics and its predictions for
+      Section~\ref{sec:UV-completion} identifies the Born--Infeld density
+      as an admissible non-perturbative completion within an explicitly
+      parametrised family; the resulting strong-curvature dynamics, its
+      dependence on the family parameter, and its predictions for
       gravitational collapse, bouncing cosmologies, and singularity
       resolution remain to be explored.
 
