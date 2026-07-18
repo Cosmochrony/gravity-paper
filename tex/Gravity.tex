@@ -651,8 +651,8 @@
       -\frac{\Lambda^2}{6(4\pi)^2}.
       \label{eq:cEH-cutoff-running}
     \end{equation}
-    The missing factor $\Lambda^2$ in the previous version was the signature of an incorrect conflation of this
-    quadratic cutoff sensitivity with zeta-scale running.
+    Conflating this quadratic cutoff sensitivity with zeta-scale running drops a factor $\Lambda^2$; the two
+    prescriptions must be kept separate.
     Zeta-scale dependence in four dimensions is instead governed by $a_4$ through~\eqref{eq:zeta-running-a4}.
 
     The renormalized coefficient has the schematic matching form
@@ -747,7 +747,10 @@
       \sqrt{-g}\;\bigl[\,\Phi(X) - 1\,\bigr]\,,
     \end{equation}
     where $\Phi$ is a smooth scalar function of the
-    endomorphism~$X$.
+    endomorphism~$X$, and the density is written in the
+    Lorentzian continuation convention of
+    Section~\ref{sec:discussion}, the algebra being
+    signature-independent.
     The effective gravitational action is then
     \[
       S_{\mathrm{coh}}^{\mathrm{full}}[g]
@@ -782,7 +785,8 @@
       \item[\textbf{(C3)}]
       \textit{Algebraic Born--Infeld saturation.}\;
       $\Phi(X) \to 0$ as any eigenvalue of $(I + X)$
-      approaches zero.
+      approaches zero, with the remaining eigenvalues of $X$
+      confined to a compact subset of $(-1,+\infty)$.
       The completer density vanishes at maximal admissible
       curvature rather than diverging, in accordance with
       the capacity bound
@@ -827,6 +831,12 @@
         =
         S_{\mathrm{coh}}(X_1) + S_{\mathrm{coh}}(X_2)\,.
       \end{equation}
+      In particular, the eigenvalue sectors of the curvature
+      endomorphism at a point are taken to qualify as
+      admissibly independent after projection locking, so
+      that extensivity applies to the rank-one spectral
+      decomposition used in
+      Lemma~\ref{lem:extensivity-consequence}.
     \end{hypothesis}
 
     \begin{remark}
@@ -1140,8 +1150,9 @@
       equations---absence of additional characteristics or
       of birefringence, in the sense in which exceptional
       propagation selects Born--Infeld electrodynamics among
-      its nonlinear
-      deformations~\cite{Boillat1970,Plebanski1970}---could
+      the nonlinear Lagrangians $L(S,P)$ with a Maxwell
+      limit, Maxwell theory being the linear
+      case~\cite{Boillat1970,Plebanski1970}---could
       single out the determinantal form; whether the
       spectral framework implies such a condition is open.
     \end{remark}
@@ -1226,7 +1237,8 @@
       it is an elementary analysis of
       conditions~(C2) and~(C3).
       Lemma~\ref{lem:spectralcarrier} is unconditional:
-      it is a classification result in Riemannian geometry.
+      it is a classification result given the
+      non-degeneracy requirement.
       Lemma~\ref{lem:extensivity-consequence} is conditional
       on~[H-ext], whose derivation from Axiom~A3
       of~\cite{Beau2026m} is structurally motivated but
