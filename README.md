@@ -135,8 +135,10 @@ identity, the infrared limit and the heat-kernel coefficient leave a trace param
 \(X=\ell_{\mathrm{sp}}^2g^{-1}\mathrm{Ric}\).
 All carriers give the same linear term; second-order data determine at most \(|1-\alpha d|\), leaving the pair
 \(\{\alpha,2/d-\alpha\}\), and the carriers differ in their saturation boundary.
-The saturation condition, applied as stated to the eigenvalues of \(I+X\), selects \(\alpha=0\); the
-non-uniqueness of the completion lies in \(h\).
+Among the completers \(\exp\sum_i h(\mu_i)\) built on these carriers, with \(\mu_i\) the eigenvalues of the
+carrier and \(h\) obeying the constraints above, the saturation condition, applied as stated to the eigenvalues of
+\(I+X\), selects \(\alpha=0\) (Theorem 1(o), which does not use [H-ext]); the non-uniqueness of the completion
+lies in \(h\).
 This classification does not determine the finite Einstein coefficient.
 
 ## Interpretive status
