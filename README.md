@@ -103,8 +103,7 @@ finite value or sign of this coefficient.
 Additional operator content and a renormalization condition are required to obtain the
 observed positive Newton constant.
 
-When the matched Einstein coefficient is non-zero, the local Einstein term dominates the four-derivative sector
-when
+For a non-zero matched Einstein coefficient, the local Einstein term dominates the four-derivative sector when
 
 \[
 RL_4^2\ll1,
