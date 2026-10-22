@@ -129,11 +129,14 @@ structural conditions do not select it uniquely: the admissible completers form 
 \(\Phi(X)=\exp\sum_i h(\lambda_i)\) with \(h\) constrained only at the origin and at the
 saturation boundary, containing in particular
 \(\Phi_a(X)=\sqrt{\det(I+X)}\,e^{a\,\mathrm{tr}(X^2)}\) for every real \(a\).
-The spectral carrier is also fixed only up to a trace parameter \(\alpha\neq1/d\):
+Among carriers linear in the curvature, of two-derivative order and with a spectrum that is not a multiple of the
+identity, the infrared limit and the heat-kernel coefficient leave a trace parameter \(\alpha\neq1/d\) free:
 \(Y_\alpha=\tfrac{t}{d}I+X_0/(1-\alpha d)\), with \(t=\mathrm{tr}\,X\) and \(X_0\) the traceless part of
 \(X=\ell_{\mathrm{sp}}^2g^{-1}\mathrm{Ric}\).
-All carriers give the same linear term; they differ at second order and in their saturation boundary, and
-\(\alpha=0\) is a convention.
+All carriers give the same linear term; second-order data determine at most \(|1-\alpha d|\), leaving the pair
+\(\{\alpha,2/d-\alpha\}\), and the carriers differ in their saturation boundary.
+The saturation condition, applied as stated to the eigenvalues of \(I+X\), selects \(\alpha=0\); the
+non-uniqueness of the completion lies in \(h\).
 This classification does not determine the finite Einstein coefficient.
 
 ## Interpretive status

@@ -70,8 +70,7 @@
   Under the separate coherence-extensivity hypothesis, the determinantal Born--Infeld density is an admissible
   tensorial completion of a supplied Einstein infrared term, but the structural conditions do not select it uniquely:
   an explicit one-parameter family of distinct admissible completions shares its infrared limit and saturation
-  behaviour, and the spectral carrier is fixed only up to a trace parameter, which leaves the linear term unchanged
-  and moves the saturation boundary.
+  behaviour; the spectral carrier is selected by the saturation condition on the Ricci endomorphism.
   \textbf{Interpretive status.}
   Spectral geometry fixes the allowed local structures and their cutoff sensitivities, but it does not yet derive the
   positive finite gravitational coupling.
@@ -167,7 +166,7 @@
       order into Einstein, quadratic-curvature, and non-local pieces.
       In Section~\ref{subsec:ir-hierarchy}
       , we formulate the infrared hierarchy as a covariant derivative expansion and
-      state the dominance criterion \(R\,\ell_{\mathrm{sp}}^2\ll 1\).
+      state the dominance criterion \(R\,L_4^2\ll 1\) for a non-zero matched Einstein coefficient.
       In Section~\ref{sec:newton-identification}
       , we discuss the cutoff-sensitive contribution and the matching definition of the effective Newton coupling.
       We conclude in Section~\ref{sec:discussion} with limitations and outlook.
@@ -747,7 +746,7 @@
       X^{\mu}{}_{\nu}
       \;=\;
       \ell_{\mathrm{sp}}^{2}\,
-      g^{\mu\alpha}\, R_{\alpha\nu}\,.
+      g^{\mu\rho}\, R_{\rho\nu}\,.
     \end{equation}
     A local covariant completer takes the form
     \begin{equation}\label{eq:completer-form}
@@ -757,10 +756,10 @@
     \end{equation}
     where $\Phi$ is a smooth scalar function of the
     endomorphism~$X$.
-    Lemma~\ref{lem:spectralcarrier} below shows that $X$ is the member $\alpha = 0$ of a family $Y_\alpha$ of
-    spectral carriers, none of which is selected by the conditions that follow; those conditions and
-    Lemmas~\ref{lem:extensivity-consequence} and~\ref{lem:1Dreduction} are stated for the argument of $\Phi$ and
-    hold for every member, with $X$ replaced by $Y_\alpha$.
+    Lemma~\ref{lem:spectralcarrier} below shows that, under its restrictions, the possible arguments of $\Phi$ form
+    a family $Y_\alpha$ of spectral carriers, of which $X$ is the member $\alpha = 0$.
+    Conditions~(C3) and~(C5) below are stated for the curvature endomorphism $X$ and its eigenvalue sectors;
+    Theorem~\ref{thm:uniqueness-completion} shows that, so applied, they select $\alpha = 0$.
     The density is written with $\sqrt{-g}$, the form it would take after a continuation to Lorentzian signature;
     that continuation is not performed here (Section~\ref{subsec:limitations}), and on the Riemannian section
     $\sqrt{-g}$ is read as $\sqrt{g}$.
@@ -873,7 +872,8 @@
       Hypothesis~[H-ext] concerns only the extensivity of the
       post-locking coherence functional.
       The classification of the spectral carriers (Lemma~\ref{lem:spectralcarrier}), which holds under the
-      restriction stated in that lemma and leaves a trace parameter free, and the constraints on the sector function
+      restriction stated in that lemma and, within its scope, leaves a trace parameter free, and the constraints on
+      the sector function
       (Lemma~\ref{lem:1Dreduction}) do not use it.
     \end{remark}
 
@@ -999,16 +999,20 @@
         \alpha \neq \frac{1}{d}\,,
       \end{equation}
       where $X_0 = X - (t/d)\,I$ is the traceless part of the mixed Ricci endomorphism~\eqref{eq:mixed-ricci}.
-      Every member has trace~$t$, so all members induce the same linear (Einstein) term.
-      The family is not reduced further by conditions~\textup{(C1)--(C4)} or by the $a_2$ coefficient: the members
-      differ by a rescaling of the traceless part, and
+      Every member has trace~$t$, so all members induce the same linear (Einstein) term, and
       \begin{equation}\label{eq:carrier-second-order}
         \mathrm{tr}\, Y_\alpha^{2} - \mathrm{tr}\, X^{2}
         \;=\;
         \Bigl[(1 - \alpha d)^{-2} - 1\Bigr]\, \mathrm{tr}\, X_0^{2}\,,
       \end{equation}
-      which is non-zero for $\alpha \neq 0$ whenever $X_0 \neq 0$.
-      The member $\alpha = 0$, $Y_0 = X$, is a convention.
+      which vanishes for $\alpha = 0$ and for $\alpha = 2/d$, and is non-zero for every other $\alpha$ whenever
+      $X_0 \neq 0$.
+      Within the restriction of the lemma, the members are distinguished neither by
+      conditions~\textup{(C1)}, \textup{(C2)}, \textup{(C4)} nor by the $a_2$ coefficient, and second-order data
+      determine at most $|1 - \alpha d|$, leaving the pair $\{\alpha,\, 2/d - \alpha\}$.
+      Conditions~\textup{(C3)} and~\textup{(C5)} are not used in the lemma; Theorem~\ref{thm:uniqueness-completion}
+      shows that, applied as stated to the curvature endomorphism $X$ and its eigenvalue sectors, they select
+      $\alpha = 0$.
     \end{lemma}
 
     \begin{proof}
@@ -1028,10 +1032,12 @@
       An overall rescaling of the argument that is not compensated by the trace normalisation is a redefinition of
       $\ell_{\mathrm{sp}}^{2}$.
       Since $X_0$ is traceless, $\mathrm{tr}\, Y_\alpha^{2} = t^{2}/d + (1-\alpha d)^{-2}\,\mathrm{tr}\, X_0^{2}$ and
-      $\mathrm{tr}\, X^{2} = t^{2}/d + \mathrm{tr}\, X_0^{2}$, which gives~\eqref{eq:carrier-second-order}.
+      $\mathrm{tr}\, X^{2} = t^{2}/d + \mathrm{tr}\, X_0^{2}$, which gives~\eqref{eq:carrier-second-order}; the
+      bracket vanishes exactly when $1 - \alpha d = \pm 1$.
+      More generally, every second-order invariant of $Y_\alpha$ is a combination of $t^{2}$ and
+      $(1-\alpha d)^{-2}\,\mathrm{tr}\,X_0^{2}$, so second-order data determine at most $(1-\alpha d)^{2}$.
       Conditions~(C1) and~(C4) concern only the dependence of~$\Phi$ on the eigenvalues of its argument, and~(C2)
-      and~(C3) constrain~$\Phi$ at the origin and at the saturation boundary of its argument; none of them involves
-      $\alpha$.
+      fixes the trace normalisation; none of them involves $\alpha$.
       The coefficient $a_2 = R/6$ is first-order data: it fixes the trace normalisation and not $\alpha$.
     \end{proof}
 
@@ -1039,42 +1045,50 @@
       \label{rem:carrier-domains}
       For $\alpha > 1/d$ the traceless part of $Y_\alpha$ changes sign, while the isotropic part $(t/d)\,I$ is the
       same for every~$\alpha$; the carrier as a whole is not opposite to the Ricci endomorphism.
-      Conditions~(C1)--(C4) exclude neither branch.
-      An application that requires the sign of the traceless part to be preserved must impose $\alpha < 1/d$ as an
-      additional condition.
+      The lemma keeps both branches.
+      The two members of a pair $\{\alpha,\, 2/d - \alpha\}$ have traceless parts of opposite signs and equal second
+      moments; data of third order can distinguish them, through terms odd in $X_0$, but need not.
 
-      With $\nu_i$ the eigenvalues of $X_0$, the admissibility domain of the carrier $Y_\alpha$, on which every
-      eigenvalue of $I + Y_\alpha$ is positive, is
+      With $\nu_i$ the eigenvalues of $X_0$, the domain of the carrier $Y_\alpha$, on which every eigenvalue of
+      $I + Y_\alpha$ is positive, is
       \begin{equation}\label{eq:carrier-domain}
         D_\alpha
         \;=\;
-        \Bigl\{ X :\ 1 + \frac{t}{d} + \frac{\nu_i}{1 - \alpha d} > 0 \ \text{ for all } i \Bigr\},
+        \Bigl\{ X :\ 1 + \frac{t}{d} + \frac{\nu_i}{1 - \alpha d} > 0 \ \text{ for all } i \Bigr\}.
       \end{equation}
-      and its saturation boundary, where condition~(C3) applies, is where one of these factors vanishes.
       In the isotropic direction $X = \lambda I$ every factor equals $1 + \lambda$, and the boundary is
       $\lambda = -1$ for every~$\alpha$.
       Along a rank-one direction $X = \lambda P$, with $P$ a unit projector, the factor along $P$ is
-      $1 + \lambda(1-\alpha)/(1-\alpha d)$, which vanishes at $\lambda_{P} = -(1-\alpha d)/(1-\alpha)$, and the
-      $d-1$ transverse factors are $1 - \alpha\lambda/(1-\alpha d)$, which vanish at
+      $1 + \lambda(1-\alpha)/(1-\alpha d)$, which for $\alpha \neq 1$ vanishes at
+      $\lambda_{P} = -(1-\alpha d)/(1-\alpha)$ and is identically $1$ for $\alpha = 1$, and the
+      $d-1$ transverse factors are $1 - \alpha\lambda/(1-\alpha d)$, which for $\alpha \neq 0$ vanish at
       $\lambda_{\perp} = (1-\alpha d)/\alpha$.
       The admissible interval of~$\lambda$ is the intersection of the two corresponding half-lines:
       $(\lambda_P, +\infty)$ for $\alpha < 0$, $(-1, +\infty)$ for $\alpha = 0$, $(\lambda_P, \lambda_\perp)$ for
       $0 < \alpha < 1/d$, $(\lambda_\perp, \lambda_P)$ for $1/d < \alpha < 1$, and $(\lambda_\perp, +\infty)$ for
       $\alpha \geq 1$.
-      The saturation boundary therefore moves with~$\alpha$ in every anisotropic direction, and for $\alpha \neq 0$
-      it can be reached through the transverse factors rather than through the factor along~$P$.
+      The boundary of $D_\alpha$ therefore moves with~$\alpha$ in every anisotropic direction, and for
+      $\alpha \neq 0$ it can be reached through the transverse factors rather than through the factor along~$P$.
+      Only for $\alpha = 0$ does it coincide with the saturation boundary named in condition~(C3), where an
+      eigenvalue of $I + X$ vanishes.
     \end{remark}
 
     \begin{theorem}[Admissibility and non-uniqueness of the
     tensorial completion]
       \label{thm:uniqueness-completion}
       Let $\mathcal{C}(g, R)$ be a local covariant scalar
-      density of the form~\eqref{eq:completer-form}, with $\Phi$ evaluated on a carrier $Y_\alpha$ of
+      density of the form~\eqref{eq:completer-form}, with the argument of $\Phi$ a carrier of
       Lemma~\ref{lem:spectralcarrier},
       satisfying conditions~\textup{(C1)--(C4)} and
-      Hypothesis~\textup{[H-ext]}.
+      Hypothesis~\textup{[H-ext]}, with~\textup{(C3)} and~\textup{(C5)} applied, as stated, to the curvature
+      endomorphism~$X$ and to its eigenvalue sectors.
       Then:
       \begin{enumerate}
+        \item[\textup{(o)}]
+        among the completers $\Phi = \exp\sum_i h(\mu_i)$ built on a carrier $Y_\alpha$ of
+        Lemma~\ref{lem:spectralcarrier}, with $\mu_i$ its eigenvalues and $h$ obeying~\eqref{eq:h-unique}, only
+        $\alpha = 0$ satisfies~\textup{(C3)} as stated: the carrier is the mixed Ricci endomorphism~$X$;
+
         \item[\textup{(i)}]
         the determinantal Born--Infeld density
         \begin{equation}\label{eq:unique-completer}
@@ -1085,12 +1099,12 @@
           \sqrt{\det\!\bigl(
           \delta^{\mu}{}_{\nu}
           + \ell_{\mathrm{sp}}^{2}\,
-          g^{\mu\alpha} R_{\alpha\nu}
+          g^{\mu\rho} R_{\rho\nu}
           \bigr)}
           \;-\; 1
           \,\Bigr]
         \end{equation}
-        is an admissible completion, corresponding to the carrier $\alpha = 0$ and the
+        is an admissible completion, corresponding to the
         sector function
         $h(\lambda) = \tfrac12\log(1+\lambda)$;
 
@@ -1098,12 +1112,10 @@
         it is not the only one: the general admissible
         completer is
         \begin{equation}\label{eq:general-completer}
-          \Phi_{h,\alpha}(X)
-          = \exp\!\Bigl(\sum_{i=1}^{d} h(\mu_i)\Bigr)\,,
-          \qquad X \in D_\alpha\,,
+          \Phi(X)
+          = \exp\!\Bigl(\sum_{i=1}^{d} h(\lambda_i)\Bigr)\,,
         \end{equation}
-        where $\mu_i$ are the eigenvalues of $Y_\alpha$, $D_\alpha$ is the domain~\eqref{eq:carrier-domain},
-        $\alpha \neq 1/d$, and $h$ is any smooth function satisfying the
+        with $h$ any smooth function satisfying the
         constraints~\eqref{eq:h-unique}.
         In particular, the one-parameter family
         \begin{equation}\label{eq:counterexample-family}
@@ -1113,26 +1125,42 @@
           \exp\!\bigl(a\,\mathrm{tr}\,X^2\bigr)\,,
           \qquad a \in \mathbb{R}\,,
         \end{equation}
-        corresponding to $\alpha = 0$ and
+        corresponding to
         $h_a(\lambda) = \tfrac12\log(1+\lambda)
         + a\lambda^2$, satisfies~\textup{(C1)--(C5)} for
         every~$a$ and differs from
         $\Phi_0 = \sqrt{\det(I+X)}$ at second order in the
-        infrared expansion; and the determinantal completers on the other carriers,
-        $\sqrt{\det(I + Y_\alpha)}$ for $\alpha \neq 0$, agree with $\Phi_0$ at first order and differ from it at
-        second order and in their saturation boundary.
+        infrared expansion.
       \end{enumerate}
     \end{theorem}
 
     \begin{proof}
-      By Lemma~\ref{lem:spectralcarrier}, the argument of $\Phi$ is a carrier $Y_\alpha$, with eigenvalues $\mu_i$.
+      \textit{(o)}\;
+      Let $\Phi = \exp\sum_i h(\mu_i)$ on a carrier $Y_\alpha$, with $h$ smooth, hence finite, on $(-1, +\infty)$
+      and divergent only as its argument tends to $-1$ (Lemma~\ref{lem:1Dreduction}).
+      In an eigenbasis of $X$, $\mu_i = (\lambda_i - \alpha t)/(1 - \alpha d)$.
+      Let $\lambda_1 \to -1$ while the remaining eigenvalues of $X$ range over a compact subset of $(-1, +\infty)$
+      with non-empty interior, as in~(C3), and write $s = \lambda_2 + \cdots + \lambda_d$.
+      The eigenvalue $\mu_1$ then tends to $(-1 + \alpha - \alpha s)/(1 - \alpha d)$, which equals $-1$ for all such
+      $s$ only if $\alpha(1 - d - s) = 0$ identically, that is only if $\alpha = 0$; the remaining $\mu_j$ tend to
+      values that are not $-1$ for generic $\lambda_j$.
+      For $\alpha \neq 0$ the completer therefore either leaves its domain before an eigenvalue of $I + X$ vanishes,
+      or tends to a finite non-zero value there, and~(C3) fails.
+      Hence $\alpha = 0$ and the carrier is $X$.
+      Since a symmetric function of the eigenvalues of $Y_\alpha$ is also a symmetric function of those of $X$, the
+      carrier matters only through the form in which the conditions are imposed; with~(C3) and~(C5) imposed on $X$
+      and its eigenvalue sectors, as stated, the completer is a function of the eigenvalues of $X$, and extensivity
+      over those sectors, which [H-ext] asserts, is the property used in
+      Lemma~\ref{lem:extensivity-consequence}.
+
+      \textit{(i) and (ii)}\;
       By Lemma~\ref{lem:extensivity-consequence}
       (conditional on~[H-ext]),
-      $\Phi = \exp\!\bigl(\sum_i h(\mu_i)\bigr)$.
+      $\Phi(X) = \exp\!\bigl(\sum_i h(\lambda_i)\bigr)$.
       By Lemma~\ref{lem:1Dreduction}, admissibility is
       equivalent to the constraints~\eqref{eq:h-unique}
-      on~$h$, on the domain $D_\alpha$ where every $\mu_i > -1$.
-      For $\alpha = 0$ the choice $h(\lambda) = \tfrac12\log(1+\lambda)$
+      on~$h$.
+      The choice $h(\lambda) = \tfrac12\log(1+\lambda)$
       satisfies them, and gives
       \[
         \Phi(X)
@@ -1154,20 +1182,25 @@
       $\Phi_a(X)
       = \Phi_0(X)\,
       \bigl(1 + a\,\mathrm{tr}\,X^2 + O(\|X\|^4)\bigr)$.
-      For the carriers, $\tfrac12\log\det(I + Y_\alpha) = \tfrac12\,\mathrm{tr}\,Y_\alpha
-      - \tfrac14\,\mathrm{tr}\,Y_\alpha^{2} + O(\|X\|^3)$; the first term equals $\tfrac12\, t$ for every $\alpha$,
-      and by~\eqref{eq:carrier-second-order} the second differs from its value at $\alpha = 0$ by
-      $-\tfrac14\bigl[(1-\alpha d)^{-2} - 1\bigr]\mathrm{tr}\,X_0^{2}$.
-      The saturation boundaries differ, as shown in the remark following Lemma~\ref{lem:spectralcarrier}.
     \end{proof}
+
+    \begin{remark}[Extensivity over curvature sectors and the carrier]
+      Hypothesis~[H-ext], applied to the eigenvalue sectors of $X$, is satisfied by the carrier $\alpha = 0$
+      (Lemma~\ref{lem:extensivity-consequence}).
+      For a carrier $Y_\alpha$ with $\alpha \neq 0$ the eigenvalues $\mu_i$ depend on the total trace $t$, which
+      couples the sectors: at second order, multiplicativity of $\exp\sum_i h(\mu_i)$ over the rank-one sectors of
+      $X$ fails by a term proportional to $\alpha(\alpha d - 2)\,h''(0)$.
+      The selection of the carrier in Theorem~\ref{thm:uniqueness-completion} rests on~(C3); the non-uniqueness of
+      the completion lies in the sector function~$h$.
+    \end{remark}
 
     \begin{remark}[Input required for a uniqueness theorem]
       \label{rem:uniqueness-input}
       Conditions~(C1)--(C5) fix the completer only through
       the constraints~\eqref{eq:h-unique}; selecting
-      $h(\lambda) = \tfrac12\log(1+\lambda)$ and the carrier $\alpha = 0$ within the
+      $h(\lambda) = \tfrac12\log(1+\lambda)$ within the
       family~\eqref{eq:general-completer} requires input
-      beyond them.
+      beyond them; the carrier is selected by~(C3) (Theorem~\ref{thm:uniqueness-completion}(o)).
       Three candidate sources of such input are open.
       First, a derived reduction of the tensorial sector
       function to the scalar saturation profile
@@ -1181,10 +1214,8 @@
       polynomial deformations order by order; carried to
       all orders this would amount to specifying $\Phi$
       rather than deriving it, so only finitely many orders
-      can legitimately serve as input.
-      At second order such data would also have to fix $\alpha$ through~\eqref{eq:carrier-second-order};
-      the present analysis supplies none, since the coefficient $a_4$ fixes logarithmic beta functions and not
-      finite values (Section~\ref{subsec:four-derivative}).
+      can legitimately serve as input; the present analysis supplies none, since the coefficient $a_4$ fixes
+      logarithmic beta functions and not finite values (Section~\ref{subsec:four-derivative}).
       Third, a propagation condition on the induced field
       equations---absence of additional characteristics or
       of birefringence, in the sense in which exceptional
@@ -1235,7 +1266,7 @@
       First, the EiBI form is not postulated as a modified
       gravity model but arises as a distinguished member of
       the family of completions allowed by the admissibility
-      conditions---the member whose carrier is the mixed Ricci endomorphism ($\alpha = 0$) and whose sector
+      conditions---the member, on the carrier selected by~(C3), whose sector
       function carries no deformation beyond the
       constraints~\eqref{eq:h-unique}; its selection within
       that family is an open problem
@@ -1278,7 +1309,8 @@
       conditions~(C2) and~(C3).
       Lemma~\ref{lem:spectralcarrier} does not use [H-ext] either:
       it is an elementary classification under its stated restriction to linear two-derivative carriers whose
-      spectrum is not a multiple of the identity, and it leaves the trace parameter $\alpha$ free.
+      spectrum is not a multiple of the identity, and within its scope it leaves the trace parameter $\alpha$ free;
+      Theorem~\ref{thm:uniqueness-completion}(o) selects $\alpha = 0$ through~(C3) applied to $X$.
       Lemma~\ref{lem:extensivity-consequence} is conditional
       on~[H-ext], whose derivation from Axiom~A3
       of~\cite{Beau2026m} is structurally motivated but
@@ -1323,7 +1355,8 @@
     and logarithmic four-derivative terms.
     Non-local form factors and logarithmic local contributions are retained explicitly.
 
-    In the regime $RL_4^2\ll1$, the local two-derivative Einstein term dominates over higher-derivative contributions.
+    For a non-zero matched Einstein coefficient and $RL_4^2\ll1$, the local two-derivative Einstein term dominates over
+    the four-derivative contributions, by power counting.
     Under cutoff-dominated matching one has parametrically $L_4=O(\ell_{\mathrm{sp}})$ and
     $G_N=O(\ell_{\mathrm{sp}}^2)$, but neither the sign nor the numerical coefficient of $G_N$ follows from the single
     determinant.
@@ -1395,11 +1428,12 @@
     non-zero spatial limit operator is the unestablished input [H-L].
     Under [H-L] and the open lifting hypothesis [H-lift], which Q9~\cite{Beau2026q9} does not discharge,
     Q5b~\cite{Beau2026q5b} gives the co-metric $\mathrm{diag}(-A_\tau, A_H, A_H, 0)$ of rank three, with an empty
-    central slot.
+    central slot and a stipulated temporal part.
     No value of $A_\tau$, $A_H$ or of a central coefficient is established: Q8~\cite{BeauQ8} shows that the
-    commutator supplies no central coefficient and that invariance leaves the common value $2\lambda$ of an isotropic
-    spatial form free, Q10~\cite{Beau2026q10} derives no value, and Q11~\cite{Beau2026q11} shows that spatial
-    $\mathrm{SU}(2)$ invariance leaves $A_\tau$ free.
+    commutator supplies no central coefficient and that, for a supplied positive rank-three spatial form invariant
+    under the full $\mathfrak{su}(2)$ action, $A_H = A_Z = 2\lambda$ with $\lambda$ free, Q10~\cite{Beau2026q10}
+    derives no value, and Q11~\cite{Beau2026q11} shows that spatial $\mathrm{SU}(2)$ invariance leaves $A_\tau$
+    free.
     A four-dimensional co-metric $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$ follows only for a supplied
     rank-four extension satisfying the hypotheses of Q11, Corollary~6.1, and its signature is a hypothesis of that
     construction; the convergence of the admissibility weights, Hypothesis~[H-w], remains open~\cite{Beau2026w1}.
@@ -1495,7 +1529,8 @@
     The spectral classification of the tensorial completions is conditional
     on this hypothesis, and even under it the admissibility conditions leave
     the Born--Infeld member non-uniquely selected within the
-    family~\eqref{eq:general-completer}, in its sector function and in its carrier.
+    family~\eqref{eq:general-completer}, through its sector function; the carrier is selected by condition~(C3)
+    applied to the curvature endomorphism.
 
     Finally, the present work focuses on the emergence of the effective
     gravitational field equations.
