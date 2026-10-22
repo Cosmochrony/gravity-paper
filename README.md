@@ -2,6 +2,11 @@
 
 This repository contains the source of the Cosmochrony Gravity paper.
 
+The paper works on a supplied four-dimensional Riemannian metric. Reading that metric as the emergent metric of
+the Cosmochrony programme is conditional on the spatial-limit hypothesis [H-L], the open lifting hypothesis
+[H-lift], a supplied rank-four extension of the rank-three co-metric of Q5b, and a continuation to Lorentzian
+signature that is not performed; no metric coefficient value is established.
+
 The paper separates two distinct regularization statements:
 
 - a physical proper-time cutoff produces power-sensitive local terms;
@@ -98,7 +103,8 @@ finite value or sign of this coefficient.
 Additional operator content and a renormalization condition are required to obtain the
 observed positive Newton constant.
 
-The local Einstein term dominates the four-derivative sector when
+When the matched Einstein coefficient is non-zero, the local Einstein term dominates the four-derivative sector
+when
 
 \[
 RL_4^2\ll1,
@@ -109,6 +115,7 @@ L_4^2=\left|\frac{\beta^{\mathrm{ren}}}{c_{\mathrm{EH}}^{\mathrm{ren}}}\right|.
 Under cutoff-dominated matching without cancellations,
 \(L_4=O(\ell_{\mathrm{sp}})\) and \(G_N=O(\ell_{\mathrm{sp}}^2)\).
 This is conditional scaling, not a numerical prediction.
+The hierarchy is a power-counting statement: it gives no general bound on the non-local contributions.
 
 ## Born--Infeld completion
 
@@ -123,6 +130,11 @@ structural conditions do not select it uniquely: the admissible completers form 
 \(\Phi(X)=\exp\sum_i h(\lambda_i)\) with \(h\) constrained only at the origin and at the
 saturation boundary, containing in particular
 \(\Phi_a(X)=\sqrt{\det(I+X)}\,e^{a\,\mathrm{tr}(X^2)}\) for every real \(a\).
+The spectral carrier is also fixed only up to a trace parameter \(\alpha\neq1/d\):
+\(Y_\alpha=\tfrac{t}{d}I+X_0/(1-\alpha d)\), with \(t=\mathrm{tr}\,X\) and \(X_0\) the traceless part of
+\(X=\ell_{\mathrm{sp}}^2g^{-1}\mathrm{Ric}\).
+All carriers give the same linear term; they differ at second order and in their saturation boundary, and
+\(\alpha=0\) is a convention.
 This classification does not determine the finite Einstein coefficient.
 
 ## Interpretive status

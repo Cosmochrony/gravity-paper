@@ -51,8 +51,8 @@
 }
 
 \abstract{
-  We determine the conditions under which a four-dimensional Laplace-type operator can support a local infrared
-  Einstein sector.
+  We determine the conditions under which a four-dimensional Laplace-type operator on a supplied Riemannian metric
+  can support a local infrared Einstein sector.
   The analysis separates two regularization statements that must not be conflated.
   A physical proper-time cutoff $\Lambda=\ell_{\mathrm{sp}}^{-1}$ produces power-sensitive local terms
   $a_0\Lambda^4$ and $a_2\Lambda^2$, while zeta regularization produces finite and logarithmic scale dependence
@@ -64,12 +64,14 @@
   complete operator content; they are not predicted by this determinant alone.
   Once these coefficients are supplied, the metric variation decomposes into Einstein, cosmological,
   higher-derivative, and non-local sectors.
-  The Einstein term dominates locally when the renormalized coefficient ratio satisfies $R L_4^2\ll1$.
+  The Einstein term dominates locally when the matched Einstein coefficient is non-zero and the renormalized
+  coefficient ratio satisfies $R L_4^2\ll1$, a power-counting statement that does not bound the non-local terms.
 
   Under the separate coherence-extensivity hypothesis, the determinantal Born--Infeld density is an admissible
   tensorial completion of a supplied Einstein infrared term, but the structural conditions do not select it uniquely:
   an explicit one-parameter family of distinct admissible completions shares its infrared limit and saturation
-  behaviour.
+  behaviour, and the spectral carrier is fixed only up to a trace parameter, which leaves the linear term unchanged
+  and moves the saturation boundary.
   \textbf{Interpretive status.}
   Spectral geometry fixes the allowed local structures and their cutoff sensitivities, but it does not yet derive the
   positive finite gravitational coupling.
@@ -136,14 +138,18 @@
       The structural necessity of non-injectivity for any genuinely emergent description is established
       in~\cite{Beau2026l}.
 
-      The present paper is a middle link in a derivation chain.
-      The Laplace-type operator $A_g = -\nabla^2_g$ is taken here as the starting point.
-      Its identification with the Cosmochrony admissibility operator $L_\Pi$ is established
-      by the chain: Q5a~\cite{Beau2026q5a} (Mosco convergence $\mathcal{E}_q \to L_\Pi$),
-      Q5b~\cite{Beau2026q5b} (BFS stratification lifts $L_\Pi$ to $L_{\mathrm{eff}}$ on
-  $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$), and Q9~\cite{Beau2026q9}
-      ([H-lift] proved unconditionally).
-      The identification $L_\Pi = A_g$ is therefore structural, not a working hypothesis.
+      The starting point of the present paper is the Laplace-type operator $A_g = -\nabla^2_g$ of a supplied
+      Riemannian metric $g$.
+      Its identification with an operator constructed from the Cosmochrony admissibility data is not established.
+      Q5a~\cite{Beau2026q5a} shows that the published admissibility form converges to the zero form, so that a
+      non-zero spatial limit operator is the unestablished input [H-L] of Q5b~\cite{Beau2026q5b}.
+      The lift of that operator to an effective operator on
+      $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$ is the open lifting hypothesis [H-lift] (Q5b,
+      Hypothesis~4.1), which Q9~\cite{Beau2026q9} does not discharge.
+      Under [H-L] and [H-lift], Q5b gives a co-metric of rank three.
+      Reading the supplied metric $g$ as an emergent metric would further require a supplied rank-four extension,
+      and relating it to a Lorentzian metric needs a continuation that is not performed.
+      The results below hold for any supplied Riemannian metric and do not depend on that reading.
       The present paper establishes the available infrared tensor structure and its regulator dependence.
       It does not establish that the minimal determinant alone fixes a positive observed Newton coupling.
 
@@ -627,7 +633,10 @@
     Non-local form factors are additionally controlled by the external momentum or curvature scale relative to the
     spectral matching scale.
 
-    This establishes a conditional infrared hierarchy once the renormalized matching coefficients are specified.
+    This establishes a conditional infrared hierarchy once the renormalized matching coefficients are specified,
+    with a non-zero Einstein coefficient.
+    The hierarchy is a power-counting statement about the local sectors: it gives no general bound on the non-local
+    contributions.
 
   \section{Spectral cutoff and Newton-coefficient matching}
   \label{sec:newton-identification}
@@ -747,10 +756,15 @@
       \sqrt{-g}\;\bigl[\,\Phi(X) - 1\,\bigr]\,,
     \end{equation}
     where $\Phi$ is a smooth scalar function of the
-    endomorphism~$X$, and the density is written in the
-    Lorentzian continuation convention of
-    Section~\ref{sec:discussion}, the algebra being
-    signature-independent.
+    endomorphism~$X$.
+    Lemma~\ref{lem:spectralcarrier} below shows that $X$ is the member $\alpha = 0$ of a family $Y_\alpha$ of
+    spectral carriers, none of which is selected by the conditions that follow; those conditions and
+    Lemmas~\ref{lem:extensivity-consequence} and~\ref{lem:1Dreduction} are stated for the argument of $\Phi$ and
+    hold for every member, with $X$ replaced by $Y_\alpha$.
+    The density is written with $\sqrt{-g}$, the form it would take after a continuation to Lorentzian signature;
+    that continuation is not performed here (Section~\ref{subsec:limitations}), and on the Riemannian section
+    $\sqrt{-g}$ is read as $\sqrt{g}$.
+    The eigenvalue algebra below does not depend on the signature.
     The effective gravitational action is then
     \[
       S_{\mathrm{coh}}^{\mathrm{full}}[g]
@@ -854,29 +868,24 @@
       This is structurally analogous to the extensivity of
       thermodynamic entropy for non-interacting subsystems.
       An analytical derivation of~[H-ext] from~A3 would
-      make the classification below an unconditional
-      result; pending such a derivation, [H-ext] occupies a
-      status analogous to the former open form of~[H-color] in the spectral
-      admissibility sub-programme~\cite{Beau2026a36}
-      (since established analytically in O31~\cite{Beau2026a35}).
+      make the classification below independent of that hypothesis; no such derivation is available, and
+      [H-ext] is an open hypothesis.
       Hypothesis~[H-ext] concerns only the extensivity of the
-      post-locking coherence functional and does not affect
-      the tensorial classification itself: the identification
-      of $g^{-1}R$ as the spectral carrier
-      (Lemma~\ref{lem:spectralcarrier}) and the constraints
-      on the sector function
-      (Lemma~\ref{lem:1Dreduction}) are both unconditional.
+      post-locking coherence functional.
+      The classification of the spectral carriers (Lemma~\ref{lem:spectralcarrier}), which holds under the
+      restriction stated in that lemma and leaves a trace parameter free, and the constraints on the sector function
+      (Lemma~\ref{lem:1Dreduction}) do not use it.
     \end{remark}
 
   \subsection{Classification of the tensorial completions}
     \label{subsec:UV-uniqueness}
 
     The classification proceeds in three lemmas.
-    Lemmas~\ref{lem:1Dreduction}
-    and~\ref{lem:spectralcarrier} are unconditional;
+    Lemma~\ref{lem:1Dreduction} does not use [H-ext];
+    Lemma~\ref{lem:spectralcarrier} does not use it either, and holds under its stated restriction on the
+    carrier;
     Lemma~\ref{lem:extensivity-consequence} is conditional
-    on~[H-ext] and carries the only conditionality in the
-    chain.
+    on~[H-ext].
 
     \begin{lemma}[Spectral decomposition from coherence
     extensivity]
@@ -972,78 +981,99 @@
       the sector function is left free.
     \end{proof}
 
-    \begin{lemma}[Spectral carrier identification]
+    \begin{lemma}[Spectral carrier family]
       \label{lem:spectralcarrier}
-      Among local covariant two-derivative symmetric tensors
-      on $(M, g)$, the mixed Ricci endomorphism
-      $X^{\mu}{}_{\nu}
-      = \ell_{\mathrm{sp}}^{2}\,
-      g^{\mu\alpha} R_{\alpha\nu}$
-      is the unique admissible spectral carrier for~$\Phi$
-      with non-degenerate eigenvalue spectrum.
+      Let the argument of~$\Phi$ be the endomorphism obtained by raising one index of a local covariant symmetric
+      tensor on $(M, g)$ that is linear in the curvature and of two-derivative order, require its spectrum not to be
+      a multiple of the identity in general, and normalise it so that its trace is
+      $t \equiv \mathrm{tr}\,X = \ell_{\mathrm{sp}}^{2} R$, the normalisation for which~(C2) reproduces the
+      Einstein--Hilbert density with the length $\ell_{\mathrm{sp}}$.
+      Then the argument is a member of the family
+      \begin{equation}\label{eq:carrier-family}
+        Y_\alpha
+        \;=\;
+        \frac{\ell_{\mathrm{sp}}^{2}\, g^{-1}\bigl(\mathrm{Ric} - \alpha R\, g\bigr)}{1 - \alpha d}
+        \;=\;
+        \frac{t}{d}\, I + \frac{X_0}{1 - \alpha d}\,,
+        \qquad
+        \alpha \neq \frac{1}{d}\,,
+      \end{equation}
+      where $X_0 = X - (t/d)\,I$ is the traceless part of the mixed Ricci endomorphism~\eqref{eq:mixed-ricci}.
+      Every member has trace~$t$, so all members induce the same linear (Einstein) term.
+      The family is not reduced further by conditions~\textup{(C1)--(C4)} or by the $a_2$ coefficient: the members
+      differ by a rescaling of the traceless part, and
+      \begin{equation}\label{eq:carrier-second-order}
+        \mathrm{tr}\, Y_\alpha^{2} - \mathrm{tr}\, X^{2}
+        \;=\;
+        \Bigl[(1 - \alpha d)^{-2} - 1\Bigr]\, \mathrm{tr}\, X_0^{2}\,,
+      \end{equation}
+      which is non-zero for $\alpha \neq 0$ whenever $X_0 \neq 0$.
+      The member $\alpha = 0$, $Y_0 = X$, is a convention.
     \end{lemma}
 
     \begin{proof}
-      \textit{Classification.}\;
-      At two-derivative order, the only symmetric $(0,2)$
-      tensors constructed covariantly from the metric and the
-      Riemann tensor are $R_{\mu\nu}$ and
-      $R\, g_{\mu\nu}$, together with linear combinations.
-      Condition~(C1) requires the argument of~$\Phi$ to be
-      an endomorphism $X : T_p M \to T_p M$, obtained by
-      raising one index with the metric.
-
-      \textit{Exclusion of
-        $f(R)\,\delta^{\mu}{}_{\nu}$.}\;
-      The endomorphism $X = f(R)\,\delta^{\mu}{}_{\nu}$
-      collapses the local spectral content to a completely
-      degenerate eigenspace:
-      $\lambda_1 = \cdots = \lambda_d = f(R)$.
-      No directional admissibility structure can be
-      distinguished, and the information carried by the
-      individual Ricci eigenvalues is entirely lost.
-      The resulting completer
-      $\Phi(X) = \exp\!\bigl(d \cdot h(f(R))\bigr)$
-      is a function of~$R$ alone and therefore cannot encode
-      the anisotropic curvature content that spectral
-      admissibility requires to resolve.
-
-      \textit{Selection.}\;
-      The remaining candidate is the mixed Ricci tensor
-      $g^{\mu\alpha} R_{\alpha\nu}$, which carries the full
-      directional information of the Ricci curvature through
-      its $d$~independent eigenvalues.
-      It is the unique minimal two-derivative endomorphism
-      with non-trivial spectral content.
-
-      \textit{Trace modifications.}\;
-      The alternative
-      $\mathcal{R}_{\mu\nu}
-      = R_{\mu\nu} - \alpha\, g_{\mu\nu} R$
-      (for constant~$\alpha$) yields eigenvalues shifted by
-      $-\alpha R$ relative to the Ricci eigenvalues.
-      Such a shift modifies $\Phi$ only at subleading IR
-      order and is absorbed into a redefinition of
-      $\ell_{\mathrm{sp}}^{2}$ provided
-      $\alpha \neq 1/d$.
-      The identification $\mathcal{R}_{\mu\nu} = R_{\mu\nu}$
-      ($\alpha = 0$) is the minimal choice.
-      The residual ambiguity in~$\alpha$ affects only
-      higher-order corrections and is resolved by matching
-      to the $a_2$ coefficient computed in
-      Section~\ref{sec:hk-sdw}.
+      At two-derivative order, the symmetric $(0,2)$ tensors linear in the curvature are the linear combinations of
+      $R_{\mu\nu}$ and $R\, g_{\mu\nu}$.
+      Condition~(C1) requires the argument of~$\Phi$ to be an endomorphism $T_p M \to T_p M$, obtained by raising one
+      index with the metric; it is therefore $a X + b\, t\, I$ for constants $a$ and $b$.
+      For $a = 0$ the argument is $f(R)\,\delta^{\mu}{}_{\nu}$, whose spectrum is completely degenerate,
+      $\lambda_1 = \cdots = \lambda_d$: the completer is then a function of $R$ alone and cannot encode the
+      anisotropic curvature content.
+      This case is excluded by the requirement on the spectrum, which is a condition of the lemma and not a
+      consequence of~(C1)--(C4).
+      The trace normalisation gives $a + b d = 1$.
+      Writing $a = (1-\alpha d)^{-1}$ and $b = -\alpha (1-\alpha d)^{-1}$ parametrises every pair with $a \neq 0$
+      and $a + b d = 1$, with $\alpha = -b/a$; this is~\eqref{eq:carrier-family}, and the decomposition into
+      $(t/d)\,I$ and the rescaled traceless part follows from $a X + b t I = a X_0 + (a + b d)(t/d)\,I$.
+      An overall rescaling of the argument that is not compensated by the trace normalisation is a redefinition of
+      $\ell_{\mathrm{sp}}^{2}$.
+      Since $X_0$ is traceless, $\mathrm{tr}\, Y_\alpha^{2} = t^{2}/d + (1-\alpha d)^{-2}\,\mathrm{tr}\, X_0^{2}$ and
+      $\mathrm{tr}\, X^{2} = t^{2}/d + \mathrm{tr}\, X_0^{2}$, which gives~\eqref{eq:carrier-second-order}.
+      Conditions~(C1) and~(C4) concern only the dependence of~$\Phi$ on the eigenvalues of its argument, and~(C2)
+      and~(C3) constrain~$\Phi$ at the origin and at the saturation boundary of its argument; none of them involves
+      $\alpha$.
+      The coefficient $a_2 = R/6$ is first-order data: it fixes the trace normalisation and not $\alpha$.
     \end{proof}
+
+    \begin{remark}[Branches and admissibility domains of the carriers]
+      \label{rem:carrier-domains}
+      For $\alpha > 1/d$ the traceless part of $Y_\alpha$ changes sign, while the isotropic part $(t/d)\,I$ is the
+      same for every~$\alpha$; the carrier as a whole is not opposite to the Ricci endomorphism.
+      Conditions~(C1)--(C4) exclude neither branch.
+      An application that requires the sign of the traceless part to be preserved must impose $\alpha < 1/d$ as an
+      additional condition.
+
+      With $\nu_i$ the eigenvalues of $X_0$, the admissibility domain of the carrier $Y_\alpha$, on which every
+      eigenvalue of $I + Y_\alpha$ is positive, is
+      \begin{equation}\label{eq:carrier-domain}
+        D_\alpha
+        \;=\;
+        \Bigl\{ X :\ 1 + \frac{t}{d} + \frac{\nu_i}{1 - \alpha d} > 0 \ \text{ for all } i \Bigr\},
+      \end{equation}
+      and its saturation boundary, where condition~(C3) applies, is where one of these factors vanishes.
+      In the isotropic direction $X = \lambda I$ every factor equals $1 + \lambda$, and the boundary is
+      $\lambda = -1$ for every~$\alpha$.
+      Along a rank-one direction $X = \lambda P$, with $P$ a unit projector, the factor along $P$ is
+      $1 + \lambda(1-\alpha)/(1-\alpha d)$, which vanishes at $\lambda_{P} = -(1-\alpha d)/(1-\alpha)$, and the
+      $d-1$ transverse factors are $1 - \alpha\lambda/(1-\alpha d)$, which vanish at
+      $\lambda_{\perp} = (1-\alpha d)/\alpha$.
+      The admissible interval of~$\lambda$ is the intersection of the two corresponding half-lines:
+      $(\lambda_P, +\infty)$ for $\alpha < 0$, $(-1, +\infty)$ for $\alpha = 0$, $(\lambda_P, \lambda_\perp)$ for
+      $0 < \alpha < 1/d$, $(\lambda_\perp, \lambda_P)$ for $1/d < \alpha < 1$, and $(\lambda_\perp, +\infty)$ for
+      $\alpha \geq 1$.
+      The saturation boundary therefore moves with~$\alpha$ in every anisotropic direction, and for $\alpha \neq 0$
+      it can be reached through the transverse factors rather than through the factor along~$P$.
+    \end{remark}
 
     \begin{theorem}[Admissibility and non-uniqueness of the
     tensorial completion]
       \label{thm:uniqueness-completion}
       Let $\mathcal{C}(g, R)$ be a local covariant scalar
-      density of the form~\eqref{eq:completer-form},
+      density of the form~\eqref{eq:completer-form}, with $\Phi$ evaluated on a carrier $Y_\alpha$ of
+      Lemma~\ref{lem:spectralcarrier},
       satisfying conditions~\textup{(C1)--(C4)} and
       Hypothesis~\textup{[H-ext]}.
-      Then, up to the trace ambiguity resolved by the
-      heat-kernel analysis of
-      Section~\ref{sec:hk-sdw}:
+      Then:
       \begin{enumerate}
         \item[\textup{(i)}]
         the determinantal Born--Infeld density
@@ -1060,7 +1090,7 @@
           \;-\; 1
           \,\Bigr]
         \end{equation}
-        is an admissible completion, corresponding to the
+        is an admissible completion, corresponding to the carrier $\alpha = 0$ and the
         sector function
         $h(\lambda) = \tfrac12\log(1+\lambda)$;
 
@@ -1068,10 +1098,12 @@
         it is not the only one: the general admissible
         completer is
         \begin{equation}\label{eq:general-completer}
-          \Phi(X)
-          = \exp\!\Bigl(\sum_{i=1}^{d} h(\lambda_i)\Bigr)\,,
+          \Phi_{h,\alpha}(X)
+          = \exp\!\Bigl(\sum_{i=1}^{d} h(\mu_i)\Bigr)\,,
+          \qquad X \in D_\alpha\,,
         \end{equation}
-        with $h$ any smooth function satisfying the
+        where $\mu_i$ are the eigenvalues of $Y_\alpha$, $D_\alpha$ is the domain~\eqref{eq:carrier-domain},
+        $\alpha \neq 1/d$, and $h$ is any smooth function satisfying the
         constraints~\eqref{eq:h-unique}.
         In particular, the one-parameter family
         \begin{equation}\label{eq:counterexample-family}
@@ -1081,27 +1113,26 @@
           \exp\!\bigl(a\,\mathrm{tr}\,X^2\bigr)\,,
           \qquad a \in \mathbb{R}\,,
         \end{equation}
-        corresponding to
+        corresponding to $\alpha = 0$ and
         $h_a(\lambda) = \tfrac12\log(1+\lambda)
         + a\lambda^2$, satisfies~\textup{(C1)--(C5)} for
         every~$a$ and differs from
         $\Phi_0 = \sqrt{\det(I+X)}$ at second order in the
-        infrared expansion.
+        infrared expansion; and the determinantal completers on the other carriers,
+        $\sqrt{\det(I + Y_\alpha)}$ for $\alpha \neq 0$, agree with $\Phi_0$ at first order and differ from it at
+        second order and in their saturation boundary.
       \end{enumerate}
     \end{theorem}
 
     \begin{proof}
-      By Lemma~\ref{lem:spectralcarrier}, the spectral
-      carrier is
-      $X = \ell_{\mathrm{sp}}^{2}\, g^{-1} R$ with
-      eigenvalues $\lambda_i$.
+      By Lemma~\ref{lem:spectralcarrier}, the argument of $\Phi$ is a carrier $Y_\alpha$, with eigenvalues $\mu_i$.
       By Lemma~\ref{lem:extensivity-consequence}
       (conditional on~[H-ext]),
-      $\Phi(X) = \exp\!\bigl(\sum_i h(\lambda_i)\bigr)$.
+      $\Phi = \exp\!\bigl(\sum_i h(\mu_i)\bigr)$.
       By Lemma~\ref{lem:1Dreduction}, admissibility is
       equivalent to the constraints~\eqref{eq:h-unique}
-      on~$h$.
-      The choice $h(\lambda) = \tfrac12\log(1+\lambda)$
+      on~$h$, on the domain $D_\alpha$ where every $\mu_i > -1$.
+      For $\alpha = 0$ the choice $h(\lambda) = \tfrac12\log(1+\lambda)$
       satisfies them, and gives
       \[
         \Phi(X)
@@ -1123,13 +1154,18 @@
       $\Phi_a(X)
       = \Phi_0(X)\,
       \bigl(1 + a\,\mathrm{tr}\,X^2 + O(\|X\|^4)\bigr)$.
+      For the carriers, $\tfrac12\log\det(I + Y_\alpha) = \tfrac12\,\mathrm{tr}\,Y_\alpha
+      - \tfrac14\,\mathrm{tr}\,Y_\alpha^{2} + O(\|X\|^3)$; the first term equals $\tfrac12\, t$ for every $\alpha$,
+      and by~\eqref{eq:carrier-second-order} the second differs from its value at $\alpha = 0$ by
+      $-\tfrac14\bigl[(1-\alpha d)^{-2} - 1\bigr]\mathrm{tr}\,X_0^{2}$.
+      The saturation boundaries differ by Remark~\ref{rem:carrier-domains}.
     \end{proof}
 
     \begin{remark}[Input required for a uniqueness theorem]
       \label{rem:uniqueness-input}
       Conditions~(C1)--(C5) fix the completer only through
       the constraints~\eqref{eq:h-unique}; selecting
-      $h(\lambda) = \tfrac12\log(1+\lambda)$ within the
+      $h(\lambda) = \tfrac12\log(1+\lambda)$ and the carrier $\alpha = 0$ within the
       family~\eqref{eq:general-completer} requires input
       beyond them.
       Three candidate sources of such input are open.
@@ -1146,6 +1182,9 @@
       all orders this would amount to specifying $\Phi$
       rather than deriving it, so only finitely many orders
       can legitimately serve as input.
+      At second order such data would also have to fix $\alpha$ through~\eqref{eq:carrier-second-order};
+      the present analysis supplies none, since the coefficient $a_4$ fixes logarithmic beta functions and not
+      finite values (Section~\ref{subsec:four-derivative}).
       Third, a propagation condition on the induced field
       equations---absence of additional characteristics or
       of birefringence, in the sense in which exceptional
@@ -1196,8 +1235,8 @@
       First, the EiBI form is not postulated as a modified
       gravity model but arises as a distinguished member of
       the family of completions allowed by the admissibility
-      conditions---the member whose sector function carries
-      no deformation beyond the
+      conditions---the member whose carrier is the mixed Ricci endomorphism ($\alpha = 0$) and whose sector
+      function carries no deformation beyond the
       constraints~\eqref{eq:h-unique}; its selection within
       that family is an open problem
       (Remark~\ref{rem:uniqueness-input}).
@@ -1233,20 +1272,19 @@
     \end{remark}
 
     \begin{remark}
-      Lemma~\ref{lem:1Dreduction} is unconditional:
+      Lemma~\ref{lem:1Dreduction} does not use [H-ext]:
       it is an elementary analysis of
       conditions~(C2) and~(C3).
-      Lemma~\ref{lem:spectralcarrier} is unconditional:
-      it is a classification result given the
-      non-degeneracy requirement.
+      Lemma~\ref{lem:spectralcarrier} does not use [H-ext] either:
+      it is an elementary classification under its stated restriction to linear two-derivative carriers whose
+      spectrum is not a multiple of the identity, and it leaves the trace parameter $\alpha$ free.
       Lemma~\ref{lem:extensivity-consequence} is conditional
       on~[H-ext], whose derivation from Axiom~A3
       of~\cite{Beau2026m} is structurally motivated but
-      not yet analytically closed.
+      not analytically closed.
       Theorem~\ref{thm:uniqueness-completion} is therefore
-      conditional on~[H-ext] alone.
-      The conditionality is sharply localised: it resides
-      entirely in the passage from non-factorisability
+      conditional on~[H-ext] and on the restriction of Lemma~\ref{lem:spectralcarrier}.
+      Within the restriction, the conditionality resides in the passage from non-factorisability
       (Axiom~A3) to extensivity of~$S_{\mathrm{coh}}$.
       The selection of the determinantal member within the
       admissible family is a separate, open problem
@@ -1306,14 +1344,14 @@
     states $O$.
     The space $F$ is not an external substrate: it is induced by the admissibility
     structure of the observable states, with its internal organisation constrained
-    by the Born\textendash Infeld capacity bound~\cite{Beau2026m,Beau2026l}.
+    by the capacity axiom of the Born\textendash Infeld companion paper~\cite{Beau2026c}.
     Such projections need not be injective: distinct admissible configurations may
     yield the same observable outcome.
 
-    A basic structural observation is that admissible injective projections possess
-    trivial holonomy.
-    If the projection is injective, transport along closed loops in the projection
-    fiber is necessarily trivial.
+    We adopt the following structural reading, which is not proved here: admissible injective projections
+    possess trivial holonomy.
+    On this reading, if the projection is injective, transport along closed loops in the projection
+    fiber is trivial.
     The associated fiber connection therefore has vanishing curvature,
     \[
       \Omega_{\mu\nu} = 0 .
@@ -1336,54 +1374,36 @@
     showing that curvature in the projection fiber can act as a source for
     effective spacetime curvature.
 
-    This observation provides a structural interpretation of emergent gravitation.
+    This reading provides a structural interpretation of emergent gravitation.
     If the effective description were injective, the projection would introduce no
     additional curvature and no gravitational sector would arise from projection
     structure.
-    The existence of an emergent gravitational response therefore requires a
-    non-injective projection~\cite{Beau2026l}.
+    On this reading, an emergent gravitational response requires a
+    non-injective projection, in line with the no-go theorem of~\cite{Beau2026l}.
 
 
-    \begin{remark}[Heisenberg torsion as the structural source]
-    The non-commutativity underlying the gravitational response has a concrete
-    realisation in the Cosmochrony spectral programme.
+    \begin{remark}[Heisenberg non-commutativity and the supplied metric]
+    The non-commutativity invoked by the Cosmochrony spectral programme has a concrete discrete setting.
     In $\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z})$, the generating set
     $S_q = \{X^{\pm 1}, Y^{\pm 1}\}$ does not include the central generator $Z$,
-    yet $[X, Y] = Z$.
-    The central direction is therefore not a degree of freedom of the BFS
-    exploration but the structural obstruction to integrability of the horizontal
-    distribution --- the torsion of the sub-Riemannian geometry of
-    $\mathrm{Heis}_3$.
-    The admissibility form $\mathcal{E}_q$, built on the perturbation of admissible
-    states by $\rho_q(s)$, is directly sensitive to this non-commutativity.
-    In the large-$q$ Mosco limit~\cite{Beau2026q5a}, this torsion translates into
-    the Laplace-type operator $L_\Pi = A_g$ that enters the present paper.
-    This identification is now unconditional: Q9~\cite{Beau2026q9} proves hypothesis~[H-lift],
-    and Q8~\cite{BeauQ8} together with Q10~\cite{Beau2026q10} establish the metric
-    coefficients $A_Z = A_H = 2$, giving $g^{\mu\nu} = \mathrm{diag}(-A_\tau, 2, 2, 2)$
-    with only the temporal coefficient $A_\tau$ remaining to be determined.
-    Numerical computation of the admissibility weight
-    $a_q(s) = \mathbb{E}_{n,c}\bigl[\|(\rho_q(s)-I)\Pi_q v_c^{(n)}\|^2_{C_q}\bigr]$
-    for all conjugate pairs $(c,q-c)$ at $q \in \{29, 61, 101, 151, 211\}$
-    (267 valid pairs in total) yields the cross-$q$ summary
-    \[
-      a_q(s)\cdot q^2 \;\in\;
-      \{2.002,\; 1.988,\; 1.982,\; 1.972,\; 1.983\},
-    \]
-    with inter-pair standard deviations below $0.09$ and mean isotropy
-    $|a_q(X)-a_q(Y)|\cdot q^2 < 0.07$ across all primes.
-    A small number of non-generic pairs (those whose character $c$
-    has special arithmetic properties modulo $q$) exhibit larger
-    anisotropy and account for the residual variance;
-    generic pairs satisfy $A_{\mathrm{hw}}\approx 2.000$ to three
-    significant figures.
-    Hypothesis~H-w of~\cite{Beau2026q5a} is thereby confirmed numerically
-    across five primes: $a_q(s)\cdot q^2 \to 2$ as $q\to\infty$,
-    with $A$ independent of $s$.
-    The isotropy $a_q(X)=a_q(Y)$ implies that the Dirichlet form limit
-    is isotropic, consistent with the emergence of a Lorentzian metric.
-    The availability of the spectral Einstein sector is therefore, at the structural level, linked to the
-    Heisenberg-torsion construction of the effective operator.
+    yet $[X, Y] = Z$: the central direction is reached through the bracket of the horizontal directions, which is
+    the non-integrability of the horizontal distribution of $\mathrm{Heis}_3$.
+    Whether this structure supplies the metric $g$ on which the present paper works is open.
+    Q5a~\cite{Beau2026q5a} shows that the published admissibility form converges to the zero form, so that a
+    non-zero spatial limit operator is the unestablished input [H-L].
+    Under [H-L] and the open lifting hypothesis [H-lift], which Q9~\cite{Beau2026q9} does not discharge,
+    Q5b~\cite{Beau2026q5b} gives the co-metric $\mathrm{diag}(-A_\tau, A_H, A_H, 0)$ of rank three, with an empty
+    central slot.
+    No value of $A_\tau$, $A_H$ or of a central coefficient is established: Q8~\cite{BeauQ8} shows that the
+    commutator supplies no central coefficient and that invariance leaves the common value $2\lambda$ of an isotropic
+    spatial form free, Q10~\cite{Beau2026q10} derives no value, and Q11~\cite{Beau2026q11} shows that spatial
+    $\mathrm{SU}(2)$ invariance leaves $A_\tau$ free.
+    A four-dimensional co-metric $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$ follows only for a supplied
+    rank-four extension satisfying the hypotheses of Q11, Corollary~6.1, and its signature is a hypothesis of that
+    construction; the convergence of the admissibility weights, Hypothesis~[H-w], remains open~\cite{Beau2026w1}.
+    The availability of the spectral Einstein sector established here therefore does not depend on this
+    construction, and its reading as the response of an emergent metric is conditional on [H-L], [H-lift], a
+    supplied rank-four extension and a continuation from Riemannian signature that is not performed.
     Its positive finite normalization remains a separate matching problem.
     \end{remark}
 
@@ -1401,29 +1421,32 @@
     Non-injective projection allows the emergence of non-trivial fiber curvature,
     which in turn enables an effective geometric response.
     The spectral entropy functional provides a minimal mechanism for an Einstein-sector contribution.
-    Dominance in the infrared follows only when the matched coefficient hierarchy satisfies~\eqref{eq:L4-def}.
+    Dominance in the infrared follows only when the matched Einstein coefficient is non-zero and $RL_4^2\ll1$,
+    with $L_4$ defined in~\eqref{eq:L4-def}.
     This mechanism is consistent with the relational spectral framework
     of~\cite{Beau2026a}, in which spacetime geometry emerges operationally from
     relational configurations under non-injective projection.
-    The same non-injectivity argument further yields gauge charges and gauge groups
-    as fibre invariants of $\Pi$, establishing Yang\textendash Mills structure without
-    additional postulates~\cite{Beau2026m}.
+    Gauge dynamics is a separate question: Q12~\cite{Beau2026q12} derives Yang\textendash Mills dynamics from the
+    same functional for a supplied compact gauge group, which is not identified from the projection.
 
   \subsection{Relation to observer-indexed space-time}
     \label{subsec:observer-indexed}
 
-    The emergent character of the metric obtained here has a direct foundational counterpart.
+    \emph{This subsection is interpretation, not a result.}
+    The present paper works on a supplied metric; on the conditional reading in which that metric is emergent, the
+    reading has a direct foundational counterpart.
     Working from extended Wigner-friend no-go theorems, Pienaar shows that rejecting the absoluteness of
     observed events forbids embedding all events in a single common background space-time, and that
     space-time notions must instead be indexed to each observer through a ``relative locality''
     condition~\cite{Pienaar2026}.
-    In the present construction the metric $g_{\mu\nu}$ is not fundamental but an effective encoding of the
-    local projective ordering rate, valid only within a projectable regime.
-    A single global manifold shared by all observers is therefore not expected: distinct effective
+    On that reading the metric $g_{\mu\nu}$ would not be fundamental but an effective structure valid only within a
+    projectable regime; identifying it with a local projective ordering rate is a further interpretation, not
+    established here.
+    A single global manifold shared by all observers would then not be expected: distinct effective
     descriptions define distinct projectable patches, and their agreement is a regime-dependent property
     rather than a prior structural assumption.
     What Pienaar reaches as a dilemma --- reductio or a new route to quantum gravity --- appears here as
-    the second horn: the observer-indexed fragmentation of space-time is the expected signature of an
+    the second horn: the observer-indexed fragmentation of space-time would be the expected signature of an
     emergent, projection-defined geometry, with the observer-independent content carried by the
     pre-geometric admissibility structure rather than by a common metric manifold.
 
@@ -1445,10 +1468,11 @@
 
     Several limitations must be emphasized.
 
-    First, the derivation is performed in a Euclidean Riemannian framework.
+    First, the derivation is performed in a Euclidean Riemannian framework, on a supplied metric.
     Although the variational structure of the spectral functional is well defined
     in this setting, a complete treatment of causal propagation requires a
-    Lorentzian formulation of the theory.
+    Lorentzian formulation of the theory, and reading the metric as emergent requires the inputs listed in
+    Section~\ref{sec:introduction}.
 
     Second, non-local contributions generated by the spectral expansion are not
     eliminated.
@@ -1464,12 +1488,12 @@
     matter content.
 
     Fourth, Hypothesis~[H-ext]
-    (Section~\ref{subsec:UV-setup}) has not yet been
+    (Section~\ref{subsec:UV-setup}) is not
     derived analytically from the Foundation axioms.
     The spectral classification of the tensorial completions is conditional
     on this hypothesis, and even under it the admissibility conditions leave
     the Born--Infeld member non-uniquely selected within the
-    family~\eqref{eq:general-completer}.
+    family~\eqref{eq:general-completer}, in its sector function and in its carrier.
 
     Finally, the present work focuses on the emergence of the effective
     gravitational field equations.
@@ -1534,14 +1558,12 @@
       descriptions may generate curvature responses in the infrared
       regime.
 
-      \item Completion of the derivation chain
-      $\Pi_q \to \mathcal{E}_q \to L_\Pi = A_g \to G_{\mu\nu}$:
-      the identification $L_\Pi = A_g$ is now unconditional (Q9~\cite{Beau2026q9}),
-      and the metric coefficients are established as
-      $g^{\mu\nu} = \mathrm{diag}(-A_\tau,\, 2,\, 2,\, 2)$
-      (Q8~\cite{BeauQ8}, Q10~\cite{Beau2026q10}).
-      Determining the temporal coefficient $A_\tau$ from the projective
-      temporal ordering data of~\cite{Beau2026q5a} is the remaining open step.
+      \item Construction of the chain from the admissibility data to the supplied metric.
+      Its open steps are a non-zero spatial limit operator ([H-L]; Q5a~\cite{Beau2026q5a} gives a zero-form
+      limit), the lifting hypothesis [H-lift] (Q5b~\cite{Beau2026q5b}; not discharged by Q9~\cite{Beau2026q9}),
+      a rank-four extension of the rank-three co-metric of Q5b, every metric coefficient value
+      (Q8~\cite{BeauQ8}, Q10~\cite{Beau2026q10}, Q11~\cite{Beau2026q11}), and the continuation relating the
+      Riemannian metric used here to a Lorentzian one.
 
     \end{itemize}
 
