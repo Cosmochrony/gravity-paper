@@ -3,5 +3,6 @@
   "web_url": "https://cosmochrony.org/science/spectral-gravity/gravity/",
   "main_tex": "tex/Gravity.tex",
   "zenodo_id": 18818721,
-  "doi": "10.5281/zenodo.18818721"
+  "doi": "10.5281/zenodo.18818721",
+  "notes": "Version 3.6 corrects the description of Axiom A3 of the Foundation paper in the statement of hypothesis H-ext and its remarks: A3 is not a non-factorisability axiom. The Foundation paper obtains non-factorisability of the admissible fibre only under an additional sector reading of A3, not derived (Foundation version 2.6, Lemma 5.6). The admissible coherence extensivity H-ext remains an explicit open hypothesis, distinct from that reading and not implied by it. No theorem, hypothesis or result of the paper is changed."
 }
