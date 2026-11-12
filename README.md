@@ -153,7 +153,10 @@ The section on the projection structure cites the white paper (Appendix A.9, The
 admissible projection in the white paper's sense (a smooth fibre-bundle map supporting a connection), injectivity
 makes every fibre a single point, so that in the principal case the structure group and the holonomy group are
 trivial and the fibre connection is flat. The paper does not establish that its projection satisfies these
-hypotheses, and it draws no conclusion on the curvature of the effective geometry from the injective case.
+hypotheses, and it draws no conclusion on the curvature of the effective geometry from the injective case or from
+the non-injective case. Since version 3.8 it no longer states that fibre curvature sources the effective curvature:
+the Einstein response computed here involves no fibre connection. The conditional Einstein–Yang–Mills coupling of a
+supplied gauge field is cited from Q13 as a separate, dynamical mechanism.
 
 The convergence of the admissibility weights, Hypothesis [H-w], remains open. The finite-\(q\) values
 \(a_q(s)\,q^2\approx 2\) quoted in versions 2.3.1 to 3.4 and withdrawn in version 3.5 come from the simulation
