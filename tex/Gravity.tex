@@ -41,8 +41,8 @@
 \title{Conditions for an Infrared Einstein Sector from Spectral Geometry}
 \author*[1]{\fnm{Jérôme} \sur{Beau}}\email{jerome.beau@cosmochrony.org}
 \affil*[1]{\orgname{Independent Researcher}, \country{France}}
-\date{26 October 2026, Version 3.6}
-\articletype{Version 3.6, 26 October 2026}
+\date{12 November 2026, Version 3.7}
+\articletype{Version 3.7, 12 November 2026}
 \hypersetup{
   pdftitle={Conditions for an Infrared Einstein Sector from Spectral Geometry},
   pdfauthor={Jérôme Beau},
@@ -1394,19 +1394,19 @@
     Such projections need not be injective: distinct admissible configurations may
     yield the same observable outcome.
 
-    We adopt the following structural reading, which is not proved here: admissible injective projections
-    possess trivial holonomy.
-    On this reading, if the projection is injective, transport along closed loops in the projection
-    fiber is trivial.
-    The associated fiber connection therefore has vanishing curvature,
+    The white paper~\cite{Cosmochrony} proves, in its Appendix~A.9 (Theorem~A.1 and Corollary~A.1), a statement
+    about admissible projections in its own sense: smooth surjective fiber-bundle maps with mutually
+    diffeomorphic fibers, compatible with the relaxation rule and supporting a connection.
+    If such a projection is injective, every fiber is a single point.
+    In the principal case, where the structure group $G_\Pi$ acts freely and transitively on the fibers, the
+    structure group is therefore trivial, and so is the holonomy group of every connection: transport along
+    closed loops in the fiber is trivial and the connection has vanishing curvature,
     \[
       \Omega_{\mu\nu} = 0 .
     \]
-
-    In this case the projection cannot generate additional geometric structure in
-    the effective description.
-    In particular, no contribution to the effective spacetime curvature can arise
-    from projection-induced fiber curvature.
+    That the projection $\Pi : F \rightarrow O$ considered here satisfies these hypotheses, a smooth principal
+    fiber-bundle structure supporting a connection, is not established in this paper.
+    The statement applies to it only under those hypotheses.
 
     When the projection is non-injective, by contrast, the projection fiber may
     carry non-trivial curvature.
@@ -1421,9 +1421,6 @@
     effective spacetime curvature.
 
     This reading provides a structural interpretation of emergent gravitation.
-    If the effective description were injective, the projection would introduce no
-    additional curvature and no gravitational sector would arise from projection
-    structure.
     On this reading, an emergent gravitational response requires a
     non-injective projection, in line with the no-go theorem of~\cite{Beau2026l}.
 
@@ -1447,7 +1444,14 @@
     free.
     A four-dimensional co-metric $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$ follows only for a supplied
     rank-four extension satisfying the hypotheses of Q11, Corollary~6.1, and its signature is a hypothesis of that
-    construction; the convergence of the admissibility weights, Hypothesis~[H-w], remains open~\cite{Beau2026w1}.
+    construction; the convergence of the admissibility weights, Hypothesis~[H-w], remains open~\cite{Beau2026w1}.\footnote{%
+      Versions up to 3.4 of this paper quoted finite-$q$ values $a_q(s)\,q^2 \approx 2$ at
+      $q \in \{29, 61, 101, 151, 211\}$ as a numerical confirmation of [H-w]; version 3.5 withdrew them.
+      Their provenance is the simulation code published with Q5a~\cite{Beau2026q5a}; a rerun with its committed
+      parameters reproduces them.
+      They do not bear on [H-w]: for pairs whose admissible window has full rank, the modulation terms equal $2$
+      exactly by the normalisation of the fingerprint vectors, while the shift terms are only numerically close to
+      $2$ on average, with no proved bound or limit in $q$.}
     The availability of the spectral Einstein sector established here therefore does not depend on this
     construction, and its reading as the response of an emergent metric is conditional on [H-L], [H-lift], a
     supplied rank-four extension and a continuation from Riemannian signature that is not performed.
