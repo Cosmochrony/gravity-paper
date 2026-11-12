@@ -153,13 +153,14 @@ The section on the projection structure cites the white paper (Appendix A.9, The
 admissible projection in the white paper's sense (a smooth fibre-bundle map supporting a connection), injectivity
 makes every fibre a single point, so that in the principal case the structure group and the holonomy group are
 trivial and the fibre connection is flat. The paper does not establish that its projection satisfies these
-hypotheses, and it draws no conclusion from them on the curvature of the effective geometry.
+hypotheses, and it draws no conclusion on the curvature of the effective geometry from the injective case.
 
 The convergence of the admissibility weights, Hypothesis [H-w], remains open. The finite-\(q\) values
-\(a_q(s)\,q^2\approx 2\) quoted up to version 3.4 and withdrawn in version 3.5 are reproducible from the
-simulation code published with Q5a, but they do not bear on [H-w]: on pairs whose admissible window has full rank
-the modulation terms equal 2 exactly by the normalisation of the fingerprint vectors, while the shift terms are
-only numerically close to 2 on average.
+\(a_q(s)\,q^2\approx 2\) quoted in versions 2.3.1 to 3.4 and withdrawn in version 3.5 come from the simulation
+code published with Q5a, and a rerun of that code with its committed parameter tables reproduces them (the
+intermediate input files are not distributed). They do not bear on [H-w]: on pairs whose admissible basis has full
+rank the modulation terms equal 2 exactly, because every entry of a fingerprint vector has the same modulus, while
+the shift terms are only numerically close to 2 on average.
 
 ## Links
 
